@@ -1,0 +1,19 @@
+{
+	"name": "tennis-vpn-react",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"format": "prettier --write \"src/**/*.{js,jsx}\"",
+		"lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^9.4.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.3.1"
+	}
+}
