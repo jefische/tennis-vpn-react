@@ -1,11 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { createRoot } from "react-dom";
+import { createRoot } from "react-dom/client";
+import Navigation from "./Navigation";
+import Hero from "./Hero";
 
 const App = () => {
 	return (
 		<>
-			<div>Hello World</div>
+			<Navigation />
+			<Hero />
 			<p>my tennis vpn site</p>
 		</>
 	);
