@@ -1,16 +1,3 @@
-function ActionButton({ vpnLink, text }) {
-	return (
-		<div id="red-button-one" className="d-grid">
-			<a
-				className="btn btn-lg rounded-pill btn-danger mt-4 mx-auto"
-				href={vpnLink}
-			>
-				<span>{text}</span>
-			</a>
-		</div>
-	);
-}
-
 export default function ActionCard({ vpnLink }) {
 	return (
 		<>
@@ -52,11 +39,6 @@ export default function ActionCard({ vpnLink }) {
 					className="w-25 d-none d-md-flex ms-3"
 				></div>
 			</div>
-
-			<ActionButton
-				vpnLink={vpnLink}
-				text="Stream tennis with ExpressVPN"
-			/>
 		</>
 	);
 }

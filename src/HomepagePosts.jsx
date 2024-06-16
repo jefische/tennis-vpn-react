@@ -46,3 +46,47 @@ export function HomepagePost2() {
 		</>
 	);
 }
+
+export function HomepagePost3({ vpnLink }) {
+	return (
+		<>
+			<p>
+				Many tennis matches cannot be streamed from various locations
+				because of <span>exclusive broadcast rights</span> that cable TV
+				networks acquire. This leads to streaming <span>blackouts</span>{" "}
+				or <span>geo-restrictions</span> that prevent many tennis fans
+				from watching an event.
+			</p>
+
+			<p>
+				The good news is that you can easily bypass these restrictions
+				using a reliable VPN. We highly recommend{" "}
+				<a href={vpnLink}>ExpressVPN</a> for{" "}
+				<span>reliability, speed, and security.</span>
+			</p>
+
+			<p>
+				ExpressVPN has <span>over 3,000 servers in 94 countires</span>{" "}
+				meaning you'll have no problem finding a server in your region
+				of choice.
+			</p>
+
+			<p>
+				Additionally, ExpressVPN uses 10Gbps servers for extremely fast
+				service and allows users to connect on up to 8 devices.
+			</p>
+
+			<p>
+				<a href={vpnLink}>ExpressVPN</a> is currently offering a 12
+				month +3 months free promotion for <span>$6.67/month.</span> All
+				subscriptions also come with a{" "}
+				<span>30-day money back guarantee.</span> This is an excellent
+				purchase for the quality of service you receive.
+			</p>
+		</>
+	);
+}
+
+export function HomepagePost4({ vpnLink }) {
+	return <></>;
+}

@@ -1,20 +1,23 @@
 import ActionCard from "./ActionCard";
 import ActionTable from "./ActionTable";
-import { HomepagePost1, HomepagePost2 } from "./HomepagePosts";
+import ActionButton from "./ActionButton";
 
 export default function Posts({
 	title,
+	id,
 	isH1 = false,
 	children,
 	card = false,
 	table = false,
+	tableData,
+	button = false,
+	buttonText,
+	buttonID,
+	vpnLink,
 }) {
-	const generalTennisLink =
-		"https://go.expressvpn.com/c/4998943/1481132/16063";
-
 	return (
 		<>
-			<div id="post1" className="bposts">
+			<div id={id} className="bposts">
 				{isH1 ? (
 					<h1 className="mt-4">{title}</h1>
 				) : (
@@ -22,8 +25,31 @@ export default function Posts({
 				)}
 				<br />
 				{children}
-				{card && <ActionCard vpnLink={generalTennisLink} />}
-				{table && <ActionTable vpnLink={generalTennisLink} />}
+				{card &&
+					(button ? (
+						<>
+							<ActionCard vpnLink={vpnLink} />
+							<ActionButton
+								vpnLink={vpnLink}
+								text={buttonText}
+								id={buttonID}
+							/>
+						</>
+					) : (
+						<ActionCard vpnLink={vpnLink} />
+					))}
+				{table &&
+					(button ? (
+						<>
+							<ActionTable
+								vpnLink={vpnLink}
+								tableData={tableData}
+							/>
+							<ActionButton vpnLink={vpnLink} text={buttonText} />
+						</>
+					) : (
+						<ActionTable vpnLink={vpnLink} tableData={tableData} />
+					))}
 			</div>
 		</>
 	);
