@@ -1,0 +1,36 @@
+#main-image {
+	background: url("../assets/bg7-880x495.jpg") no-repeat center;
+	height: 400px;
+	max-width: 880px;
+}
+.bposts {
+	max-width: 880px;
+	scroll-margin-top: 4rem;
+}
+
+p > span,
+li > span {
+	font-weight: 600;
+}
+
+#evpn-logo {
+	background: url("./assets/EVPN-logo-200x118.png") no-repeat center;
+}
+@media (min-width: 992px) {
+	#evpn-logo {
+		background: url("./assets/EVPN-logo-250x147.png") no-repeat center;
+	}
+}
+
+@media (min-width: 1200px) {
+	#evpn-logo {
+		background: url("./assets/EVPN-logo-300x176.png") no-repeat center;
+	}
+}
+
+@media (min-width: 768px) {
+	.central-card,
+	#red-button-one {
+		width: 75%;
+	}
+}
