@@ -22,19 +22,19 @@ export default function SideContent() {
 				<h4>Table of Contents</h4>
 				<ol>
 					<li>
-						<a href="#post1">How to Watch Tennis Online</a>
+						<a href="#toc1">How to Watch Tennis Online</a>
 					</li>
 					<li>
-						<a href="#post2">Best Streaming Options</a>
+						<a href="#toc2">Best Streaming Options</a>
 					</li>
 					<li>
-						<a href="#post3">Why do you need a VPN?</a>
+						<a href="#toc3">Why do you need a VPN?</a>
 					</li>
 					<li>
-						<a href="#post4">Upcoming ATP events</a>
+						<a href="#toc4">Upcoming ATP events</a>
 					</li>
 					<li>
-						<a href="#post5">Upcoming WTA events</a>
+						<a href="#toc5">Upcoming WTA events</a>
 					</li>
 				</ol>
 			</div>

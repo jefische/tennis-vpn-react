@@ -28,53 +28,59 @@ export function HomepagePost() {
 			<ActionCard vpnLink={generalTennisLink} />
 			<ActionButton vpnLink={generalTennisLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
 
-			<h2 className="mt-5">Best Streaming Options to Watch Tennis</h2>
-			<p>
-				If you're looking to cut the cord there are multiple options to watch tennis with just an internet
-				connection. Some of the best streaming services include{" "}
-				<span>Sling TV, ESPN+, TSN, Eurosport and Tennis Channel Plus.</span> To{" "}
-				<span>unblock any geo-restrictions</span> you might face when accessing these services, you'll need a
-				reliable VPN.
-			</p>
-			<p>Below is a list of some streaming services by country and the cost per month.</p>
+			<div id="toc2" className="bposts">
+				<h2 className="mt-5">Best Streaming Options to Watch Tennis</h2>
+				<p>
+					If you're looking to cut the cord there are multiple options to watch tennis with just an internet
+					connection. Some of the best streaming services include{" "}
+					<span>Sling TV, ESPN+, TSN, Eurosport and Tennis Channel Plus.</span> To{" "}
+					<span>unblock any geo-restrictions</span> you might face when accessing these services, you'll need
+					a reliable VPN.
+				</p>
+				<p>Below is a list of some streaming services by country and the cost per month.</p>
 
-			<ActionTable tableData={streamingData} />
-			<ActionButton vpnLink={streamingServicesLink} text="Unblock streaming with ExpressVPN" />
+				<ActionTable tableData={streamingData} />
+				<ActionButton vpnLink={streamingServicesLink} text="Unblock streaming with ExpressVPN" />
+			</div>
 
-			<h2 className="mt-5">Why do you need a VPN?</h2>
-			<p>
-				Many tennis matches cannot be streamed from various locations because of{" "}
-				<span>exclusive broadcast rights</span> that cable TV networks acquire. This leads to streaming{" "}
-				<span>blackouts</span> or <span>geo-restrictions</span> that prevent many tennis fans from watching an
-				event.
-			</p>
+			<div id="toc3" className="bposts">
+				<h2 className="mt-5">Why do you need a VPN?</h2>
+				<p>
+					Many tennis matches cannot be streamed from various locations because of{" "}
+					<span>exclusive broadcast rights</span> that cable TV networks acquire. This leads to streaming{" "}
+					<span>blackouts</span> or <span>geo-restrictions</span> that prevent many tennis fans from watching
+					an event.
+				</p>
+				<p>
+					The good news is that you can easily bypass these restrictions using a reliable VPN. We highly
+					recommend <a href={generalTennisLink}>ExpressVPN</a> for{" "}
+					<span>reliability, speed, and security.</span>
+				</p>
+				<p>
+					ExpressVPN has <span>over 3,000 servers in 94 countires</span> meaning you'll have no problem
+					finding a server in your region of choice.
+				</p>
+				<p>
+					Additionally, ExpressVPN uses 10Gbps servers for extremely fast service and allows users to connect
+					on up to 8 devices.
+				</p>
+				<p>
+					<a href={generalTennisLink}>ExpressVPN</a> is currently offering a 12 month +3 months free promotion
+					for <span>$6.67/month.</span> All subscriptions also come with a{" "}
+					<span>30-day money back guarantee.</span> This is an excellent purchase for the quality of service
+					you receive.
+				</p>
+			</div>
 
-			<p>
-				The good news is that you can easily bypass these restrictions using a reliable VPN. We highly recommend{" "}
-				<a href={generalTennisLink}>ExpressVPN</a> for <span>reliability, speed, and security.</span>
-			</p>
+			<div id="toc4" className="bposts">
+				<h2 className="mt-5">Upcoming ATP events</h2>
+				<ActionTable tableData={atpTournamentData} />
+			</div>
 
-			<p>
-				ExpressVPN has <span>over 3,000 servers in 94 countires</span> meaning you'll have no problem finding a
-				server in your region of choice.
-			</p>
-
-			<p>
-				Additionally, ExpressVPN uses 10Gbps servers for extremely fast service and allows users to connect on
-				up to 8 devices.
-			</p>
-
-			<p>
-				<a href={generalTennisLink}>ExpressVPN</a> is currently offering a 12 month +3 months free promotion for{" "}
-				<span>$6.67/month.</span> All subscriptions also come with a <span>30-day money back guarantee.</span>{" "}
-				This is an excellent purchase for the quality of service you receive.
-			</p>
-
-			<h2 className="mt-5">Upcoming ATP events</h2>
-			<ActionTable tableData={atpTournamentData} />
-
-			<h2 className="mt-5">Upcoming WTA events</h2>
-			<ActionTable tableData={wtaTournamentData} />
+			<div id="toc5" className="bposts">
+				<h2 className="mt-5">Upcoming WTA events</h2>
+				<ActionTable tableData={wtaTournamentData} />
+			</div>
 
 			<h2 className="mt-5">Conclusion</h2>
 			<p>
@@ -84,7 +90,6 @@ export function HomepagePost() {
 				<span>avoid paying for expensive cable plans</span>, having access to a <span>quality VPN</span> is a
 				must have to bypass geo-restrictions and help you watch more tennis!
 			</p>
-
 			<p>Let us know in the comment section below if you found this guide helpful or have any questions.</p>
 		</>
 	);

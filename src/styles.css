@@ -34,3 +34,53 @@ li > span {
 		width: 75%;
 	}
 }
+
+/*AO page*/
+
+#ao-main-image {
+	background: url("./assets/AO6-484x484.png") no-repeat center;
+	height: 450px;
+}
+
+@media (min-width: 768px) {
+	#ao-main-image {
+		background: url("./assets/AO6-670x670.png") no-repeat center;
+		height: 450px;
+	}
+}
+
+@media (min-width: 992px) {
+	#ao-main-image {
+		background: url("./assets/AO6-800x800.png") no-repeat center;
+		height: 450px;
+	}
+}
+
+@media (min-width: 1200px) {
+	#ao-main-image {
+		background: url("./assets/AO6-880x880.png") no-repeat center;
+		height: 450px;
+	}
+}
+
+/*French Open page*/
+
+#french-main-image {
+	background: url("./assets/FO1-1140x641.jpg") no-repeat center;
+	height: 400px;
+}
+
+/*Wimbledon page*/
+
+#wimbledon-main-image {
+	background: url("./assets/Wimby4-880x550.jpg") no-repeat center;
+	height: 480px;
+}
+
+/*US Open page*/
+
+#uso-main-image {
+	background: url("./assets/us-open-880x495.jpg") no-repeat center;
+
+	height: 400px;
+}

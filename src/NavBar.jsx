@@ -1,11 +1,10 @@
-export default function Navigation() {
+import { Link, NavLink } from "react-router-dom";
+
+export default function NavBar() {
 	return (
-		<nav
-			className="navbar sticky-top navbar-expand-md bg-dark"
-			data-bs-theme="dark"
-		>
+		<nav className="navbar sticky-top navbar-expand-md bg-dark" data-bs-theme="dark">
 			<div className="container-lg">
-				<a className="navbar-brand text-white" href="index.html">
+				<Link className="navbar-brand text-white" to="/">
 					<img
 						src="./assets/tennisball-bg-dark.png"
 						alt="Logo"
@@ -14,7 +13,7 @@ export default function Navigation() {
 						className="d-inline-block align-text-center"
 					/>
 					Total Tennis
-				</a>
+				</Link>
 
 				{/* toggle button for mobile nav */}
 				<button
@@ -37,24 +36,24 @@ export default function Navigation() {
 				>
 					<ul className="navbar-nav mb-lg-0">
 						<li className="nav-item ms-3">
-							<a className="nav-link" href="AO.html">
+							<NavLink className="nav-link" to="australian-open">
 								Australian Open
-							</a>
+							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<a className="nav-link" href="FO.html">
+							<NavLink className="nav-link" to="french-open">
 								French Open
-							</a>
+							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<a className="nav-link" href="Wimby.html">
+							<NavLink className="nav-link" to="wimbledon">
 								Wimbledon
-							</a>
+							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<a className="nav-link" href="USO.html">
+							<NavLink className="nav-link" to="us-open">
 								US Open
-							</a>
+							</NavLink>
 						</li>
 						<li className="nav-item dropdown ms-3">
 							<a
