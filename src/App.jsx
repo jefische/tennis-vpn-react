@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import Navigation from "./Navigation";
-import Hero from "./Hero";
+import Hero from "./components/Hero";
 import Body from "./Body";
 
 const App = () => {

@@ -1,4 +1,4 @@
-export default function ActionTable({ vpnLink, tableData }) {
+export default function ActionTable({ tableData }) {
 	return (
 		<>
 			<table className="table table-bordered table-sm rounded-top-3 overflow-hidden table-striped streamtable">

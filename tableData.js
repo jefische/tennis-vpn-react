@@ -1,10 +1,5 @@
 export const streamingData = {
-	headers: [
-		"Streaming service",
-		"Availability",
-		"Cost per month",
-		"Streaming details",
-	],
+	headers: ["Streaming service", "Availability", "Cost per month", "Streaming details"],
 	options: [
 		{
 			id: 1,
@@ -18,8 +13,7 @@ export const streamingData = {
 			name: "Stan Sport",
 			location: "Australia",
 			cost: "$15",
-			details:
-				"Requires Stan Basic which starts at $10/month (with 30 day free trial).",
+			details: "Requires Stan Basic which starts at $10/month (with 30 day free trial).",
 		},
 		{
 			id: 3,

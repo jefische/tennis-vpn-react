@@ -1,7 +1,7 @@
 export default function SideContent() {
 	return (
 		<div className="col-3 p-3 pt-0 d-none d-lg-block">
-			<div className="overflow-hidden">
+			{/* <div className="overflow-hidden">
 				<p className="fst-italic fs-5 fw-semibold">
 					"What is the single most important quality of a tennis
 					champion? I would have to say desire, staying in there and
@@ -16,7 +16,7 @@ export default function SideContent() {
 					/>
 					<img src="assets/sideHome-300x330.png" />
 				</picture>
-			</div>
+			</div> */}
 
 			<div id="TOC" className="mt-5 sticky-top" style={{ top: "10%" }}>
 				<h4>Table of Contents</h4>
