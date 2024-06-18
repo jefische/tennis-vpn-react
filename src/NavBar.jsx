@@ -36,22 +36,22 @@ export default function NavBar() {
 				>
 					<ul className="navbar-nav mb-lg-0">
 						<li className="nav-item ms-3">
-							<NavLink className="nav-link" to="australian-open">
+							<NavLink className="nav-link" to="/australian-open">
 								Australian Open
 							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<NavLink className="nav-link" to="french-open">
+							<NavLink className="nav-link" to="/french-open">
 								French Open
 							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<NavLink className="nav-link" to="wimbledon">
+							<NavLink className="nav-link" to="/wimbledon">
 								Wimbledon
 							</NavLink>
 						</li>
 						<li className="nav-item ms-3">
-							<NavLink className="nav-link" to="us-open">
+							<NavLink className="nav-link" to="/us-open">
 								US Open
 							</NavLink>
 						</li>

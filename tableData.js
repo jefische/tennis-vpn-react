@@ -61,7 +61,7 @@ export const streamingData = {
 			id: 9,
 			name: "Eurosport",
 			location: "UK",
-			cost: "&#1636.99",
+			cost: "\u00A3" + "6.99",
 			details: "Subscribe via Discovery+",
 		},
 		{
