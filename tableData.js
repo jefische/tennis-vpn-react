@@ -225,3 +225,135 @@ export const wtaTournamentData = {
 		},
 	],
 };
+
+export const atpAustralianOdds = {
+	title: "AO Mens 2024 Favorites to Win",
+	options: [
+		{
+			id: 1,
+			player: "N. Djokovic",
+			american_odds: "+110",
+			euro_odds: "2.1",
+		},
+		{
+			id: 2,
+			player: "C. Alcaraz",
+			american_odds: "+275",
+			euro_odds: "3.75",
+		},
+		{
+			id: 3,
+			player: "J.Sinner",
+			american_odds: "+600",
+			euro_odds: "7.0",
+		},
+		{
+			id: 4,
+			player: "D. Medvedev",
+			american_odds: "+700",
+			euro_odds: "8.0",
+		},
+		{
+			id: 5,
+			player: "R. Nadal",
+			american_odds: "+2200",
+			euro_odds: "23.0",
+		},
+		{
+			id: 6,
+			player: "H. Rune",
+			american_odds: "+3000",
+			euro_odds: "31.0",
+		},
+		{
+			id: 7,
+			player: "A. Zverev",
+			american_odds: "+3000",
+			euro_odds: "31.0",
+		},
+		{
+			id: 8,
+			player: "N. Kyrgios",
+			american_odds: "+3500",
+			euro_odds: "36.0",
+		},
+		{
+			id: 9,
+			player: "B. Shelton",
+			american_odds: "+3500",
+			euro_odds: "36.0",
+		},
+		{
+			id: 10,
+			player: "S. Tsitsipas",
+			american_odds: "+4000",
+			euro_odds: "41.0",
+		},
+	],
+};
+
+export const wtaAustralianOdds = {
+	title: "AO Womens 2024 Favorites to Win",
+	options: [
+		{
+			id: 1,
+			player: "I. Swiatek",
+			american_odds: "+275",
+			euro_odds: "3.75",
+		},
+		{
+			id: 2,
+			player: "A. Sabalenka",
+			american_odds: "+450",
+			euro_odds: "5.5",
+		},
+		{
+			id: 3,
+			player: "E. Rybakina",
+			american_odds: "+700",
+			euro_odds: "8.0",
+		},
+		{
+			id: 4,
+			player: "C. Gauff",
+			american_odds: "+900",
+			euro_odds: "10.0",
+		},
+		{
+			id: 5,
+			player: "N. Osaka",
+			american_odds: "+1200",
+			euro_odds: "13.0",
+		},
+		{
+			id: 6,
+			player: "J. Pegula",
+			american_odds: "+1200",
+			euro_odds: "13.0",
+		},
+		{
+			id: 7,
+			player: "M. Vondrousova",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 8,
+			player: "M. Andreeva",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 9,
+			player: "O. Jabeur",
+			american_odds: "+2200",
+			euro_odds: "23.0",
+		},
+		{
+			id: 10,
+			player: "K. Muchova",
+			american_odds: "+3000",
+			euro_odds: "31.0",
+		},
+	],
+};

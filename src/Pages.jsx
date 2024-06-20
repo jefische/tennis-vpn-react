@@ -6,8 +6,8 @@ import { AustralianPost } from "./content/AustralianPost";
 export function Home() {
 	return (
 		<>
-			<Hero img="main-image" />
-			<Posts id="toc1" title="How to Watch Tennis Online in 2024">
+			<Posts id="toc1" title="How to Watch Tennis Online in 2024" updated=" ">
+				<Hero img="main-image" />
 				<HomepagePost />
 			</Posts>
 		</>
@@ -17,8 +17,8 @@ export function Home() {
 export function Australian() {
 	return (
 		<>
-			<Hero img="ao-main-image" />
-			<Posts title="How to Watch the Australian Open in 2024">
+			<Posts title="How to Watch the Australian Open in 2024" updated="Last updated December 2023">
+				<Hero img="ao-main-image" />
 				<AustralianPost />
 			</Posts>
 		</>
@@ -28,8 +28,9 @@ export function Australian() {
 export function French() {
 	return (
 		<>
-			<Hero img="french-main-image" />
-			<Posts title="How to Watch the French Open in 2024"></Posts>
+			<Posts title="How to Watch the French Open in 2024">
+				<Hero img="french-main-image" />
+			</Posts>
 		</>
 	);
 }
@@ -37,8 +38,9 @@ export function French() {
 export function Wimbledon() {
 	return (
 		<>
-			<Hero img="wimbledon-main-image" />
-			<Posts title="How to Watch the Wimbledon in 2024"></Posts>
+			<Posts title="How to Watch the Wimbledon in 2024">
+				<Hero img="wimbledon-main-image" />
+			</Posts>
 		</>
 	);
 }
@@ -46,8 +48,9 @@ export function Wimbledon() {
 export function USO() {
 	return (
 		<>
-			<Hero img="uso-main-image" />
-			<Posts title="How to Watch the US Open in 2024"></Posts>
+			<Posts title="How to Watch the US Open in 2024">
+				<Hero img="uso-main-image" />
+			</Posts>
 		</>
 	);
 }

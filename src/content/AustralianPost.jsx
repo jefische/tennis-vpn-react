@@ -9,8 +9,7 @@ const streamingServicesLink = "https://go.expressvpn.com/c/4998943/1462857/16063
 export function AustralianPost() {
 	return (
 		<>
-			<h6>Updated December 2023</h6>
-
+			<br />
 			<p>
 				With the start of the 2024 season just around the corner, the <span>Australian Open</span> will be under
 				way before we know it, kicking off the first of the four grand slam events! The tournament will{" "}

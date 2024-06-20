@@ -1,6 +1,11 @@
+.container-custom {
+	margin: auto;
+	max-width: 1080px;
+}
+
 #main-image {
 	background: url("../assets/bg7-880x495.jpg") no-repeat center;
-	height: 400px;
+	height: 275px;
 	max-width: 880px;
 }
 .bposts {
@@ -58,8 +63,9 @@ li > span {
 
 @media (min-width: 1200px) {
 	#ao-main-image {
-		background: url("./assets/AO6-880x880.png") no-repeat center;
-		height: 450px;
+		/* background: url("./assets/AO6-880x880.png") no-repeat center; */
+		background: url("./assets/AO5-827x275.jpg") no-repeat center;
+		height: 275px;
 	}
 }
 
@@ -67,14 +73,14 @@ li > span {
 
 #french-main-image {
 	background: url("./assets/FO1-1140x641.jpg") no-repeat center;
-	height: 400px;
+	height: 275px;
 }
 
 /*Wimbledon page*/
 
 #wimbledon-main-image {
 	background: url("./assets/Wimby4-880x550.jpg") no-repeat center;
-	height: 480px;
+	height: 275px;
 }
 
 /*US Open page*/
@@ -82,5 +88,28 @@ li > span {
 #uso-main-image {
 	background: url("./assets/us-open-880x495.jpg") no-repeat center;
 
-	height: 400px;
+	height: 275px;
+}
+
+.odds-container {
+	font-size: 1rem;
+	text-align: center;
+	top: 10%;
+}
+
+.odds {
+	display: grid;
+	font-size: 0.9rem;
+
+	grid-template-rows: auto;
+	grid-template-columns: auto repeat(2, 1fr);
+}
+
+.odds-header,
+.odds-data {
+	text-align: right;
+}
+
+.odds-header {
+	border-bottom: 1px solid;
 }
