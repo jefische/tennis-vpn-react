@@ -15,7 +15,7 @@
 
 p > span,
 li > span {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 #evpn-logo {
@@ -112,4 +112,8 @@ li > span {
 
 .odds-header {
 	border-bottom: 1px solid;
+}
+
+.card-custom {
+	border-left: 4px solid;
 }

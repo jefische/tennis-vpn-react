@@ -1,5 +1,5 @@
 import OddsGrid from "./components/OddsGrid";
-import { atpAustralianOdds, wtaAustralianOdds } from "../tableData";
+import { atpAustralianOdds, wtaAustralianOdds, atpFrenchOdds, wtaFrenchOdds } from "../tableData";
 import { useLocation } from "react-router-dom";
 
 export default function SideContent() {
@@ -27,10 +27,15 @@ export default function SideContent() {
 						</li>
 					</ol>
 				</div>
-			) : (
+			) : location.pathname === "/australian-open" ? (
 				<div className="odds-container sticky-top">
 					<OddsGrid tableData={atpAustralianOdds} title={atpAustralianOdds.title} />
 					<OddsGrid tableData={wtaAustralianOdds} title={wtaAustralianOdds.title} />
+				</div>
+			) : (
+				<div className="odds-container sticky-top">
+					<OddsGrid tableData={atpFrenchOdds} title={atpFrenchOdds.title} />
+					<OddsGrid tableData={wtaFrenchOdds} title={wtaFrenchOdds.title} />
 				</div>
 			)}
 		</div>

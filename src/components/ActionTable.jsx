@@ -15,10 +15,9 @@ export default function ActionTable({ tableData }) {
 					{tableData.options.map((x) => {
 						return (
 							<tr key={x.id}>
-								<td>{x[Object.keys(x)[1]]}</td>
-								<td>{x[Object.keys(x)[2]]}</td>
-								<td>{x[Object.keys(x)[3]]}</td>
-								<td>{x[Object.keys(x)[4]]}</td>
+								{Object.keys(x).map((k) => {
+									return k != "id" && <td key={k}>{x[k]}</td>;
+								})}
 							</tr>
 						);
 					})}

@@ -1,5 +1,5 @@
 import ActionButton from "../components/ActionButton";
-import ActionCard from "../components/ActionCard";
+import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
 import { streamingData, atpTournamentData, wtaTournamentData } from "../../tableData";
 
@@ -26,7 +26,7 @@ export function HomepagePost() {
 				to connect to a streaming service to watch the tournament.
 			</p>
 
-			<ActionCard vpnLink={generalTennisLink} />
+			<QuickGuide vpnLink={generalTennisLink} />
 			<ActionButton vpnLink={generalTennisLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
 
 			<div id="toc2" className="bposts">

@@ -1,10 +1,14 @@
 import ActionButton from "../components/ActionButton";
-import ActionCard from "../components/ActionCard";
+import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
-import { streamingData, atpTournamentData, wtaTournamentData } from "../../tableData";
+import { streamingData, atpTournamentData, wtaTournamentData, australianSchedule } from "../../tableData";
+import ActionCard from "../components/ActionCard";
 
 const generalTennisLink = "https://go.expressvpn.com/c/4998943/1481132/16063";
 const streamingServicesLink = "https://go.expressvpn.com/c/4998943/1462857/16063";
+const smartTVLink = "https://go.expressvpn.com/c/4998943/1635891/16063";
+const AOLink = "https://go.expressvpn.com/c/4998943/1635000/16063";
+const routerLink = "https://go.expressvpn.com/c/4998943/1481136/16063";
 
 export function AustralianPost() {
 	return (
@@ -31,8 +35,69 @@ export function AustralianPost() {
 				<span>3,000 servers</span> located in <span>94 countries</span>.
 			</p>
 
-			<ActionCard vpnLink={generalTennisLink} />
-			<ActionButton vpnLink={generalTennisLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+			<QuickGuide
+				vpnLink={AOLink}
+				bullet1="then download and install on your device."
+				bullet2="yourself to an Australian server."
+				bullet3="to 9Now or create an account if needed (you may need an Australian postal code, e.g. 2000 or 3010)"
+			/>
+			<ActionButton vpnLink={AOLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+
+			<h2 id="best-streaming-options" className="mt-5">
+				Best streaming services to watch the Australian Open
+			</h2>
+			<br />
+			<p>
+				There are a few services you can use to watch the Australian Open depending on your location. The best
+				option is <span>9Now</span> as it is a <span>completely free streaming service</span>. However, for
+				users with a different preference here are other great affordable options:
+			</p>
+			<ActionTable tableData={streamingData} />
+			<ActionButton vpnLink={streamingServicesLink} text="Unblock streaming with ExpressVPN" />
+
+			<h2 className="mt-5">Watching the Australian Open on your device</h2>
+			<br />
+			<p>
+				You can catch all of the Australian Open online with any device including{" "}
+				<span>Android, iOS, Windows, Mac, Linux and Smart TVs</span>.
+			</p>
+
+			<p>
+				<a href={smartTVLink}>ExpressVPN</a> supported Smart TVs include:
+			</p>
+
+			<ul>
+				<li>Samsung TV</li>
+				<li>Apple TV</li>
+				<li>Amazon Fire TV and Fire Stick</li>
+				<li>Roku</li>
+				<li>Google Chromecast</li>
+				<li>Android TV</li>
+				<li>Nvidia Shield</li>
+			</ul>
+
+			<p>Follow these easy steps to stream the Australian Open on your device:</p>
+
+			<ActionCard>
+				<li className="pb-1">
+					Download the <a href={smartTVLink}>ExpressVPN</a> app directly to your device and login
+				</li>
+				<li className="pb-1">Connect to a server in Australia</li>
+				<li className="pb-1">Login to 9Now or another streaming service in Australia of your choice.</li>
+				<li className="pb-1">Enjoy live streaming the matches!</li>
+			</ActionCard>
+
+			<ActionButton vpnLink={AOLink} text="Stream Australian Open on your device" />
+
+			<p className="pt-5">
+				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
+				your VPN straight to your <a href={routerLink}>Wi-Fi router</a>. Simply access your router’s admin
+				dashboard and connect to your <span>VPN network</span>.
+			</p>
+
+			<h2 className="mt-5">2024 Australian Open Schedule of Play (Singles) </h2>
+			<br />
+			<ActionTable tableData={australianSchedule} />
 		</>
 	);
 }
