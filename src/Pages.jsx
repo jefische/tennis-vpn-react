@@ -2,6 +2,8 @@ import Hero from "./components/Hero";
 import Posts from "./components/Posts";
 import { HomepagePost } from "./content/HomepagePost";
 import { AustralianPost } from "./content/AustralianPost";
+import { FrenchPost } from "./content/FrenchPost";
+import { WimbledonPost } from "./content/WimbledonPost";
 
 export function Home() {
 	return (
@@ -28,8 +30,9 @@ export function Australian() {
 export function French() {
 	return (
 		<>
-			<Posts title="How to Watch the French Open in 2024">
+			<Posts title="How to Watch the French Open in 2024" updated="Last updated April 2024">
 				<Hero img="french-main-image" />
+				<FrenchPost />
 			</Posts>
 		</>
 	);
@@ -38,8 +41,9 @@ export function French() {
 export function Wimbledon() {
 	return (
 		<>
-			<Posts title="How to Watch the Wimbledon in 2024">
+			<Posts title="How to Watch Wimbledon in 2024" updated="Last updated June 2024">
 				<Hero img="wimbledon-main-image" />
+				<WimbledonPost />
 			</Posts>
 		</>
 	);

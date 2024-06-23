@@ -3,7 +3,7 @@ import { Fragment } from "react";
 export default function OddsGrid({ tableData, title }) {
 	return (
 		<>
-			<h5>{title}</h5>
+			<h5>{tableData.title}</h5>
 
 			<div className="odds mb-5">
 				<div className="odds-header"></div>

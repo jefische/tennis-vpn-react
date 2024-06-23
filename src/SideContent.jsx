@@ -1,5 +1,12 @@
 import OddsGrid from "./components/OddsGrid";
-import { atpAustralianOdds, wtaAustralianOdds, atpFrenchOdds, wtaFrenchOdds } from "../tableData";
+import {
+	atpAustralianOdds,
+	wtaAustralianOdds,
+	atpFrenchOdds,
+	wtaFrenchOdds,
+	atpWimbledonOdds,
+	wtaWimbledonOdds,
+} from "../oddsData";
 import { useLocation } from "react-router-dom";
 
 export default function SideContent() {
@@ -29,14 +36,26 @@ export default function SideContent() {
 				</div>
 			) : location.pathname === "/australian-open" ? (
 				<div className="odds-container sticky-top">
-					<OddsGrid tableData={atpAustralianOdds} title={atpAustralianOdds.title} />
-					<OddsGrid tableData={wtaAustralianOdds} title={wtaAustralianOdds.title} />
+					<OddsGrid tableData={atpAustralianOdds} />
+					<OddsGrid tableData={wtaAustralianOdds} />
+				</div>
+			) : location.pathname === "/french-open" ? (
+				<div className="odds-container sticky-top">
+					<OddsGrid tableData={atpFrenchOdds} />
+					<OddsGrid tableData={wtaFrenchOdds} />
+				</div>
+			) : location.pathname === "/wimbledon" ? (
+				<div className="odds-container sticky-top">
+					<OddsGrid tableData={atpWimbledonOdds} />
+					<OddsGrid tableData={wtaWimbledonOdds} />
+				</div>
+			) : location.pathname === "/us-open" ? (
+				<div className="odds-container sticky-top">
+					<OddsGrid tableData={atpFrenchOdds} />
+					<OddsGrid tableData={wtaFrenchOdds} />
 				</div>
 			) : (
-				<div className="odds-container sticky-top">
-					<OddsGrid tableData={atpFrenchOdds} title={atpFrenchOdds.title} />
-					<OddsGrid tableData={wtaFrenchOdds} title={wtaFrenchOdds.title} />
-				</div>
+				<></>
 			)}
 		</div>
 	);
