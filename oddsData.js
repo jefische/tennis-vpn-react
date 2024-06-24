@@ -393,3 +393,135 @@ export const wtaWimbledonOdds = {
 		},
 	],
 };
+
+export const atpUSOdds = {
+	title: "US Open Mens 2024 Favorites to Win",
+	options: [
+		{
+			id: 1,
+			player: "C. Alcaraz",
+			american_odds: "+150",
+			euro_odds: "2.5",
+		},
+		{
+			id: 2,
+			player: "J. Sinner",
+			american_odds: "+175",
+			euro_odds: "2.75",
+		},
+		{
+			id: 3,
+			player: "N. Djokovic",
+			american_odds: "+350",
+			euro_odds: "4.5",
+		},
+		{
+			id: 4,
+			player: "A. Zverev",
+			american_odds: "+1200",
+			euro_odds: "13.0",
+		},
+		{
+			id: 5,
+			player: "H. Hurkacz",
+			american_odds: "+1300",
+			euro_odds: "14.0",
+		},
+		{
+			id: 6,
+			player: "D. Medvedev",
+			american_odds: "+1600",
+			euro_odds: "17.0",
+		},
+		{
+			id: 7,
+			player: "M. Berrettini",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 8,
+			player: "J. Draper",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 9,
+			player: "A. De Minaur",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 10,
+			player: "T. Fritz",
+			american_odds: "+2800",
+			euro_odds: "29.0",
+		},
+	],
+};
+
+export const wtaUSOdds = {
+	title: "US Open Womens 2024 Favorites to Win",
+	options: [
+		{
+			id: 1,
+			player: "A. Sabalenka",
+			american_odds: "+320",
+			euro_odds: "4.2",
+		},
+		{
+			id: 2,
+			player: "I. Swiatek",
+			american_odds: "+320",
+			euro_odds: "4.2",
+		},
+		{
+			id: 3,
+			player: "E. Rybakina",
+			american_odds: "+450",
+			euro_odds: "5.5",
+		},
+		{
+			id: 4,
+			player: "C. Gauff",
+			american_odds: "+650",
+			euro_odds: "7.5",
+		},
+		{
+			id: 5,
+			player: "N. Osaka",
+			american_odds: "+1300",
+			euro_odds: "14.0",
+		},
+		{
+			id: 6,
+			player: "O. Jabeur",
+			american_odds: "+1300",
+			euro_odds: "14.0",
+		},
+		{
+			id: 7,
+			player: "J. Pegula",
+			american_odds: "+2000",
+			euro_odds: "21.0",
+		},
+		{
+			id: 8,
+			player: "M. Andreeva",
+			american_odds: "+2500",
+			euro_odds: "26.0",
+		},
+		{
+			id: 9,
+			player: "M. Vondrousova",
+			american_odds: "+2500",
+			euro_odds: "26.0",
+		},
+		{
+			id: 10,
+			player: "E. Raducanu",
+			american_odds: "+2500",
+			euro_odds: "26.0",
+		},
+	],
+};

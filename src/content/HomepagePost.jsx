@@ -2,9 +2,7 @@ import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
 import { streamingData, atpTournamentData, wtaTournamentData } from "../../tableData";
-
-const generalTennisLink = "https://go.expressvpn.com/c/4998943/1481132/16063";
-const streamingServicesLink = "https://go.expressvpn.com/c/4998943/1462857/16063";
+import { vpn } from "../../vpnLinks";
 
 export function HomepagePost() {
 	return (
@@ -26,8 +24,8 @@ export function HomepagePost() {
 				to connect to a streaming service to watch the tournament.
 			</p>
 
-			<QuickGuide vpnLink={generalTennisLink} />
-			<ActionButton vpnLink={generalTennisLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+			<QuickGuide vpnLink={vpn.generalTennisLink} />
+			<ActionButton vpnLink={vpn.generalTennisLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
 
 			<div id="toc2" className="bposts">
 				<h2 className="mt-5">Best Streaming Options to Watch Tennis</h2>
@@ -41,7 +39,7 @@ export function HomepagePost() {
 				<p>Below is a list of some streaming services by country and the cost per month.</p>
 
 				<ActionTable tableData={streamingData} />
-				<ActionButton vpnLink={streamingServicesLink} text="Unblock streaming with ExpressVPN" />
+				<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
 			</div>
 
 			<div id="toc3" className="bposts">
@@ -54,7 +52,7 @@ export function HomepagePost() {
 				</p>
 				<p>
 					The good news is that you can easily bypass these restrictions using a reliable VPN. We highly
-					recommend <a href={generalTennisLink}>ExpressVPN</a> for{" "}
+					recommend <a href={vpn.generalTennisLink}>ExpressVPN</a> for{" "}
 					<span>reliability, speed, and security.</span>
 				</p>
 				<p>
@@ -66,8 +64,8 @@ export function HomepagePost() {
 					on up to 8 devices.
 				</p>
 				<p>
-					<a href={generalTennisLink}>ExpressVPN</a> is currently offering a 12 month +3 months free promotion
-					for <span>$6.67/month.</span> All subscriptions also come with a{" "}
+					<a href={vpn.generalTennisLink}>ExpressVPN</a> is currently offering a 12 month +3 months free
+					promotion for <span>$6.67/month.</span> All subscriptions also come with a{" "}
 					<span>30-day money back guarantee.</span> This is an excellent purchase for the quality of service
 					you receive.
 				</p>

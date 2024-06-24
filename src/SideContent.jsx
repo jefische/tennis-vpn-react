@@ -6,6 +6,8 @@ import {
 	wtaFrenchOdds,
 	atpWimbledonOdds,
 	wtaWimbledonOdds,
+	atpUSOdds,
+	wtaUSOdds,
 } from "../oddsData";
 import { useLocation } from "react-router-dom";
 
@@ -51,8 +53,8 @@ export default function SideContent() {
 				</div>
 			) : location.pathname === "/us-open" ? (
 				<div className="odds-container sticky-top">
-					<OddsGrid tableData={atpFrenchOdds} />
-					<OddsGrid tableData={wtaFrenchOdds} />
+					<OddsGrid tableData={atpUSOdds} />
+					<OddsGrid tableData={wtaUSOdds} />
 				</div>
 			) : (
 				<></>

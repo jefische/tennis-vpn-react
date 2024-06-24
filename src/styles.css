@@ -49,19 +49,20 @@ li > span {
 
 @media (min-width: 768px) {
 	#ao-main-image {
-		background: url("./assets/AO6-670x670.png") no-repeat center;
-		height: 450px;
+		/* background: url("./assets/AO6-670x670.png") no-repeat center; */
+		background: url("./assets/AO5-827x275.jpg") no-repeat center;
+		height: 275px;
 	}
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
 	#ao-main-image {
 		background: url("./assets/AO6-800x800.png") no-repeat center;
 		height: 450px;
 	}
-}
+} */
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 	#ao-main-image {
 		/* background: url("./assets/AO6-880x880.png") no-repeat center; */
 		background: url("./assets/AO5-827x275.jpg") no-repeat center;

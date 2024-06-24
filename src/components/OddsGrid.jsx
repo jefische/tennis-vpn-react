@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function OddsGrid({ tableData, title }) {
+export default function OddsGrid({ tableData }) {
 	return (
 		<>
 			<h5>{tableData.title}</h5>

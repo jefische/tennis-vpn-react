@@ -11,17 +11,17 @@ export function WimbledonPost() {
 		<>
 			<br />
 			<p>
-				The second gram slam of the season and one of the most anticipated tournaments of the year is upon us,{" "}
-				<span>Roland Garros!</span> Much of the anticipation this year is centered around{" "}
-				<span>Rafael Nadal's</span> return to competitive match play and what many have speculated as likely his
-				last French Open as a player.
+				Get ready for the oldest and most prestigious tennis tournament in the world, <span>Wimbledon.</span>{" "}
+				While last years champions Carlos Alcaraz and Market Vondrousova are among the favorites to win again
+				this year, the fields are stacked with great competition in both the men's and women's draws.
 			</p>
 			<p>
-				The tournament will <span>start on Sunday, May 26th</span> and run until Sunday June 9th.
+				The tournament will <span>start on Monday, July 1st</span> and run until Sunday July 14th and is{" "}
+				<span>completely free to watch on BBC iPlayer in the UK and 9Now in Australia.</span>
 			</p>
 
 			<p>
-				If you are located in Australia, then you can watch the tournament for{" "}
+				For If you are located in Australia, then you can watch the tournament for{" "}
 				<span>free on Channel 9 or 9Now</span>. If you <span>live outside Australia</span> then unfortunately
 				you may not have access to a live broadcast of the tournaments due to <span>geo-restrictions</span> or{" "}
 				<span>blackout policies</span> which prevent certain locations from streaming events because of TV
