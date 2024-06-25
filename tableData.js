@@ -192,6 +192,68 @@ export const streamingDataFO = {
 	],
 };
 
+export const streamingDataWimbledon = {
+	headers: ["Streaming service", "Availability", "Cost per month", "Streaming details"],
+	options: [
+		{
+			id: 1,
+			name: "9Now",
+			location: "Australia",
+			cost: "Free",
+			details: "",
+		},
+		{
+			id: 2,
+			name: "Stan Sport",
+			location: "Australia",
+			cost: "$15",
+			details: "Requires Stan Basic which starts at $10/month (with 30 day free trial).",
+		},
+		{
+			id: 3,
+			name: "TSN",
+			location: "Canada",
+			cost: "$19.99",
+			details: "TSN1 - TSN5, TSN+",
+		},
+		{
+			id: 4,
+			name: "Star+",
+			location: "Latin America",
+			cost: "$9.99",
+			details: "",
+		},
+		{
+			id: 5,
+			name: "ESPN+",
+			location: "USA",
+			cost: "$9.99",
+			details: "",
+		},
+		{
+			id: 6,
+			name: "Sling TV",
+			location: "USA",
+			cost: "$40 ($20 first month)",
+			details: "ESPN, ESPN2, ESPN3",
+		},
+		{
+			id: 7,
+			name: "Eurosport",
+			location: "UK",
+			cost: "\u00A3" + "6.99",
+			details: "Subscribe via Discovery+",
+		},
+		{
+			id: 8,
+			name: "BBC iPlayer",
+			location: "UK",
+			cost: "Free",
+			details: "",
+		},
+	],
+};
+
 export const atpTournamentData = {
 	headers: ["Date", "Tournament", "ATP Level", "Location"],
 	options: [

@@ -4,6 +4,7 @@ import { HomepagePost } from "./content/HomepagePost";
 import { AustralianPost } from "./content/AustralianPost";
 import { FrenchPost } from "./content/FrenchPost";
 import { WimbledonPost } from "./content/WimbledonPost";
+import { USOpenPost } from "./content/USOpenPost";
 
 export function Home() {
 	return (
@@ -52,8 +53,9 @@ export function Wimbledon() {
 export function USO() {
 	return (
 		<>
-			<Posts title="How to Watch the US Open in 2024">
+			<Posts title="How to Watch the US Open in 2024" updated="Last updated January 2024">
 				<Hero img="uso-main-image" />
+				<USOpenPost />
 			</Posts>
 		</>
 	);

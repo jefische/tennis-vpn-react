@@ -5,4 +5,5 @@ export const vpn = {
 	routerLink: "https://go.expressvpn.com/c/4998943/1481136/16063",
 	AOLink: "https://go.expressvpn.com/c/4998943/1635000/16063",
 	FOLink: "https://go.expressvpn.com/c/4998943/1648128/16063",
+	WimbledonLink: "https://go.expressvpn.com/c/4998943/1732638/16063",
 };

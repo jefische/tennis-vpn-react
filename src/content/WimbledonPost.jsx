@@ -2,7 +2,7 @@ import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
-import { streamingDataFO } from "../../tableData";
+import { streamingDataWimbledon } from "../../tableData";
 import { wimbledonSchedule } from "../../scheduleData";
 import { vpn } from "../../vpnLinks";
 
@@ -12,7 +12,7 @@ export function WimbledonPost() {
 			<br />
 			<p>
 				Get ready for the oldest and most prestigious tennis tournament in the world, <span>Wimbledon.</span>{" "}
-				While last years champions Carlos Alcaraz and Market Vondrousova are among the favorites to win again
+				While last years champions Carlos Alcaraz and Marketa Vondrousova are among the favorites to win again
 				this year, the fields are stacked with great competition in both the men's and women's draws.
 			</p>
 			<p>
@@ -21,39 +21,38 @@ export function WimbledonPost() {
 			</p>
 
 			<p>
-				For If you are located in Australia, then you can watch the tournament for{" "}
-				<span>free on Channel 9 or 9Now</span>. If you <span>live outside Australia</span> then unfortunately
-				you may not have access to a live broadcast of the tournaments due to <span>geo-restrictions</span> or{" "}
-				<span>blackout policies</span> which prevent certain locations from streaming events because of TV
-				broadcasting rights.
+				Tennis broadcasting rights are available only for select channels and streaming services around the
+				world. Fortunately, even if you are located in a country without access to these channels or services,
+				all you need to do is <span>mask your ip address</span> with a reputable VPN. A VPN will allow you to
+				bypass any <span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain
+				locations from streaming events due to broadcasting rights.
 			</p>
 
 			<p>
-				Fortunately, you can bypass these restrictions using a VPN and{" "}
-				<span>masking your actual IP address</span>. A VPN will change your IP address to a different location
-				of your choosing and encrypt your data for safety. A high quality VPN recommended by many experts is{" "}
-				<span>ExpressVPN</span> due to its reliability, speed, and service with more than{" "}
-				<span>3,000 servers</span> located in <span>94 countries</span>.
+				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its
+				reliability, speed, and service with more than <span>3,000 servers</span> located in{" "}
+				<span>94 countries</span>.
 			</p>
 
 			<QuickGuide
-				vpnLink={vpn.FOLink}
+				vpnLink={vpn.WimbledonLink}
 				bullet1="then download and install on your device."
-				bullet2="yourself to an Australian server."
-				bullet3="to 9Now or create an account if needed (you may need an Australian postal code, e.g. 2000 or 3010)"
+				bullet2="yourself to a location based on your streaming service of choice. For example relocate to the UK if you plan to use BBC iPlayer"
+				bullet3="to your streaming platform of choice."
 			/>
-			<ActionButton vpnLink={vpn.FOLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
 
 			<h2 id="best-streaming-options" className="mt-5">
 				Best streaming services to watch Wimbledon
 			</h2>
 			<br />
 			<p>
-				There are a few services you can use to watch Wimbledon depending on your location. The best option is{" "}
-				<span>9Now</span> as it is a <span>completely free streaming service</span>. However, for users with a
-				different preference here are other great options:
+				There are a few services you can use to watch Wimbledon depending on your location. The best options are{" "}
+				<span>BBC iPlayer</span> and <span>9Now</span> as both are{" "}
+				<span>completely free streaming services</span>. For users with a different preference here are other
+				great options:
 			</p>
-			<ActionTable tableData={streamingDataFO} />
+			<ActionTable tableData={streamingDataWimbledon} />
 			<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
 
 			<h2 className="mt-5">Watching Wimbledon on your device</h2>
@@ -83,12 +82,12 @@ export function WimbledonPost() {
 				<li className="pb-1">
 					Download the <a href={vpn.smartTVLink}>ExpressVPN</a> app directly to your device and login
 				</li>
-				<li className="pb-1">Connect to a server in Australia</li>
-				<li className="pb-1">Login to 9Now or another streaming service in Australia of your choice.</li>
+				<li className="pb-1">Connect to a UK server</li>
+				<li className="pb-1">Login to BBC iPlayer or another streaming service of your choice.</li>
 				<li className="pb-1">Enjoy live streaming the matches!</li>
 			</ActionCard>
 
-			<ActionButton vpnLink={vpn.FOLink} text="Stream Wimbledon on your device" />
+			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream Wimbledon on your device" />
 
 			<p className="pt-5">
 				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
@@ -96,7 +95,7 @@ export function WimbledonPost() {
 				dashboard and connect to your <span>VPN network</span>.
 			</p>
 
-			<h2 className="mt-5">2024 Wimbledon Broadcast Schedule (USA)</h2>
+			<h2 className="mt-5">2024 Wimbledon Schedule of Play</h2>
 			<br />
 			<ActionTable tableData={wimbledonSchedule} />
 		</>

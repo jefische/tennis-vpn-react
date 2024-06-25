@@ -4,7 +4,7 @@
 }
 
 #main-image {
-	background: url("../assets/bg7-880x495.jpg") no-repeat center;
+	background: url("./assets/bg7-880x495.jpg") no-repeat center;
 	height: 275px;
 	max-width: 880px;
 }
@@ -80,18 +80,22 @@ li > span {
 /*Wimbledon page*/
 
 #wimbledon-main-image {
-	background: url("./assets/Wimby4-880x550.jpg") no-repeat center;
+	background: url("./assets/Wimby1-1140x641.jpg") no-repeat center;
+	/* background: url("./assets/Wimby4-880x550.jpg") no-repeat center; */
 	height: 275px;
 }
 
 /*US Open page*/
 
 #uso-main-image {
-	background: url("./assets/us-open-880x495.jpg") no-repeat center;
+	background: url("./assets/USO1-1140x641.jpg") no-repeat center;
+	background: url("./assets/USO3.jpg") no-repeat center;
+	/* background: url("./assets/us-open-880x495.jpg") no-repeat center; */
 
 	height: 275px;
 }
 
+/* Odds tables */
 .odds-container {
 	font-size: 1rem;
 	text-align: center;
@@ -117,4 +121,15 @@ li > span {
 
 .card-custom {
 	border-left: 4px solid;
+}
+
+.btn-hover {
+	transition: all 0.5s ease;
+}
+
+.btn-hover:hover {
+	background-color: rgb(233, 104, 121);
+	color: rgb(229, 255, 0);
+	text-decoration: underline;
+	transform: scale(1.05);
 }
