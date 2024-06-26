@@ -3,11 +3,6 @@
 	max-width: 1080px;
 }
 
-#main-image {
-	background: url("./assets/bg7-880x495.jpg") no-repeat center;
-	height: 275px;
-	max-width: 880px;
-}
 .bposts {
 	max-width: 880px;
 	scroll-margin-top: 4rem;
@@ -40,58 +35,41 @@ li > span {
 	}
 }
 
+#main-image {
+	background: url("./assets/Sports_Tennis-880x495.jpg") no-repeat center;
+	height: 275px;
+}
+
 /*AO page*/
 
 #ao-main-image {
-	background: url("./assets/AO6-484x484.png") no-repeat center;
-	height: 450px;
-}
-
-@media (min-width: 768px) {
-	#ao-main-image {
-		/* background: url("./assets/AO6-670x670.png") no-repeat center; */
-		background: url("./assets/AO5-827x275.jpg") no-repeat center;
-		height: 275px;
-	}
-}
-
-/* @media (min-width: 992px) {
-	#ao-main-image {
-		background: url("./assets/AO6-800x800.png") no-repeat center;
-		height: 450px;
-	}
-} */
-
-@media (min-width: 992px) {
-	#ao-main-image {
-		/* background: url("./assets/AO6-880x880.png") no-repeat center; */
-		background: url("./assets/AO5-827x275.jpg") no-repeat center;
-		height: 275px;
-	}
+	background: url("./assets/AO5-827x275.jpg") no-repeat center;
+	height: 275px;
 }
 
 /*French Open page*/
 
 #french-main-image {
-	background: url("./assets/FO1-1140x641.jpg") no-repeat center;
+	background: url("./assets/FO2-800x295.png") no-repeat center;
 	height: 275px;
 }
 
 /*Wimbledon page*/
 
 #wimbledon-main-image {
-	background: url("./assets/Wimby1-1140x641.jpg") no-repeat center;
-	/* background: url("./assets/Wimby4-880x550.jpg") no-repeat center; */
+	background: url("./assets/Wimby2-880x275.jpg") no-repeat center;
 	height: 275px;
+}
+@media (min-width: 992px) {
+	#wimbledon-main-image {
+		background: url("./assets/Wimby2-778x275.jpg") no-repeat center;
+	}
 }
 
 /*US Open page*/
 
 #uso-main-image {
-	/* background: url("./assets/USO1-1140x641.jpg") no-repeat center; */
-	background: url("./assets/USO3.jpg") no-repeat center;
-	/* background: url("./assets/us-open-880x495.jpg") no-repeat center; */
-
+	background: url("./assets/USO6-1600x522.png") no-repeat center;
 	height: 275px;
 }
 
