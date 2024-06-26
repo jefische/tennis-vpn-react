@@ -88,7 +88,7 @@ li > span {
 /*US Open page*/
 
 #uso-main-image {
-	background: url("./assets/USO1-1140x641.jpg") no-repeat center;
+	/* background: url("./assets/USO1-1140x641.jpg") no-repeat center; */
 	background: url("./assets/USO3.jpg") no-repeat center;
 	/* background: url("./assets/us-open-880x495.jpg") no-repeat center; */
 
@@ -132,4 +132,22 @@ li > span {
 	color: rgb(229, 255, 0);
 	text-decoration: underline;
 	transform: scale(1.05);
+}
+
+@media (min-width: 819px) {
+	ul li.nav-item {
+		margin-left: 1rem;
+	}
+}
+
+@media (min-width: 915px) {
+	ul li.nav-item {
+		margin-left: 2rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	ul li.nav-item {
+		margin-left: 3rem;
+	}
 }

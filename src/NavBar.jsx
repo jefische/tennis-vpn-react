@@ -6,7 +6,7 @@ export default function NavBar() {
 			<div className="container-lg">
 				<Link className="navbar-brand text-white" to="/">
 					<img
-						src="./src/assets/tennisball-bg-dark.png"
+						src="./assets/tennisball-bg-dark.png"
 						alt="Logo"
 						width="30"
 						height="24"
@@ -32,30 +32,30 @@ export default function NavBar() {
 				<div
 					className="collapse navbar-collapse"
 					id="navbarSupportedContent"
-					style={{ justifyContent: "center" }}
+					style={{ justifyContent: "space-around" }}
 				>
 					<ul className="navbar-nav mb-lg-0">
-						<li className="nav-item ms-3">
+						<li className="nav-item">
 							<NavLink className="nav-link" to="/australian-open">
 								Australian Open
 							</NavLink>
 						</li>
-						<li className="nav-item ms-3">
+						<li className="nav-item">
 							<NavLink className="nav-link" to="/french-open">
 								French Open
 							</NavLink>
 						</li>
-						<li className="nav-item ms-3">
+						<li className="nav-item">
 							<NavLink className="nav-link" to="/wimbledon">
 								Wimbledon
 							</NavLink>
 						</li>
-						<li className="nav-item ms-3">
+						<li className="nav-item">
 							<NavLink className="nav-link" to="/us-open">
 								US Open
 							</NavLink>
 						</li>
-						<li className="nav-item dropdown ms-3">
+						<li className="nav-item dropdown">
 							<a
 								className="nav-link dropdown-toggle"
 								href="#"
@@ -67,11 +67,12 @@ export default function NavBar() {
 							</a>
 							<ul className="dropdown-menu">
 								<li>
-									<a className="dropdown-item" href="#">
-										Indian Wells
+									<a className="dropdown-item" href="javascript:void(0)">
+										Coming Soon
+										{/* Indian Wells */}
 									</a>
 								</li>
-								<li>
+								{/* <li>
 									<a className="dropdown-item" href="#">
 										Miami Open
 									</a>
@@ -123,13 +124,13 @@ export default function NavBar() {
 									<a className="dropdown-item" href="#">
 										WTA Finals Cancun
 									</a>
-								</li>
+								</li> */}
 							</ul>
 						</li>
-						<li className="nav-item ms-3">
-							<a className="nav-link" href="Contact.html">
+						<li className="nav-item">
+							<NavLink className="nav-link" to="/contact">
 								Contact
-							</a>
+							</NavLink>
 						</li>
 					</ul>
 				</div>

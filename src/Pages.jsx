@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Posts from "./components/Posts";
+import { useEffect } from "react";
 import { HomepagePost } from "./content/HomepagePost";
 import { AustralianPost } from "./content/AustralianPost";
 import { FrenchPost } from "./content/FrenchPost";
@@ -7,6 +8,9 @@ import { WimbledonPost } from "./content/WimbledonPost";
 import { USOpenPost } from "./content/USOpenPost";
 
 export function Home() {
+	useEffect(() => {
+		document.title = "Home";
+	}, []);
 	return (
 		<>
 			<Posts id="toc1" title="How to Watch Tennis Online in 2024" updated=" ">
@@ -18,6 +22,9 @@ export function Home() {
 }
 
 export function Australian() {
+	useEffect(() => {
+		document.title = "Australian Open";
+	}, []);
 	return (
 		<>
 			<Posts title="How to Watch the Australian Open in 2024" updated="Last updated December 2023">
@@ -29,6 +36,9 @@ export function Australian() {
 }
 
 export function French() {
+	useEffect(() => {
+		document.title = "French Open";
+	}, []);
 	return (
 		<>
 			<Posts title="How to Watch the French Open in 2024" updated="Last updated April 2024">
@@ -40,6 +50,9 @@ export function French() {
 }
 
 export function Wimbledon() {
+	useEffect(() => {
+		document.title = "Wimbledon";
+	}, []);
 	return (
 		<>
 			<Posts title="How to Watch Wimbledon in 2024" updated="Last updated June 2024">
@@ -51,12 +64,26 @@ export function Wimbledon() {
 }
 
 export function USO() {
+	useEffect(() => {
+		document.title = "US Open";
+	}, []);
 	return (
 		<>
 			<Posts title="How to Watch the US Open in 2024" updated="Last updated January 2024">
 				<Hero img="uso-main-image" />
 				<USOpenPost />
 			</Posts>
+		</>
+	);
+}
+
+export function Contact() {
+	useEffect(() => {
+		document.title = "Contact";
+	}, []);
+	return (
+		<>
+			<h4 className="ps-3 mt-5 text-center">Please email us for any questions at support@totaltennis.tv</h4>
 		</>
 	);
 }
