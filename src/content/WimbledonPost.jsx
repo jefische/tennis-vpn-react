@@ -22,10 +22,10 @@ export function WimbledonPost() {
 
 			<p>
 				Tennis broadcasting rights are available only for select channels and streaming services around the
-				world. Fortunately, even if you are located in a country without access to these channels or services,
-				all you need to do is <span>mask your ip address</span> with a reputable VPN. A VPN will allow you to
-				bypass any <span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain
-				locations from streaming events due to broadcasting rights.
+				world. Fortunately, even if you are located in a country without access to these channels, all you need
+				to do is <span>mask your ip address</span> with a reputable VPN. A VPN will allow you to bypass any{" "}
+				<span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain locations from
+				streaming events due to broadcasting rights.
 			</p>
 
 			<p>
@@ -40,7 +40,7 @@ export function WimbledonPost() {
 				bullet2="yourself to a location based on your streaming service of choice. For example relocate to the UK if you plan to use BBC iPlayer"
 				bullet3="to your streaming platform of choice."
 			/>
-			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream Wimbledon with ExpressVPN" id="red-button-one" />
 
 			<h2 id="best-streaming-options" className="mt-5">
 				Best streaming services to watch Wimbledon

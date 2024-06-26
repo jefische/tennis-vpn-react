@@ -89,7 +89,6 @@ export function HomepagePost() {
 				<span>avoid paying for expensive cable plans</span>, having access to a <span>quality VPN</span> is a
 				must have to bypass geo-restrictions and help you watch more tennis!
 			</p>
-			<p>Let us know in the comment section below if you found this guide helpful or have any questions.</p>
 		</>
 	);
 }

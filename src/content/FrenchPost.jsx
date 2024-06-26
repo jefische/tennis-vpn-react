@@ -42,7 +42,7 @@ export function FrenchPost() {
 				bullet2="yourself to an Australian server."
 				bullet3="to 9Now or create an account if needed (you may need an Australian postal code, e.g. 2000 or 3010)"
 			/>
-			<ActionButton vpnLink={vpn.FOLink} text="Stream tennis with ExpressVPN" id="red-button-one" />
+			<ActionButton vpnLink={vpn.FOLink} text="Stream French Open with ExpressVPN" id="red-button-one" />
 
 			<h2 id="best-streaming-options" className="mt-5">
 				Best streaming services to watch the French Open
@@ -88,7 +88,7 @@ export function FrenchPost() {
 				<li className="pb-1">Enjoy live streaming the matches!</li>
 			</ActionCard>
 
-			<ActionButton vpnLink={vpn.FOLink} text="Stream the French Open on your device" />
+			<ActionButton vpnLink={vpn.FOLink} text="Stream French Open on your device" />
 
 			<p className="pt-5">
 				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting

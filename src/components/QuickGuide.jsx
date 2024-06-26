@@ -18,7 +18,7 @@ export default function QuickGuide({
 
 						<ol>
 							<li>
-								<span>Subscribe</span> to <a href={vpnLink}>ExpressVPN</a> {bullet1}
+								<span>Subscribe</span> to <a href={vpnLink}>ExpressVPN - 49% OFF</a> {bullet1}
 							</li>
 							<li>
 								<span>Relocate</span> {bullet2}
