@@ -9,7 +9,8 @@
 }
 
 p > span,
-li > span {
+li > span,
+a {
 	font-weight: 700;
 }
 

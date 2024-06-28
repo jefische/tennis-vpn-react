@@ -88,11 +88,30 @@ export function WimbledonPost() {
 			</ActionCard>
 
 			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream Wimbledon on your device" />
-
 			<p className="pt-5">
 				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
 				your VPN straight to your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin
 				dashboard and connect to your <span>VPN network</span>.
+			</p>
+
+			<h2 className="mt-5">How to sign up for BBC iPlayer</h2>
+			<br />
+			<p>Signing up for a new BBC account is easy and only takes a couple minutes.</p>
+			<ol>
+				<li>
+					Go to the login page and click <span>Register Now</span>
+				</li>
+				<li>
+					Next enter your personal details including date of birth, email address, and{" "}
+					<span>provide a UK postal code</span> (i.e. E1 0AA, SW1A 2AA)
+				</li>
+				<li>
+					When finished, click <span>Register</span> and verify your email address
+				</li>
+			</ol>
+			<p>
+				Note that when using the iPlayer, British law requires you to have a TV licence however there is no
+				verification system in place and iPlayer relies entirely on an honor system.
 			</p>
 
 			<h2 className="mt-5">2024 Wimbledon Schedule of Play</h2>

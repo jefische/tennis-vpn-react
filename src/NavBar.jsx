@@ -6,7 +6,7 @@ export default function NavBar() {
 			<div className="container-lg">
 				<Link className="navbar-brand text-white" to="/">
 					<img
-						src="./assets/tennisball-bg-dark.png"
+						src="./tennisball-bg-dark.png"
 						alt="Logo"
 						width="30"
 						height="24"
