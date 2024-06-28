@@ -9,19 +9,24 @@ export function HomepagePost() {
 		<>
 			<br />
 			<p>
-				The start of the 2024 tennis season will be here in a few weeks! Tournaments will begin in Australia and
-				first up will be the second edition of the <span>United Cup</span> played in{" "}
-				<span>Perth and Sydney</span>, followed by <span>Brisbane</span> which will be Rafa Nadal's first
-				tournament since the Australian Open. Depending on which country you live in, you may not have access to
-				a live broadcast of a tournament due to <span>geo-restrictions.</span> Another roadblock fans run into
-				are <span>blackout policies</span> which prevent certain locations from streaming an event due to TV
-				station broadcasting rights. Fortunately you can bypass these restrictions using a VPN and{" "}
+				The 2024 tennis season has been nothing short of amazing! <span>Jannik Sinner</span> and{" "}
+				<span>Carlos Alcaraz</span> have displayed some incredible tennis capturing the Australian Open and
+				French Open titles respectively. On the womens side <span>Iga Swiatek</span> has established her
+				domination on clay winning her 3rd Roland Garros in a row, while <span>Aryna Sabalenka</span> defended
+				her title in Australia claiming her 2nd grand slam.
+			</p>
+			<p>
+				With <span>Wimbledon</span> and the <span>Olympics</span> starting soon, there is plenty of high level
+				tennis to watch. However, depending on which country you live in, you may not have access to a live
+				broadcast of a tournament due to <span>geo-restrictions.</span> Another roadblock fans run into are{" "}
+				<span>blackout policies</span> which prevent certain locations from streaming an event due to TV station
+				broadcasting rights. Fortunately you can bypass these restrictions using a VPN and{" "}
 				<span>masking your actual IP address.</span>
 			</p>
 			<p>
-				For example, if you are in Australia then Channel 9Now will be broadcasting the Australian Open for
-				free. However, if you reside outside Australia you may not have access to a live broadcast and will need
-				to connect to a streaming service to watch the tournament.
+				For example, if you are in Australia then Channel 9Now will be broadcasting the Australian Open and
+				other grand slams for free. However, if you reside outside Australia you may not have access to a live
+				broadcast and will need to connect to a streaming service to watch the tournament.
 			</p>
 
 			<QuickGuide vpnLink={vpn.generalTennisLink} />
@@ -60,12 +65,12 @@ export function HomepagePost() {
 					finding a server in your region of choice.
 				</p>
 				<p>
-					Additionally, ExpressVPN uses 10Gbps servers for extremely fast service and allows users to connect
-					on up to 8 devices.
+					Additionally, ExpressVPN <span>uses 10Gbps servers</span> for extremely fast service and allows
+					users to <span>connect up to 8 devices.</span>
 				</p>
 				<p>
-					<a href={vpn.generalTennisLink}>ExpressVPN</a> is currently offering a 12 month +3 months free
-					promotion for <span>$6.67/month.</span> All subscriptions also come with a{" "}
+					<a href={vpn.generalTennisLink}>ExpressVPN - 49% OFF</a> is currently offering a 12 month +3 months
+					free promotion for <span>$6.67/month.</span> All subscriptions also come with a{" "}
 					<span>30-day money back guarantee.</span> This is an excellent purchase for the quality of service
 					you receive.
 				</p>
