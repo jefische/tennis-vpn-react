@@ -10,7 +10,7 @@ export default function NavBar() {
 						alt="Logo"
 						width="30"
 						height="24"
-						className="d-inline-block align-text-center"
+						className="d-inline-block align-text-center me-2"
 					/>
 					Total Tennis
 				</Link>

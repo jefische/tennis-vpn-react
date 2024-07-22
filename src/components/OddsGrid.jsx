@@ -2,10 +2,12 @@ import { Fragment } from "react";
 
 export default function OddsGrid({ tableData }) {
 	return (
-		<>
-			<h5>{tableData.title}</h5>
+		<div>
+			<div className="odds-card-header">
+				<h5 className="mt-1">{tableData.title}</h5>
+			</div>
 
-			<div className="odds mb-5">
+			<div className="odds-table">
 				<div className="odds-header"></div>
 				<div className="odds-header">American Odds</div>
 				<div className="odds-header">Decimal Odds</div>
@@ -20,6 +22,6 @@ export default function OddsGrid({ tableData }) {
 					);
 				})}
 			</div>
-		</>
+		</div>
 	);
 }
