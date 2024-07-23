@@ -69,7 +69,7 @@ export function USO() {
 	}, []);
 	return (
 		<>
-			<Posts title="How to Watch the US Open in 2024" updated="Last updated January 2024">
+			<Posts title="How to Watch the US Open in 2024" updated="Last updated July 2024">
 				<Hero img="uso-main-image" />
 				<USOpenPost />
 			</Posts>
