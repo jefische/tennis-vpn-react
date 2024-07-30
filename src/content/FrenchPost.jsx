@@ -101,6 +101,8 @@ export function FrenchPost() {
 			<br />
 			<ActionTable tableData={frenchSchedule} />
 
+			<h2 className="mt-5">Past Champions: &emsp; </h2>
+
 			<div className="accordion" id="accordionPanelsStayOpenExample">
 				<div className="accordion-item">
 					<h2 className="accordion-header">
