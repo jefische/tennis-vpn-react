@@ -3,7 +3,7 @@ import ActionButton from "../components/ActionButton";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
 import { streamingDataUSO } from "../../tableData";
-import { USOSchedule, wimbledonSchedule } from "../../scheduleData";
+import { USOSchedule } from "../../scheduleData";
 import { vpn } from "../../vpnLinks";
 
 export function USOpenPost() {

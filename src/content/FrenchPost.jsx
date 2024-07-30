@@ -5,6 +5,7 @@ import ActionCard from "../components/ActionCard";
 import { streamingDataFO } from "../../tableData";
 import { frenchSchedule } from "../../scheduleData";
 import { vpn } from "../../vpnLinks";
+import { frenchChampionsATP, frenchChampionsWTA } from "../../championsData";
 
 export function FrenchPost() {
 	return (
@@ -99,6 +100,48 @@ export function FrenchPost() {
 			<h2 className="mt-5">2024 French Open Broadcast Schedule (USA)</h2>
 			<br />
 			<ActionTable tableData={frenchSchedule} />
+
+			<div className="accordion" id="accordionPanelsStayOpenExample">
+				<div className="accordion-item">
+					<h2 className="accordion-header">
+						<button
+							className="accordion-button"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#panelsStayOpen-collapseOne"
+							aria-expanded="true"
+							aria-controls="panelsStayOpen-collapseOne"
+						>
+							View Past Champions - ATP
+						</button>
+					</h2>
+					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+						<div className="accordion-body">
+							<ActionTable tableData={frenchChampionsATP} />
+						</div>
+					</div>
+				</div>
+				<div className="accordion-item">
+					<h2 className="accordion-header">
+						<button
+							className="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#panelsStayOpen-collapseTwo"
+							aria-expanded="false"
+							aria-controls="panelsStayOpen-collapseTwo"
+						>
+							View Past Champions - WTA
+						</button>
+					</h2>
+					<div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
+						<div className="accordion-body">
+							<ActionTable tableData={frenchChampionsWTA} />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="white-space" style={{ height: "80px", color: "white" }}></div>
 		</>
 	);
 }

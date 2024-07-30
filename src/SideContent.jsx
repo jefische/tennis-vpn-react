@@ -37,22 +37,22 @@ export default function SideContent() {
 					</ol>
 				</div>
 			) : location.pathname === "/australian-open" ? (
-				<div className="odds-container sticky-top">
+				<div className="odds-container sticky-top z-1">
 					<OddsGrid tableData={atpAustralianOdds} />
 					<OddsGrid tableData={wtaAustralianOdds} />
 				</div>
 			) : location.pathname === "/french-open" ? (
-				<div className="odds-container sticky-top">
+				<div className="odds-container sticky-top z-1">
 					<OddsGrid tableData={atpFrenchOdds} />
 					<OddsGrid tableData={wtaFrenchOdds} />
 				</div>
 			) : location.pathname === "/wimbledon" ? (
-				<div className="odds-container sticky-top">
+				<div className="odds-container sticky-top z-1">
 					<OddsGrid tableData={atpWimbledonOdds} />
 					<OddsGrid tableData={wtaWimbledonOdds} />
 				</div>
 			) : location.pathname === "/us-open" ? (
-				<div className="odds-container sticky-top">
+				<div className="odds-container sticky-top z-1">
 					<OddsGrid tableData={atpUSOdds} />
 					<OddsGrid tableData={wtaUSOdds} />
 				</div>
