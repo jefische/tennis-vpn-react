@@ -5,6 +5,7 @@ import ActionCard from "../components/ActionCard";
 import { streamingDataUSO } from "../../tableData";
 import { USOSchedule } from "../../scheduleData";
 import { vpn } from "../../vpnLinks";
+import { USOChampionsATP, USOChampionsWTA } from "../../championsData";
 
 export function USOpenPost() {
 	return (
@@ -99,6 +100,50 @@ export function USOpenPost() {
 			<ActionTable tableData={USOSchedule} />
 
 			{/* <p>Coco played 68 matches in 2023 and lost 16 matches, won 52 matches and 4 titles</p> */}
+
+			<h2 className="mt-5">Past Champions: &emsp; </h2>
+
+			<div className="accordion" id="accordionPanelsStayOpenExample">
+				<div className="accordion-item">
+					<h2 className="accordion-header">
+						<button
+							className="accordion-button"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#panelsStayOpen-collapseOne"
+							aria-expanded="true"
+							aria-controls="panelsStayOpen-collapseOne"
+						>
+							View Past Champions - ATP
+						</button>
+					</h2>
+					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+						<div className="accordion-body">
+							<ActionTable tableData={USOChampionsATP} />
+						</div>
+					</div>
+				</div>
+				<div className="accordion-item">
+					<h2 className="accordion-header">
+						<button
+							className="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#panelsStayOpen-collapseTwo"
+							aria-expanded="false"
+							aria-controls="panelsStayOpen-collapseTwo"
+						>
+							View Past Champions - WTA
+						</button>
+					</h2>
+					<div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
+						<div className="accordion-body">
+							<ActionTable tableData={USOChampionsWTA} />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="white-space" style={{ height: "80px", color: "white" }}></div>
 		</>
 	);
 }
