@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import DrawGroup from "./DrawGroup";
+import { atpWimbledonScores } from "../../data/scoresData";
 
 export default function Draws({ title, updated, children }) {
 	const [selection, setSelection] = useState({});
@@ -52,9 +54,13 @@ export default function Draws({ title, updated, children }) {
 					<button type="submit">Submit</button>
 				</form>
 			</div>
-			<div className="container-fluid d-flex mt-5 ">
+
+			<div className="container-fluid d-flex mt-5 justify-content-center">
 				<div className="columnA roundGroup">
 					<h3>1st Round</h3>
+
+					<DrawGroup scores={atpWimbledonScores} />
+
 					<div className="drawGroup">
 						<div className="card matchbox">
 							<div className="d-flex team-info team-one">
@@ -365,15 +371,13 @@ export default function Draws({ title, updated, children }) {
 						</div>
 					</div>
 				</div>
-				<div className="columnC roundGroup">
+				<div className="columnC roundGroup last">
 					<h3>3rd Round</h3>
 					<div className="drawGroup">
 						<div className="card matchbox">
 							<div className="d-flex team-info team-one">
 								<div className="flex-fill name">F. Comesana</div>
-								<div className="check-icon">
-									<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
-								</div>
+								<div className="check-icon"></div>
 								<div className="d-flex match-score">
 									<div className="set set1">
 										<span className="score">2</span>
@@ -395,16 +399,36 @@ export default function Draws({ title, updated, children }) {
 									</div>
 								</div>
 							</div>
-							<div className="d-flex team-info team-two">L. Musetti</div>
-						</div>
-					</div>
-				</div>
-				<div className="columnD roundGroup last">
-					<h3>4th Round</h3>
-					<div className="drawGroup">
-						<div className="card matchbox">
-							<div className="d-flex team-info team-one">L. Musetti</div>
-							<div className="d-flex team-info team-two">G. Mpetshi</div>
+							<div className="d-flex team-info team-two">
+								<div className="flex-fill name">L. Musetti</div>
+								<div className="check-icon">
+									<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
+								</div>
+								<div className="d-flex match-score">
+									<div className="set set1">
+										<span className="score">6</span>
+									</div>
+									<div className="set set2">
+										<span className="score">6</span>
+										<span className="tiebreak">4</span>
+									</div>
+									<div className="set set3">
+										<span className="score">7</span>
+										<span className="tiebreak">7</span>
+									</div>
+									<div className="set set4">
+										<span className="score">6</span>
+									</div>
+									<div className="set set5">
+										<span className="score"></span>
+										<span className="tiebreak"></span>
+									</div>
+								</div>
+							</div>
+							<div className="connector-round">
+								<div className="left-side"></div>
+								<div className="right-side"></div>
+							</div>
 						</div>
 					</div>
 				</div>

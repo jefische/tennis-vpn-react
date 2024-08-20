@@ -12,9 +12,9 @@ export function WimbledonPost() {
 		<>
 			<br />
 			<p>
-				Get ready for the oldest and most prestigious tennis tournament in the world, <span>Wimbledon.</span>{" "}
-				While last years champions Carlos Alcaraz and Marketa Vondrousova are among the favorites to win again
-				this year, the fields are stacked with great competition in both the men's and women's draws.
+				Get ready for the oldest and most prestigious tennis tournament in the world, <span>Wimbledon.</span> While last
+				years champions Carlos Alcaraz and Marketa Vondrousova are among the favorites to win again this year, the
+				fields are stacked with great competition in both the men's and women's draws.
 			</p>
 			<p>
 				The tournament will <span>start on Monday, July 1st</span> and run until Sunday July 14th and is{" "}
@@ -22,17 +22,16 @@ export function WimbledonPost() {
 			</p>
 
 			<p>
-				Tennis broadcasting rights are available only for select channels and streaming services around the
-				world. Fortunately, even if you are located in a country without access to these channels, all you need
-				to do is <span>mask your ip address</span> with a reputable VPN. A VPN will allow you to bypass any{" "}
-				<span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain locations from
-				streaming events due to broadcasting rights.
+				Tennis broadcasting rights are available only for select channels and streaming services around the world.
+				Fortunately, even if you are located in a country without access to these channels, all you need to do is{" "}
+				<span>mask your ip address</span> with a reputable VPN. A VPN will allow you to bypass any{" "}
+				<span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain locations from streaming
+				events due to broadcasting rights.
 			</p>
 
 			<p>
-				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its
-				reliability, speed, and service with more than <span>3,000 servers</span> located in{" "}
-				<span>94 countries</span>.
+				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its reliability,
+				speed, and service with more than <span>3,000 servers</span> located in <span>94 countries</span>.
 			</p>
 
 			<QuickGuide
@@ -49,9 +48,8 @@ export function WimbledonPost() {
 			<br />
 			<p>
 				There are a few services you can use to watch Wimbledon depending on your location. The best options are{" "}
-				<span>BBC iPlayer</span> and <span>9Now</span> as both are{" "}
-				<span>completely free streaming services</span>. For users with a different preference here are other
-				great options:
+				<span>BBC iPlayer</span> and <span>9Now</span> as both are <span>completely free streaming services</span>. For
+				users with a different preference here are other great options:
 			</p>
 			<ActionTable tableData={streamingDataWimbledon} />
 			<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
@@ -90,9 +88,9 @@ export function WimbledonPost() {
 
 			<ActionButton vpnLink={vpn.WimbledonLink} text="Stream Wimbledon on your device" />
 			<p className="pt-5">
-				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
-				your VPN straight to your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin
-				dashboard and connect to your <span>VPN network</span>.
+				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting your VPN
+				straight to your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin dashboard and
+				connect to your <span>VPN network</span>.
 			</p>
 
 			<h2 className="mt-5">How to sign up for BBC iPlayer</h2>
@@ -111,8 +109,8 @@ export function WimbledonPost() {
 				</li>
 			</ol>
 			<p>
-				Note that when using the iPlayer, British law requires you to have a TV licence however there is no
-				verification system in place and iPlayer relies entirely on an honor system.
+				Note that when using the iPlayer, British law requires you to have a TV licence however there is no verification
+				system in place and iPlayer relies entirely on an honor system.
 			</p>
 
 			<h2 className="mt-5">2024 Wimbledon Schedule of Play</h2>

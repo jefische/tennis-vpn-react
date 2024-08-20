@@ -2,6 +2,7 @@
 
 .roundGroup {
 	margin-right: 25px;
+	max-width: 400px;
 	width: calc(33.3333%);
 
 	.drawGroup {
@@ -49,13 +50,7 @@
 		}
 		.connector-round {
 			display: flex;
-
 			position: absolute;
-			top: -25px;
-			left: -25px;
-
-			height: 144px;
-			width: 25px;
 
 			.left-side {
 				border-top: 1px solid green;
@@ -84,6 +79,31 @@
 	}
 	.drawGroup {
 		margin-bottom: 194px;
+
+		.connector-round {
+			top: -25px;
+			left: -25px;
+
+			height: 144px;
+			width: 25px;
+		}
+	}
+}
+
+.columnC {
+	.drawGroup:first-of-type {
+		margin-top: 215px;
+	}
+	.drawGroup {
+		margin-bottom: 94px;
+
+		.connector-round {
+			top: -98px;
+			left: -30px;
+
+			height: 289px;
+			width: 25px;
+		}
 	}
 }
 

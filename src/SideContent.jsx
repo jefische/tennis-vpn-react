@@ -8,7 +8,7 @@ import {
 	wtaWimbledonOdds,
 	atpUSOdds,
 	wtaUSOdds,
-} from "../oddsData";
+} from "../data/oddsData";
 import { useLocation } from "react-router-dom";
 
 export default function SideContent() {
