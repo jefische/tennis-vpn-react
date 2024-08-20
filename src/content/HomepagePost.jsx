@@ -1,8 +1,8 @@
 import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
-import { streamingData, atpTournamentData, wtaTournamentData } from "../../tableData";
-import { vpn } from "../../vpnLinks";
+import { streamingData, atpTournamentData, wtaTournamentData } from "../../data/tableData";
+import { vpn } from "../../data/vpnLinks";
 
 export function HomepagePost() {
 	return (

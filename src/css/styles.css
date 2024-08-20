@@ -3,6 +3,11 @@
 	max-width: 1080px;
 }
 
+.container-draw {
+	margin: auto;
+	max-width: 95%;
+}
+
 .bposts {
 	max-width: 880px;
 	scroll-margin-top: 4rem;
@@ -15,17 +20,17 @@ a {
 }
 
 #evpn-logo {
-	background: url("./assets/EVPN-logo-200x118.png") no-repeat center;
+	background: url("../assets/EVPN-logo-200x118.png") no-repeat center;
 }
 @media (min-width: 992px) {
 	#evpn-logo {
-		background: url("./assets/EVPN-logo-250x147.png") no-repeat center;
+		background: url("../assets/EVPN-logo-250x147.png") no-repeat center;
 	}
 }
 
 @media (min-width: 1200px) {
 	#evpn-logo {
-		background: url("./assets/EVPN-logo-300x176.png") no-repeat center;
+		background: url("../assets/EVPN-logo-300x176.png") no-repeat center;
 	}
 }
 
@@ -37,40 +42,40 @@ a {
 }
 
 #main-image {
-	background: url("./assets/Sports_Tennis-880x495.jpg") no-repeat center;
+	background: url("../assets/Sports_Tennis-880x495.jpg") no-repeat center;
 	height: 275px;
 }
 
 /*AO page*/
 
 #ao-main-image {
-	background: url("./assets/AO5-827x275.jpg") no-repeat center;
+	background: url("../assets/AO5-827x275.jpg") no-repeat center;
 	height: 275px;
 }
 
 /*French Open page*/
 
 #french-main-image {
-	background: url("./assets/FO2-800x295.png") no-repeat center;
+	background: url("../assets/FO2-800x295.png") no-repeat center;
 	height: 275px;
 }
 
 /*Wimbledon page*/
 
 #wimbledon-main-image {
-	background: url("./assets/Wimby2-880x275.jpg") no-repeat center;
+	background: url("../assets/Wimby2-880x275.jpg") no-repeat center;
 	height: 275px;
 }
 @media (min-width: 992px) {
 	#wimbledon-main-image {
-		background: url("./assets/Wimby2-778x275.jpg") no-repeat center;
+		background: url("../assets/Wimby2-778x275.jpg") no-repeat center;
 	}
 }
 
 /*US Open page*/
 
 #uso-main-image {
-	background: url("./assets/USO2-880x483.jpg") no-repeat center;
+	background: url("../assets/USO2-880x483.jpg") no-repeat center;
 	height: 275px;
 }
 

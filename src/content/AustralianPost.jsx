@@ -2,11 +2,11 @@ import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
-import { streamingDataAO } from "../../tableData";
-import { australianSchedule } from "../../scheduleData";
-import { vpn } from "../../vpnLinks";
+import { streamingDataAO } from "../../data/tableData";
+import { australianSchedule } from "../../data/scheduleData";
+import { vpn } from "../../data/vpnLinks";
 import { useState } from "react";
-import { australianChampionsATP, australianChampionsWTA } from "../../championsData";
+import { australianChampionsATP, australianChampionsWTA } from "../../data/championsData";
 
 export function AustralianPost() {
 	const [showATP, setATP] = useState(false);

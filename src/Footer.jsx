@@ -5,7 +5,7 @@ export default function Footer() {
 	const location = useLocation();
 	return (
 		<>
-			{location.pathname === "/contact" ? (
+			{(location.pathname === "/contact") | (location.pathname === "/grand-slam-results") ? (
 				<footer
 					className="d-flex justify-content-center align-items-center fixed-bottom bg-dark"
 					style={{ height: "40px", color: "white" }}

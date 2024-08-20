@@ -16,7 +16,7 @@ export default function SideContent() {
 	return (
 		<div className="col-3 p-3 pt-0 d-none d-lg-block">
 			{location.pathname === "/" ? (
-				<div id="TOC" className="sticky-top" style={{ top: "10%" }}>
+				<div id="TOC" className="sticky-top z-1" style={{ top: "10%" }}>
 					<h4>Table of Contents</h4>
 					<ol>
 						<li>

@@ -67,6 +67,12 @@ export default function NavBar() {
 							</a>
 							<ul className="dropdown-menu">
 								<li>
+									<Link className="dropdown-item" to="/national-bank-open">
+										National Bank Open
+									</Link>
+									<Link className="dropdown-item" to="/grand-slam-results">
+										Grand Slam Results
+									</Link>
 									<a className="dropdown-item" href="javascript:void(0)">
 										Coming Soon
 										{/* Indian Wells */}

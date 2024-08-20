@@ -1,66 +1,67 @@
-import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
+import ActionButton from "../components/ActionButton";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
-import { streamingDataFO } from "../../data/tableData";
-import { frenchSchedule } from "../../data/scheduleData";
+import { streamingDataUSO } from "../../data/tableData";
+import { USOSchedule } from "../../data/scheduleData";
 import { vpn } from "../../data/vpnLinks";
-import { frenchChampionsATP, frenchChampionsWTA } from "../../data/championsData";
+import { USOChampionsATP, USOChampionsWTA } from "../../data/championsData";
 
-export function FrenchPost() {
+export function NationalBankOpenPost() {
 	return (
 		<>
-			<br />
-			<p>
-				The second gram slam of the season and one of the most anticipated tournaments of the year is upon us,{" "}
-				<span>Roland Garros!</span> Much of the anticipation this year is centered around{" "}
-				<span>Rafael Nadal's</span> return to competitive match play and what many have speculated as likely his
-				last French Open as a player.
-			</p>
-			<p>
-				The tournament will <span>start on Sunday, May 26th</span> and run until Sunday June 9th.
-			</p>
-
-			<p>
-				If you are located in Australia, then you can watch the tournament for{" "}
-				<span>free on Channel 9 or 9Now</span>. If you <span>live outside Australia</span> then unfortunately
-				you may not have access to a live broadcast of the tournaments due to <span>geo-restrictions</span> or{" "}
-				<span>blackout policies</span> which prevent certain locations from streaming events because of TV
-				broadcasting rights.
+			<iframe
+				width="778"
+				height="345"
+				src="https://www.youtube.com/embed/ZQxy8lfunYM?si=Wr8qO71pXHiFcCPo"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+			<p className="mt-2">
+				The National Bank Open, also known as the Rogers Cup, will <span>kick off on Tuesday August 6th</span>{" "}
+				in <span>Montreal, Canada</span> for the men and <span>Toronto, Canada</span> for the women.
 			</p>
 
 			<p>
-				Fortunately, you can bypass these restrictions using a VPN and{" "}
-				<span>masking your actual IP address</span>. A VPN will change your IP address to a different location
-				of your choosing and encrypt your data for safety. A high quality VPN recommended by many experts is{" "}
-				<span>ExpressVPN</span> due to its reliability, speed, and service with more than{" "}
-				<span>3,000 servers</span> located in <span>94 countries</span>.
+				<span>ESPN owns the broadcasting rights for the 2024 US Open,</span> meaning the it will be difficult to
+				watch matches anywhere outside of the US. This is due to <span>geo-restrictions</span> and{" "}
+				<span>blackout policies</span> which prevent certain locations from streaming the tournament.
+				Fortunately, users can bypass these restrictions by <span>masking your ip address with a VPN.</span>
+			</p>
+
+			<p>
+				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its
+				reliability, speed, and service with more than <span>3,000 servers</span> located in{" "}
+				<span>94 countries</span>.
 			</p>
 
 			<QuickGuide
-				vpnLink={vpn.FOLink}
+				vpnLink={vpn.USOLink}
 				bullet1="then download and install on your device."
 				bullet2="yourself to an Australian server."
 				bullet3="to 9Now or create an account if needed (you may need an Australian postal code, e.g. 2000 or 3010)"
 			/>
-			<ActionButton vpnLink={vpn.FOLink} text="Stream French Open with ExpressVPN" id="red-button-one" />
+			<ActionButton vpnLink={vpn.USOLink} text="Stream US Open with ExpressVPN" id="red-button-one" />
 
 			<h2 id="best-streaming-options" className="mt-5">
-				Best streaming services to watch the French Open
+				Best streaming services to watch the US Open
 			</h2>
 			<br />
 			<p>
-				There are a few services you can use to watch the French Open depending on your location. The best
-				option is <span>9Now</span> as it is a <span>completely free streaming service</span>. However, for
-				users with a different preference here are other great options:
+				There are a few services you can use to watch the US Open depending on your location. A great option is{" "}
+				<span>9Now</span> as it's <span>complete free</span>. For users with a different preference here are
+				other great options:
 			</p>
-			<ActionTable tableData={streamingDataFO} />
+			<ActionTable tableData={streamingDataUSO} />
 			<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
 
-			<h2 className="mt-5">Watching the French Open on your device</h2>
+			<h2 className="mt-5">Watching the US Open on your device</h2>
 			<br />
 			<p>
-				You can catch all of the French Open online with any device including{" "}
+				You can catch all of the US Open online with any device including{" "}
 				<span>Android, iOS, Windows, Mac, Linux and Smart TVs</span>.
 			</p>
 
@@ -78,7 +79,7 @@ export function FrenchPost() {
 				<li>Nvidia Shield</li>
 			</ul>
 
-			<p>Follow these easy steps to stream the French Open on your device:</p>
+			<p>Follow these easy steps to stream the US Open on your device:</p>
 
 			<ActionCard>
 				<li className="pb-1">
@@ -89,7 +90,7 @@ export function FrenchPost() {
 				<li className="pb-1">Enjoy live streaming the matches!</li>
 			</ActionCard>
 
-			<ActionButton vpnLink={vpn.FOLink} text="Stream French Open on your device" />
+			<ActionButton vpnLink={vpn.USOLink} text="Stream US Open on your device" />
 
 			<p className="pt-5">
 				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
@@ -97,9 +98,11 @@ export function FrenchPost() {
 				dashboard and connect to your <span>VPN network</span>.
 			</p>
 
-			<h2 className="mt-5">2024 French Open Broadcast Schedule (USA)</h2>
+			<h2 className="mt-5">2024 US Open Schedule of Play (Singles)</h2>
 			<br />
-			<ActionTable tableData={frenchSchedule} />
+			<ActionTable tableData={USOSchedule} />
+
+			{/* <p>Coco played 68 matches in 2023 and lost 16 matches, won 52 matches and 4 titles</p> */}
 
 			<h2 className="mt-5">Past Champions: &emsp; </h2>
 
@@ -119,7 +122,7 @@ export function FrenchPost() {
 					</h2>
 					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
 						<div className="accordion-body">
-							<ActionTable tableData={frenchChampionsATP} />
+							<ActionTable tableData={USOChampionsATP} />
 						</div>
 					</div>
 				</div>
@@ -138,7 +141,7 @@ export function FrenchPost() {
 					</h2>
 					<div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
 						<div className="accordion-body">
-							<ActionTable tableData={frenchChampionsWTA} />
+							<ActionTable tableData={USOChampionsWTA} />
 						</div>
 					</div>
 				</div>

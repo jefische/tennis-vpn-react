@@ -2,10 +2,10 @@ import QuickGuide from "../components/QuickGuide";
 import ActionButton from "../components/ActionButton";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
-import { streamingDataUSO } from "../../tableData";
-import { USOSchedule } from "../../scheduleData";
-import { vpn } from "../../vpnLinks";
-import { USOChampionsATP, USOChampionsWTA } from "../../championsData";
+import { streamingDataUSO } from "../../data/tableData";
+import { USOSchedule } from "../../data/scheduleData";
+import { vpn } from "../../data/vpnLinks";
+import { USOChampionsATP, USOChampionsWTA } from "../../data/championsData";
 
 export function USOpenPost() {
 	return (

@@ -2,10 +2,10 @@ import ActionButton from "../components/ActionButton";
 import QuickGuide from "../components/QuickGuide";
 import ActionTable from "../components/ActionTable";
 import ActionCard from "../components/ActionCard";
-import { streamingDataWimbledon } from "../../tableData";
-import { wimbledonSchedule } from "../../scheduleData";
-import { vpn } from "../../vpnLinks";
-import { wimbledonChampionsATP, wimbledonChampionsWTA } from "../../championsData";
+import { streamingDataWimbledon } from "../../data/tableData";
+import { wimbledonSchedule } from "../../data/scheduleData";
+import { vpn } from "../../data/vpnLinks";
+import { wimbledonChampionsATP, wimbledonChampionsWTA } from "../../data/championsData";
 
 export function WimbledonPost() {
 	return (

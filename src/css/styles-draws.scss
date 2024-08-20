@@ -1,0 +1,92 @@
+/* Draws */
+
+.roundGroup {
+	margin-right: 25px;
+	width: calc(33.3333%);
+
+	.drawGroup {
+		position: relative;
+		.matchbox {
+			border-left: 5px solid green;
+			height: 94px;
+
+			.team-info {
+				padding: 10px;
+
+				.name {
+					font-weight: 500;
+				}
+
+				.check-icon {
+					margin-right: 25px;
+					width: 20px;
+				}
+				.match-score {
+					width: 100px;
+
+					.set {
+						width: 20px;
+						.score {
+							font-size: 17px;
+							color: navy;
+							font-weight: 600;
+						}
+						.tiebreak {
+							color: navy;
+							font-weight: 600;
+							position: relative;
+							top: -9px;
+							font-size: 10px;
+						}
+					}
+				}
+			}
+
+			.team-one {
+				border-bottom: 1px solid;
+				border-bottom-color: rgba(0, 0, 0, 0.176);
+			}
+		}
+		.connector-round {
+			display: flex;
+
+			position: absolute;
+			top: -25px;
+			left: -25px;
+
+			height: 144px;
+			width: 25px;
+
+			.left-side {
+				border-top: 1px solid green;
+				border-bottom: 1px solid green;
+				border-right: 1px solid green;
+				width: 50%;
+			}
+			.right-side {
+				border-bottom: 1px solid green;
+				height: 50%;
+				width: 50%;
+			}
+		}
+	}
+}
+
+.columnA {
+	.drawGroup {
+		margin-bottom: 50px;
+	}
+}
+
+.columnB {
+	.drawGroup:first-of-type {
+		margin-top: 72px;
+	}
+	.drawGroup {
+		margin-bottom: 194px;
+	}
+}
+
+.roundGroup.last {
+	margin-right: 0px;
+}

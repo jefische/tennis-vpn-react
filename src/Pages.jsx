@@ -1,11 +1,14 @@
 import Hero from "./components/Hero";
 import Posts from "./components/Posts";
+import Draws from "./components/Draws";
 import { useEffect } from "react";
 import { HomepagePost } from "./content/HomepagePost";
 import { AustralianPost } from "./content/AustralianPost";
 import { FrenchPost } from "./content/FrenchPost";
 import { WimbledonPost } from "./content/WimbledonPost";
 import { USOpenPost } from "./content/USOpenPost";
+import { NationalBankOpenPost } from "./content/NationalBankOpenPost";
+import { SlamResultsPost } from "./content/SlamResultsPost";
 
 export function Home() {
 	useEffect(() => {
@@ -84,6 +87,30 @@ export function Contact() {
 	return (
 		<>
 			<h4 className="ps-3 mt-5 text-center">Please email us for any questions at support@totaltennis.tv</h4>
+		</>
+	);
+}
+
+export function NationalBank() {
+	useEffect(() => {
+		document.title = "National Bank Open";
+	}, []);
+	return (
+		<>
+			<Posts title="How to Watch National Bank Open in 2024" updated="Last updated August 2024">
+				<NationalBankOpenPost />
+			</Posts>
+		</>
+	);
+}
+
+export function SlamResults() {
+	useEffect(() => {
+		document.title = "Draws";
+	}, []);
+	return (
+		<>
+			<Draws title="Select a tournament draw"></Draws>
 		</>
 	);
 }
