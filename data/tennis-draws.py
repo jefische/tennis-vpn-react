@@ -12,11 +12,11 @@ pd.set_option('display.max_colwidth', None)
 # df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2024.csv")
 df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2023.csv")
 df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/2023-wimbledon-matches.csv")
-
+df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/2023-wimbledon-points.csv")
 
 
 # df2 Match Scores data cleaning
-
+# grab necessary columns
 df2=df1.loc[:, ['Round', 'Winner', 'Loser', 'W1', 'W2', 'W3', 'W4', 'W5', 'L1', 'L2', 'L3', 'L4', 'L5']]
 
 # Relabel rounds to integers 1-7
@@ -46,6 +46,8 @@ player1 = 'O Connell C.' # C. O Connell
 player1 = 'Cerundolo J.M.' # J.M. Cerundolo
 player1 = 'Galan D.E.' # D.E. Galan
 player1 = 'Barrios M.' # M. Barrios
+player1 = 'Varillas J.P.' # J.P. Varillas
+player1 = 'Zapata Miralles B.' # B. Zapata Miralles
 
 firstname1 = re.search(r'\s\w+\.\w*.?', player1)
 lastname1 = re.sub(r'\s\w+\.\w*.?', '',player1)
@@ -61,6 +63,8 @@ player2 = "Christopher O'Connell" # C. O'Connell
 player2 = 'Juan Manuel Cerundolo' # J. Manuel Cerundolo
 player2 = 'Daniel Elahi Galan' # D. Elahi Galan
 player2 = 'Tomas Barrios Vera' # T. Barrios Vera
+player2 = 'Felix Auger Aliassime'
+player2 = 'Juan Pablo Varillas' # J. Pablo Varillas
 
 if bool(re.search(r'\.{1,2}', player2)): # true/false check for periods in the name
     firstname2 = re.search(r'\w+.{1,2}', player2) # true
@@ -72,11 +76,11 @@ print(f'{firstname2.group()}.{lastname2.group()}')
 
 
 # Reformat player names to first initial. last name of the match results csv
-player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera']
+player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas']
 hardcoded_names1 = np.array(player_hardcoded_names1)
 
 # Reformat player names to first initial. last name of the draw order csv
-player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan']
+player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry']
 hardcoded_names2 = np.array(player_hardcoded_names2)
 
 
@@ -125,8 +129,6 @@ df_order = df_order.loc[:, ['match_num', 'player1', 'player2']]
 
 # Reformat player names to first initial. last name of the draw order csv
 
-
-# player1 = 'Marc Andrea Huesler'
 
 # arr1 = np.array(player_hardcoded_names)
 # hardcoded_names = np.array(player_hardcoded_names)
@@ -192,12 +194,6 @@ for i in range(0, len(df_order)):
 
 
 
-df2
-df_order
-
-# df2[df2.Winner == 'N. Jarry']
-
-
 # left_merged = pd.merge(df_order, df2, how='left', on=['player1', 'player2'])
 # left_merged.shape
 # df2.shape
@@ -219,17 +215,84 @@ left_merged_2.shape
 left_merged_2.sort_values(by=['match_num'])
 
 left_merged_2.to_csv('sample_data_2.csv', index=True)
+left_merged_2
+
+df_TB=df_Tiebreak.loc[:,['match_id', 'ElapsedTime', 'SetNo', 'P1GamesWon', 'P2GamesWon', 'SetWinner', 'GameNo', 'GameWinner', 'P1Score', 'P2Score']]
+
+# df_TB = df_TB.loc[(df_TB['GameNo'] == 13)]
+
+# iterate through all of the tiebreak scores
+TB_list = df_TB.loc[(df_TB['GameNo'] == 13) & (df_TB['SetWinner'] != 0) & (df_TB['P1GamesWon'] > 0) & (df_TB['P2GamesWon'] > 0)].index.tolist()
+TB_list
+TB_list_extended = TB_list.copy()
+TB_list_extended.extend([x-1 for x in TB_list]) # Need to add record right before Tiebreak ends to capture the correct score
+TB_list_extended.sort()
+TB_list_extended
+
+df_TB
+df_TB.loc[TB_list]
 
 
+#df_TB.iloc[255, 'GameNo']
+#df_TB.filter(items=[255], axis=0)
+#int(df_TB.filter(items=[255], axis=0)['GameNo'].values[0])
+
+#reformat all match id values to remove the year and tournament name
+#matchid = re.search(r'-\d\d\d\d', df_TB.loc[i,'match_id'])
+#df_TB.loc[i,'match_id'] = matchid.group()[1:]
+#df_TB.loc[244,'match_id']
+
+df_TB.head(12)
+
+for i in TB_list_extended:
+    matchidi = re.search(r'-\d\d\d\d', df_TB.loc[i,'match_id'])
+    matchidj = re.search(r'-\d\d\d\d', df_TB.loc[i-1,'match_id'])
+    if matchidi is not None:
+        df_TB.loc[i,'match_id'] = matchidi.group()[1:]
+    if matchidj is not None:
+        df_TB.loc[i-1,'match_id'] = matchidj.group()[1:]
+
+df_TB.sort_values(by=['match_id'])
+# df_TB.sort_index() 
+df_TB = df_TB.loc[TB_list_extended]
+
+df_TB
+df_TB.shape
+df_TB['match_id'] = df_TB['match_id'].astype(int) # convert match_id from string to integer
+df_TB['P1Score'] = df_TB['P1Score'].astype(int) # convert P1Score from string to integer
+df_TB['P2Score'] = df_TB['P2Score'].astype(int) # convert P2Score from string to integer
+
+#df_TB.loc[28182]
+#df_TB.loc[df_TB['match_id'] == 1408]
+
+df_TB.to_csv('sample_tiebreak_data.csv')
+
+# Add additional columns for set tiebreak scores
+left_merged_2 = left_merged_2.reindex(['match_num', 'player1', 'player2', 'Round', 'P1_1', 'P1_1T', 'P1_2', 'P1_2T', 'P1_3', 'P1_3T', 'P1_4', 'P1_4T', 'P1_5', 'P1_5T', 'P2_1', 'P2_1T', 'P2_2', 'P2_2T', 'P2_3', 'P2_3T', 'P2_4', 'P2_4T', 'P2_5', 'P2_5T', 'Winner'], axis=1)
+left_merged_2
+
+#left_merged_2.loc[left_merged_2['match_num'] == 1102]
+
+# Iterate through the tiebreak list and pull scores from the previous record (i-1)
+for i in TB_list:
+    if (df_TB.loc[i-1, 'P1Score'] != 0) | (df_TB.loc[i-1, 'P2Score'] != 0):
+        matchid = df_TB.loc[i-1, 'match_id']
+        set = df_TB.loc[i-1, 'SetNo']
+        p1 = df_TB.loc[i-1, 'P1Score']
+        p2 = df_TB.loc[i-1, 'P2Score']
+        if p1 > p2:
+            p1+=1
+        else:
+            p2+=1
+        # construct column name to enter tiebreak data
+        TBcolName1 = ('P1_'+ str(set) + 'T')
+        TBcolName2 = ('P2_'+ str(set) + 'T')
+        left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName1] = p1
+        left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName2] = p2
 
 
-
-
-
-
-
-
-
+left_merged_2.head(12)
+left_merged_2.to_csv('sample_data_2.csv', index=True)
 
 
 os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data")
