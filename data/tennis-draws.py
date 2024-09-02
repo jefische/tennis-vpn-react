@@ -8,6 +8,9 @@ pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_colwidth', None)
 
+os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data")
+os.getcwd()
+
 #Load data
 # df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2024.csv")
 df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2023.csv")
@@ -122,9 +125,10 @@ for i in range(0, len(df2)):
 df2.rename(columns={'Winner' : 'player1', 'Loser' : 'player2', 'W1' : 'P1_1', 'W2' : 'P1_2', 'W3' : 'P1_3', 'W4' : 'P1_4', 'W5' : 'P1_5', 'L1' : 'P2_1', 'L2' : 'P2_2', 'L3' : 'P2_3', 'L4' : 'P2_4', 'L5' : 'P2_5'}, inplace=True)
 df2['Winner'] = df2['player1']
 
+df2.to_csv('sample_data.csv', index=True)
+
 
 # df_order Tournament Draw data cleaning
-
 df_order = df_order.loc[:, ['match_num', 'player1', 'player2']]
 
 # Reformat player names to first initial. last name of the draw order csv
@@ -221,11 +225,11 @@ df_TB=df_Tiebreak.loc[:,['match_id', 'ElapsedTime', 'SetNo', 'P1GamesWon', 'P2Ga
 
 # df_TB = df_TB.loc[(df_TB['GameNo'] == 13)]
 
-# iterate through all of the tiebreak scores
+# Pull all of the tiebreak final points
 TB_list = df_TB.loc[(df_TB['GameNo'] == 13) & (df_TB['SetWinner'] != 0) & (df_TB['P1GamesWon'] > 0) & (df_TB['P2GamesWon'] > 0)].index.tolist()
 TB_list
 TB_list_extended = TB_list.copy()
-TB_list_extended.extend([x-1 for x in TB_list]) # Need to add record right before Tiebreak ends to capture the correct score
+TB_list_extended.extend([x-1 for x in TB_list]) # Need to add the point/record right before the tiebreak ends to capture the final score
 TB_list_extended.sort()
 TB_list_extended
 
@@ -243,7 +247,7 @@ df_TB.loc[TB_list]
 #df_TB.loc[244,'match_id']
 
 df_TB.head(12)
-
+# Rename all of the match id values to remove the year and tournament name (e.g. 2023-wimbledon-1101 to 1101)
 for i in TB_list_extended:
     matchidi = re.search(r'-\d\d\d\d', df_TB.loc[i,'match_id'])
     matchidj = re.search(r'-\d\d\d\d', df_TB.loc[i-1,'match_id'])
@@ -253,7 +257,6 @@ for i in TB_list_extended:
         df_TB.loc[i-1,'match_id'] = matchidj.group()[1:]
 
 df_TB.sort_values(by=['match_id'])
-# df_TB.sort_index() 
 df_TB = df_TB.loc[TB_list_extended]
 
 df_TB
@@ -273,14 +276,14 @@ left_merged_2
 
 #left_merged_2.loc[left_merged_2['match_num'] == 1102]
 
-# Iterate through the tiebreak list and pull scores from the previous record (i-1)
+# Iterate through the tiebreak final point list and pull scores from the previous record (i-1) to capture the final score
 for i in TB_list:
     if (df_TB.loc[i-1, 'P1Score'] != 0) | (df_TB.loc[i-1, 'P2Score'] != 0):
         matchid = df_TB.loc[i-1, 'match_id']
         set = df_TB.loc[i-1, 'SetNo']
         p1 = df_TB.loc[i-1, 'P1Score']
         p2 = df_TB.loc[i-1, 'P2Score']
-        if p1 > p2:
+        if p1 > p2: # we need to add 1 to the final winners score since the data always stops counting at this point (e.g. 6 needs to be 7)
             p1+=1
         else:
             p2+=1
@@ -294,9 +297,8 @@ for i in TB_list:
 left_merged_2.head(12)
 left_merged_2.to_csv('sample_data_2.csv', index=True)
 
+left_merged_2.to_json('temp.json', orient='records', lines=True)
 
-os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data")
-os.getcwd()
-df2.to_csv('sample_data.csv', index=True)
+
 
 
