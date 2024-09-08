@@ -1,6 +1,6 @@
 #Import packages
 import pandas as pd # read_csv
-import os, re
+import os, re, math
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -39,7 +39,9 @@ for i in range(0, len(df2)):
     elif df2.loc[i, 'Round'] == 'The Final':
         df2.loc[i, 'Round'] = 7
         
-
+#################################################################################
+# regex testing
+#################################################################################
 # df2 regex
 player1 = 'Wolf J.J.'
 player1 = 'De Minaur A.'
@@ -76,7 +78,9 @@ else:
 
 lastname2 = re.search(r'\s.*', player2)
 print(f'{firstname2.group()}.{lastname2.group()}')
-
+#################################################################################
+# regex testing
+#################################################################################
 
 # Reformat player names to first initial. last name of the match results csv
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas']
@@ -207,7 +211,6 @@ for i in range(0, len(df_order)):
 
 # To capture instances where the winner is player2 and not player 1, switch up all the columns and do a 2nd merge with the new dataset
 df2_reverse = df2.rename(columns={'player1' : 'player2', 'player2' : 'player1', 'P1_1' : 'P2_1', 'P1_2' : 'P2_2', 'P1_3' : 'P2_3', 'P1_4' : 'P2_4', 'P1_5' : 'P2_5', 'P2_1' : 'P1_1', 'P2_2' : 'P1_2', 'P2_3' : 'P1_3', 'P2_4' : 'P1_4', 'P2_5' : 'P1_5'})
-# df2_reverse = df2_reverse.loc[:, ['player1', 'player2', 'P1_1', 'P1_2', 'P1_3', 'P1_4', 'P1_5', 'P2_1', 'P2_2', 'P2_3', 'P2_4', 'P2_5', 'Winner']]
 df2_reverse
 
 # Try to concatenate df2 and df2_reverse by rows (axis = 0 the default) and then merge
@@ -233,7 +236,7 @@ TB_list_extended.extend([x-1 for x in TB_list]) # Need to add the point/record r
 TB_list_extended.sort()
 TB_list_extended
 
-df_TB
+df_TB.head(12)
 df_TB.loc[TB_list]
 
 
@@ -246,8 +249,10 @@ df_TB.loc[TB_list]
 #df_TB.loc[i,'match_id'] = matchid.group()[1:]
 #df_TB.loc[244,'match_id']
 
-df_TB.head(12)
+
 # Rename all of the match id values to remove the year and tournament name (e.g. 2023-wimbledon-1101 to 1101)
+# This will allow matching between left_merged_2 (df_order & df2) and df_TB
+
 for i in TB_list_extended:
     matchidi = re.search(r'-\d\d\d\d', df_TB.loc[i,'match_id'])
     matchidj = re.search(r'-\d\d\d\d', df_TB.loc[i-1,'match_id'])
@@ -295,9 +300,96 @@ for i in TB_list:
 
 
 left_merged_2.head(12)
-left_merged_2.to_csv('sample_data_2.csv', index=True)
 
+# Rename all of the match id values to format tournament id, tournament year, match id (e.g. 2023-wimbledon-1101 would be 0320231101)
+# 01 = Austrlian Open
+# 02 = French Open
+# 03 = Wimbledon
+# 04 = US Open
+
+for i in range(0,len(left_merged_2)):
+    left_merged_2.loc[i, 'match_num'] = int(str('032023')+str(left_merged_2.loc[i, 'match_num']))
+
+
+#left_merged_2.to_csv('sample_data_2.csv', index=True)
 left_merged_2.to_json('temp.json', orient='records', lines=True)
+left_merged_2
+
+def isNaN(num):
+    return num != num
+
+# Convert NaN values to -1 for the scoring columns
+for i in range(0, len(left_merged_2)):
+    for j in range(1,6):
+        P1_colName =('P1_'+ str(j))
+        P1T_colName =('P1_'+ str(j) + 'T')
+        P2_colName =('P2_'+ str(j))
+        P2T_colName =('P2_'+ str(j) + 'T')
+        if isNaN(left_merged_2.loc[i,P1_colName]):
+            left_merged_2.loc[i,P1_colName] = -1
+        if isNaN(left_merged_2.loc[i,P1T_colName]):
+            left_merged_2.loc[i,P1T_colName] = -1
+        if isNaN(left_merged_2.loc[i,P2_colName]):
+            left_merged_2.loc[i,P2_colName] = -1
+        if isNaN(left_merged_2.loc[i,P2T_colName]):
+            left_merged_2.loc[i,P2T_colName] = -1
+
+
+
+left_merged_2['P1_1'] = left_merged_2['P1_1'].astype(int) # convert P1_1 score from float to integer
+left_merged_2['P1_1T'] = left_merged_2['P1_1T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_2'] = left_merged_2['P1_2'].astype(int) # convert P1_2 score from float to integer
+left_merged_2['P1_2T'] = left_merged_2['P1_2T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_3'] = left_merged_2['P1_3'].astype(int) # convert P1_3 score from float to integer
+left_merged_2['P1_3T'] = left_merged_2['P1_3T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_4'] = left_merged_2['P1_4'].astype(int) # convert P1_4 score from float to integer
+left_merged_2['P1_4T'] = left_merged_2['P1_4T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_5'] = left_merged_2['P1_5'].astype(int) # convert P1_5 score from float to integer
+left_merged_2['P1_5T'] = left_merged_2['P1_5T'].astype(int) # convert P1_5T score from float to integer
+
+left_merged_2['P2_1'] = left_merged_2['P2_1'].astype(int) # convert P2_1 score from float to integer
+left_merged_2['P2_1T'] = left_merged_2['P2_1T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_2'] = left_merged_2['P2_2'].astype(int) # convert P2_2 score from float to integer
+left_merged_2['P2_2T'] = left_merged_2['P2_2T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_3'] = left_merged_2['P2_3'].astype(int) # convert P2_3 score from float to integer
+left_merged_2['P2_3T'] = left_merged_2['P2_3T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_4'] = left_merged_2['P2_4'].astype(int) # convert P2_4 score from float to integer
+left_merged_2['P2_4T'] = left_merged_2['P2_4T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_5'] = left_merged_2['P2_5'].astype(int) # convert P2_5 score from float to integer
+left_merged_2['P2_5T'] = left_merged_2['P2_5T'].astype(int) # convert P2_5T score from float to integer
+
+left_merged_2['score1'] = np.empty((len(left_merged_2), 0)).tolist() # create new empty array column for Player 1 scores
+left_merged_2['score2'] = np.empty((len(left_merged_2), 0)).tolist() # create new empty array column for Player 2 scores
+
+left_merged_2 = left_merged_2.drop('score1', axis=1) # drop a column
+left_merged_2 = left_merged_2.drop('score2', axis=1) # drop a column
+
+for i in range(0, len(left_merged_2)):
+    for j in range(1,6):
+        P1_colName =('P1_'+ str(j))
+        P1T_colName =('P1_'+ str(j) + 'T')
+        P2_colName =('P2_'+ str(j))
+        P2T_colName =('P2_'+ str(j) + 'T')
+        if left_merged_2.loc[i,P1_colName] < 0:
+            break
+        elif left_merged_2.loc[i,P1T_colName] < 0:
+            left_merged_2.loc[i,'score1'].append(left_merged_2.loc[i,P1_colName])
+        else:
+            left_merged_2.loc[i,'score1'].append([left_merged_2.loc[i,P1_colName], left_merged_2.loc[i,P1T_colName]])
+        
+        if left_merged_2.loc[i,P2_colName] < 0:
+            break
+        elif left_merged_2.loc[i,P2T_colName] < 0:
+            left_merged_2.loc[i,'score2'].append(left_merged_2.loc[i,P2_colName])
+        else:
+            left_merged_2.loc[i,'score2'].append([left_merged_2.loc[i,P2_colName], left_merged_2.loc[i,P2T_colName]])
+
+
+
+left_merged_2
+
+
+
 
 
 
