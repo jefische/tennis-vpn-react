@@ -3,6 +3,8 @@ import pandas as pd # read_csv
 import os, re, math
 import matplotlib.pyplot as plt
 import numpy as np
+from json import loads, dumps
+import json
 
 pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', None)
@@ -226,8 +228,6 @@ left_merged_2
 
 df_TB=df_Tiebreak.loc[:,['match_id', 'ElapsedTime', 'SetNo', 'P1GamesWon', 'P2GamesWon', 'SetWinner', 'GameNo', 'GameWinner', 'P1Score', 'P2Score']]
 
-# df_TB = df_TB.loc[(df_TB['GameNo'] == 13)]
-
 # Pull all of the tiebreak final points
 TB_list = df_TB.loc[(df_TB['GameNo'] == 13) & (df_TB['SetWinner'] != 0) & (df_TB['P1GamesWon'] > 0) & (df_TB['P2GamesWon'] > 0)].index.tolist()
 TB_list
@@ -301,19 +301,16 @@ for i in TB_list:
 
 left_merged_2.head(12)
 
+#####################################################################################################################################
 # Rename all of the match id values to format tournament id, tournament year, match id (e.g. 2023-wimbledon-1101 would be 0320231101)
 # 01 = Austrlian Open
 # 02 = French Open
 # 03 = Wimbledon
 # 04 = US Open
+#####################################################################################################################################
 
 for i in range(0,len(left_merged_2)):
     left_merged_2.loc[i, 'match_num'] = int(str('032023')+str(left_merged_2.loc[i, 'match_num']))
-
-
-#left_merged_2.to_csv('sample_data_2.csv', index=True)
-left_merged_2.to_json('temp.json', orient='records', lines=True)
-left_merged_2
 
 def isNaN(num):
     return num != num
@@ -364,7 +361,16 @@ left_merged_2['score2'] = np.empty((len(left_merged_2), 0)).tolist() # create ne
 left_merged_2 = left_merged_2.drop('score1', axis=1) # drop a column
 left_merged_2 = left_merged_2.drop('score2', axis=1) # drop a column
 
+left_merged_2['WinnerTeam'] = left_merged_2['Winner']
+
+# Iterate through each record to add player1 and player2 scores to an array
 for i in range(0, len(left_merged_2)):
+
+    if left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player1']:
+        left_merged_2.loc[i, 'WinnerTeam'] = 'team1'
+    elif left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player2']:
+        left_merged_2.loc[i, 'WinnerTeam'] = 'team2'
+
     for j in range(1,6):
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
@@ -386,11 +392,17 @@ for i in range(0, len(left_merged_2)):
 
 
 
+#left_merged_2.to_csv('sample_data_2.csv', index=True)
+left_merged_2.to_json('temp.json', orient='records', lines=True)
 left_merged_2
 
+# Grab necessary columns and ATP records
+df_final=left_merged_2.loc[left_merged_2['match_num'] < 320232000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Round']]
+df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Round' : 'round'}, inplace=True)
+df_final
 
-
-
-
-
-
+result = df_final.to_json(orient='records')
+parsed = loads(result)
+json_object = json.dumps(parsed, indent=4)
+with open('sample.json', 'w') as outfile:
+    outfile.write(json_object)

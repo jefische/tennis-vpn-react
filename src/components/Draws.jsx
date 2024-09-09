@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import DrawGroup from "./DrawGroup";
-import { atpWimbledonScores } from "../../data/scoresData";
+import { atpWimbledonScores, atpWimbledonScores2023 } from "../../data/scoresData";
 
 export default function Draws({ title, updated, children }) {
 	const [selection, setSelection] = useState({});
@@ -58,15 +58,15 @@ export default function Draws({ title, updated, children }) {
 			<div className="container-fluid d-flex mt-5 justify-content-center">
 				<div className="columnA roundGroup">
 					<h3 className="text-center">1st Round</h3>
-					<DrawGroup scores={atpWimbledonScores} round={1} connector={false} />
+					<DrawGroup scores={atpWimbledonScores2023} round={1} connector={false} />
 				</div>
 				<div className="columnB roundGroup">
 					<h3 className="text-center">2nd Round</h3>
-					<DrawGroup scores={atpWimbledonScores} round={2} connector={true} />
+					<DrawGroup scores={atpWimbledonScores2023} round={2} connector={true} />
 				</div>
 				<div className="columnC roundGroup last">
 					<h3 className="text-center">3rd Round</h3>
-					<DrawGroup scores={atpWimbledonScores} round={3} connector={true} />
+					<DrawGroup scores={atpWimbledonScores2023} round={3} connector={true} />
 				</div>
 			</div>
 		</>
