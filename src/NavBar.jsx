@@ -29,11 +29,7 @@ export default function NavBar() {
 				</button>
 
 				{/* Menu of Tournmanets */}
-				<div
-					className="collapse navbar-collapse"
-					id="navbarSupportedContent"
-					style={{ justifyContent: "space-around" }}
-				>
+				<div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ justifyContent: "space-around" }}>
 					<ul className="navbar-nav mb-lg-0">
 						<li className="nav-item">
 							<NavLink className="nav-link" to="/australian-open">
@@ -56,13 +52,7 @@ export default function NavBar() {
 							</NavLink>
 						</li>
 						<li className="nav-item dropdown">
-							<a
-								className="nav-link dropdown-toggle"
-								href="#"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
+							<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								News
 							</a>
 							<ul className="dropdown-menu">
@@ -73,10 +63,10 @@ export default function NavBar() {
 									<Link className="dropdown-item" to="/grand-slam-results">
 										Grand Slam Results
 									</Link>
-									<a className="dropdown-item" href="javascript:void(0)">
-										Coming Soon
-										{/* Indian Wells */}
-									</a>
+									{/* <a className="dropdown-item" href="javascript:void(0)"> */}
+									{/* Coming Soon */}
+									{/* Indian Wells */}
+									{/* </a> */}
 								</li>
 								{/* <li>
 									<a className="dropdown-item" href="#">

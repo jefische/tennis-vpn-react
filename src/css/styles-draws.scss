@@ -1,5 +1,10 @@
 /* Draws */
 
+html,
+body {
+	height: 100%;
+}
+
 .roundGroup {
 	margin-right: 25px;
 	max-width: 400px;
@@ -68,6 +73,7 @@
 }
 
 .columnA {
+	// margin-left: 50px;
 	.drawGroup {
 		margin-bottom: 50px;
 	}
@@ -107,6 +113,43 @@
 	}
 }
 
-.roundGroup.last {
-	margin-right: 0px;
+.buttonGroup {
+	margin-top: 2rem;
+}
+
+.carousel {
+	// height: 100%;
+	margin: auto;
+	max-width: calc(95%);
+}
+
+.flickity-viewport {
+	// height: 100%;
+	margin: auto;
+	max-width: calc(90%);
+	// overflow-y: visible;
+}
+
+.flickity-viewport .is-selected {
+	// overflow-y: visible;
+}
+
+.flickity-viewport::-webkit-scrollbar {
+	display: none;
+}
+
+/* position outside */
+.flickity-prev-next-button.previous {
+	position: fixed;
+	left: 5px;
+	top: 280px;
+}
+.flickity-prev-next-button.next {
+	position: fixed;
+	right: 5px;
+	top: 280px;
+}
+
+.whitespace {
+	height: 100px;
 }
