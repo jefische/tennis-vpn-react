@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
+// import { faForward as farFaForward } from "@fortawesome/free-regular-svg-icons";
 import DrawGroup from "./DrawGroup";
 import { atpWimbledonScores, atpWimbledonScores2023 } from "../../data/scoresData";
 
@@ -9,8 +10,8 @@ export default function Draws({ title, updated, children }) {
 	const [columnARound, setRoundA] = useState(1);
 	const [columnBRound, setRoundB] = useState(2);
 	const [columnCRound, setRoundC] = useState(3);
-	const [displayRoundButtons, setRoundButtons] = useState(false);
 	const [displayDraw, setDisplay] = useState("invisible");
+	const [slamData, setSlamData] = useState([]);
 	const ref = useRef(null);
 
 	const titleA = document.querySelector("h3.pad-1");
@@ -70,7 +71,6 @@ export default function Draws({ title, updated, children }) {
 		const titleA = document.querySelector("h3.pad-1");
 		const titleB = document.querySelector("h3.pad-2");
 		const titleC = document.querySelector("h3.pad-3");
-		const colA = document.querySelector(".columnA");
 		const colB = document.querySelector(".columnB");
 		const colC = document.querySelector(".columnC");
 
@@ -159,14 +159,19 @@ export default function Draws({ title, updated, children }) {
 						e.preventDefault();
 
 						const formData = new FormData(e.target);
-						console.log(formData.get("slams"));
-
-						setRoundButtons(!displayRoundButtons);
-						setDisplay(displayRoundButtons ? "invisible" : "visible");
+						const slam = formData.get("slams");
+						const year = formData.get("year");
+						{
+							formData.get("slams") == "WM"
+								? setSlamData(atpWimbledonScores2023) & console.log("setting slam data...") & setDisplay("visible")
+								: console.log("no slam data...");
+						}
 					}}
 				>
-					<label htmlFor="slams">Tournament</label>
-					<select id="slams" name="slams" className="mx-2">
+					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="slams">
+						Tournament
+					</label>
+					<select className="form-select mx-2 w-auto" id="slams" name="slams">
 						<option value="AOM">Australian Open (M)</option>
 						<option value="AOW">Australian Open (W)</option>
 						<option value="FOM">French Open (M)</option>
@@ -176,44 +181,43 @@ export default function Draws({ title, updated, children }) {
 						<option value="USOM">US Open (M)</option>
 						<option value="USOW">US Open (W)</option>
 					</select>
-					<label htmlFor="year">Year</label>
-					<select name="year" className="mx-2">
+					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="year">
+						Year
+					</label>
+					<select className="form-select mx-2 w-auto" name="year">
 						<option value="2024">2024</option>
 						<option value="2023">2023</option>
 					</select>
-					<button className="btn btn-success" type="submit">
+					<button className="btn btn-success mx-3" type="submit">
 						Submit
 					</button>
 				</form>
-				{displayRoundButtons ? (
-					<div className="buttonGroup justify-content-center px-4">
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="0">
-							1st Round
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="1">
-							2nd Round
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="2">
-							3rd Round
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="3">
-							4th Round
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="4">
-							Quarterfinals
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="5">
-							Semifinals
-						</button>
-						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="6">
-							Finals
-						</button>
-					</div>
-				) : (
-					<div></div>
-				)}
+
+				<div className={`buttonGroup d-flex justify-content-center px-4 mt-4 ${displayDraw}`}>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="0">
+						1st Round
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="1">
+						2nd Round
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="2">
+						3rd Round
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="3">
+						4th Round
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="4">
+						Quarterfinals
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="5">
+						Semifinals
+					</button>
+					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="6">
+						Finals
+					</button>
+				</div>
 			</div>
-			<div className="mt-2 sticky-top bg-body w-100" style={{ top: "33%" }}>
+			<div className="round-headers-container sticky-top bg-body w-100" style={{ top: "33%" }}>
 				<div className={`d-flex border-bottom round-headers ${displayDraw}`}>
 					<h3 className="text-center pad-1">1st Round</h3>
 					<h3 className="text-center pad-2">2nd Round</h3>
@@ -223,17 +227,21 @@ export default function Draws({ title, updated, children }) {
 			<div className="carousel-container">
 				<div className={`d-flex px-4 pt-5 ${displayDraw}`} ref={ref}>
 					<div className="columnA roundGroup">
-						<DrawGroup scores={atpWimbledonScores2023} round={columnARound} connector={false} />
+						<DrawGroup scores={slamData} round={columnARound} connector={false} />
 					</div>
 					<div className="columnB roundGroup">
-						<DrawGroup scores={atpWimbledonScores2023} round={columnBRound} connector={true} />
+						<DrawGroup scores={slamData} round={columnBRound} connector={true} />
 					</div>
 					<div className="columnC roundGroup">
-						<DrawGroup scores={atpWimbledonScores2023} round={columnCRound} connector={true} />
+						<DrawGroup scores={slamData} round={columnCRound} connector={true} />
 					</div>
 				</div>
-				<button className="prev-next-button next"></button>
-				<button className="prev-next-button previous"></button>
+				<button className="prev-next-button next">
+					<FontAwesomeIcon icon={faForward} size="xl" style={{ color: "#1e860a" }} />
+				</button>
+				<button className="prev-next-button previous">
+					<FontAwesomeIcon icon={faBackward} size="xl" style={{ color: "#1e860a" }} />
+				</button>
 			</div>
 		</>
 	);
