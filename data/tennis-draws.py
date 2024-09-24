@@ -14,10 +14,10 @@ os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data
 os.getcwd()
 
 #Load data
-# df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2024.csv")
 df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2023.csv")
 df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/2023-wimbledon-matches.csv")
 df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/2023-wimbledon-points.csv")
+# df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon_mens_2024.csv")
 
 
 # df2 Match Scores data cleaning
@@ -81,7 +81,7 @@ else:
 lastname2 = re.search(r'\s.*', player2)
 print(f'{firstname2.group()}.{lastname2.group()}')
 #################################################################################
-# regex testing
+# end of regex testing
 #################################################################################
 
 # Reformat player names to first initial. last name of the match results csv
