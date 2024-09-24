@@ -1,0 +1,1163 @@
+[
+	{
+		"id": 320231101,
+		"team1": "C. Alcaraz",
+		"team2": "J. Chardy",
+		"score1": [6, 6, 7],
+		"score2": [0, 2, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231102,
+		"team1": "A. Muller",
+		"team2": "A. Rinderknech",
+		"score1": [[7, 7], 1, 6, 6],
+		"score2": [[6, 5], 6, 3, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231103,
+		"team1": "J. Kubler",
+		"team2": "U. Humbert",
+		"score1": [6, 4, 6, 3, 6],
+		"score2": [4, 6, 2, 6, 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231104,
+		"team1": "M. Cecchinato",
+		"team2": "N. Jarry",
+		"score1": [6, 2, 4, 1],
+		"score2": [4, 6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231105,
+		"team1": "A. Zverev",
+		"team2": "G. Brouwer",
+		"score1": [6, [7, 7], [7, 7]],
+		"score2": [4, [6, 4], [6, 5]],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231106,
+		"team1": "M.A. Huesler",
+		"team2": "Y. Watanuki",
+		"score1": [[7, 7], 7, [6, 5], [6, 3], 3],
+		"score2": [[6, 5], 5, [7, 7], [7, 7], 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231107,
+		"team1": "M. Berrettini",
+		"team2": "L. Sonego",
+		"score1": [[6, 5], 6, [7, 9], 6],
+		"score2": [[7, 7], 3, [6, 7], 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231108,
+		"team1": "K. Coppejans",
+		"team2": "A. De Minaur",
+		"score1": [[7, 7], 3, 3, [6, 2]],
+		"score2": [[6, 5], 6, 6, [7, 7]],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231109,
+		"team1": "F. Tiafoe",
+		"team2": "Y. Wu",
+		"score1": [[7, 7], 6, 6],
+		"score2": [[6, 4], 3, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231110,
+		"team1": "D. Stricker",
+		"team2": "A. Popyrin",
+		"score1": [3, 6, 6, 4, 7],
+		"score2": [6, 3, 2, 6, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231111,
+		"team1": "I. Ivashka",
+		"team2": "F. Coria",
+		"score1": [4, 6, 6, 6],
+		"score2": [6, 4, 3, 0],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231112,
+		"team1": "S. Shimabukuro",
+		"team2": "G. Dimitrov",
+		"score1": [1, 2, 1],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231113,
+		"team1": "A. Davidovich Fokina",
+		"team2": "A. Fils",
+		"score1": [[7, 7], 6, 6],
+		"score2": [[6, 3], 1, 2],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231114,
+		"team1": "Z. Zhang",
+		"team2": "B. Van De Zandschulp",
+		"score1": [6, [6, 3], [6, 6], 6, 2],
+		"score2": [2, [7, 7], [7, 8], 3, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231115,
+		"team1": "M. Arnaldi",
+		"team2": "R. Carballes Baena",
+		"score1": [[7, 7], 3, 4, 4],
+		"score2": [[6, 0], 6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231116,
+		"team1": "G. Loffhagen",
+		"team2": "H. Rune",
+		"score1": [[6, 4], 3, 2],
+		"score2": [[7, 7], 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231117,
+		"team1": "D. Medvedev",
+		"team2": "A. Fery",
+		"score1": [7, 6, 6],
+		"score2": [5, 4, 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231118,
+		"team1": "A. Mannarino",
+		"team2": "A. Shevchenko",
+		"score1": [6, 6, 6],
+		"score2": [3, 3, 2],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231119,
+		"team1": "M. Giron",
+		"team2": "H. Dellien",
+		"score1": [[7, 7], 6, 6],
+		"score2": [[6, 2], 4, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231120,
+		"team1": "M. Fucsovics",
+		"team2": "T. Griekspoor",
+		"score1": [6, 6, 6],
+		"score2": [4, 2, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231121,
+		"team1": "F. Cerundolo",
+		"team2": "N. Borges",
+		"score1": [5, 6, 6, 6],
+		"score2": [7, 3, 3, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231122,
+		"team1": "J. Lehecka",
+		"team2": "S. Ofner",
+		"score1": [6, 6, 6],
+		"score2": [4, 4, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231123,
+		"team1": "M. Raonic",
+		"team2": "D. Novak",
+		"score1": [[6, 5], 6, [7, 7], 6],
+		"score2": [[7, 7], 4, [6, 5], 1],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231124,
+		"team1": "S. Mochizuki",
+		"team2": "T. Paul",
+		"score1": [5, 3, 1],
+		"score2": [7, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231125,
+		"team1": "C. Norrie",
+		"team2": "T. Machac",
+		"score1": [6, 4, 6, 6],
+		"score2": [3, 6, 1, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231126,
+		"team1": "C. Eubanks",
+		"team2": "T. Monteiro",
+		"score1": [4, 7, 7, 6],
+		"score2": [6, 5, 5, 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231127,
+		"team1": "C. O'Connell",
+		"team2": "H. Medjedovic",
+		"score1": [7, 6, 4, 6],
+		"score2": [5, 4, 6, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231128,
+		"team1": "J. Vesely",
+		"team2": "S. Korda",
+		"score1": [[7, 9], 4, 6, 6],
+		"score2": [[6, 7], 6, 2, 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231129,
+		"team1": "B. Shelton",
+		"team2": "T. Daniel",
+		"score1": [6, 6, 3, 4, 6],
+		"score2": [4, 3, 6, 6, 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231130,
+		"team1": "M. Cressy",
+		"team2": "L. Djere",
+		"score1": [
+			[7, 7],
+			[6, 3],
+			[6, 8],
+			[6, 7]
+		],
+		"score2": [
+			[6, 5],
+			[7, 7],
+			[7, 10],
+			[7, 9]
+		],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231131,
+		"team1": "R. Peniston",
+		"team2": "A. Murray",
+		"score1": [3, 0, 1],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231132,
+		"team1": "D. Thiem",
+		"team2": "S. Tsitsipas",
+		"score1": [6, [6, 1], 2, [7, 7], 6],
+		"score2": [3, [7, 7], 6, [6, 5], 7],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231133,
+		"team1": "J. Sinner",
+		"team2": "J.M. Cerundolo",
+		"score1": [6, 6, 6],
+		"score2": [2, 2, 2],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231134,
+		"team1": "M. Kecmanovic",
+		"team2": "D. Schwartzman",
+		"score1": [0, 3, 4],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231135,
+		"team1": "A. Vukic",
+		"team2": "D. Altmaier",
+		"score1": [6, [7, 7], 3, 7],
+		"score2": [3, [6, 1], 6, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231136,
+		"team1": "Q. Halys",
+		"team2": "D. Evans",
+		"score1": [6, 6, [6, 5], 6],
+		"score2": [2, 3, [7, 7], 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231137,
+		"team1": "Y. Nishioka",
+		"team2": "D.E. Galan",
+		"score1": [4, 3, 3],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231138,
+		"team1": "D. Koepfer",
+		"team2": "O. Otte",
+		"score1": [5, 3, [6, 9]],
+		"score2": [7, 6, [7, 11]],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231139,
+		"team1": "M. Ymer",
+		"team2": "A. Molcan",
+		"score1": [6, 6, 6],
+		"score2": [3, 3, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231140,
+		"team1": "Y. Hanfmann",
+		"team2": "T. Fritz",
+		"score1": [4, 6, 6, 5, 3],
+		"score2": [6, 2, 4, 7, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231141,
+		"team1": "B. Coric",
+		"team2": "G. Pella",
+		"score1": [3, 5, 6, 6, 1],
+		"score2": [6, 7, 4, 3, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231142,
+		"team1": "B. Bonzi",
+		"team2": "H. Mayot",
+		"score1": [3, 4, 5],
+		"score2": [6, 6, 7],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231143,
+		"team1": "C. Moutet",
+		"team2": "R. Gasquet",
+		"score1": [6, 7, 7],
+		"score2": [3, 5, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231144,
+		"team1": "R. Safiullin",
+		"team2": "R. Bautista Agut",
+		"score1": [2, [7, 9], [6, 4], 6, 7],
+		"score2": [6, [6, 7], [7, 7], 4, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231145,
+		"team1": "D. Shapovalov",
+		"team2": "R. Albot",
+		"score1": [5, 6, 6, 6],
+		"score2": [7, 4, 2, 2],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231146,
+		"team1": "L. Harris",
+		"team2": "G. Barrere",
+		"score1": [5, [7, 7], 5, 3],
+		"score2": [7, [6, 4], 7, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231147,
+		"team1": "L. Broady",
+		"team2": "C. Lestienne",
+		"score1": [6, 6, 7],
+		"score2": [1, 3, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231148,
+		"team1": "L. Lokoli",
+		"team2": "C. Ruud",
+		"score1": [1, 7, 4, 3],
+		"score2": [6, 5, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231149,
+		"team1": "A. Rublev",
+		"team2": "M. Purcell",
+		"score1": [6, 7, 6],
+		"score2": [3, 5, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231150,
+		"team1": "L. Van Assche",
+		"team2": "A. Karatsev",
+		"score1": [[7, 7], 4, 2, 4],
+		"score2": [[6, 4], 6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231151,
+		"team1": "S. Baez",
+		"team2": "T. Barrios Vera",
+		"score1": [[6, 7], 6, 3, [6, 2]],
+		"score2": [[7, 9], 3, 6, [7, 7]],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231152,
+		"team1": "D. Goffin",
+		"team2": "F. Marozsan",
+		"score1": [6, 5, 6, 6],
+		"score2": [2, 7, 2, 0],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231153,
+		"team1": "A. Bublik",
+		"team2": "M. McDonald",
+		"score1": [[6, 3], 6, 6, 6],
+		"score2": [[7, 7], 4, 4, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231154,
+		"team1": "J.J. Wolf",
+		"team2": "E. Couacaud",
+		"score1": [7, 6, [7, 7]],
+		"score2": [5, 3, [6, 4]],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231155,
+		"team1": "M. Marterer",
+		"team2": "B. Gojo",
+		"score1": [7, [6, 8], 6, 6],
+		"score2": [5, [7, 10], 3, 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231156,
+		"team1": "M. Mmoh",
+		"team2": "F. Auger Aliassime",
+		"score1": [[7, 7], [6, 4], [7, 7], 6],
+		"score2": [[6, 4], [7, 7], [6, 4], 4],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231157,
+		"team1": "L. Musetti",
+		"team2": "J.P. Varillas",
+		"score1": [6, 6, 7],
+		"score2": [3, 1, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231158,
+		"team1": "J. Isner",
+		"team2": "J. Munar",
+		"score1": [6, 3, 4, 4],
+		"score2": [4, 6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231159,
+		"team1": "J. Choinski",
+		"team2": "D. Lajovic",
+		"score1": [5, [7, 7], 6, 6],
+		"score2": [7, [6, 4], 2, 2],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231160,
+		"team1": "A. Ramos Vinolas",
+		"team2": "H. Hurkacz",
+		"score1": [1, 4, 4],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231161,
+		"team1": "T. Etcheverry",
+		"team2": "B. Zapata Miralles",
+		"score1": [[6, 5], 5, 6, 6, 7],
+		"score2": [[7, 7], 7, 3, 4, 5],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231162,
+		"team1": "E. Ruusuvuori",
+		"team2": "S. Wawrinka",
+		"score1": [5, 5, 4],
+		"score2": [7, 7, 6],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231163,
+		"team1": "J. Thompson",
+		"team2": "B. Nakashima",
+		"score1": [2, 2, 6, [7, 7], 6],
+		"score2": [6, 6, 4, [6, 4], 3],
+		"winner": "team1",
+		"round": 1
+	},
+	{
+		"id": 320231164,
+		"team1": "P. Cachin",
+		"team2": "N. Djokovic",
+		"score1": [3, 3, [6, 4]],
+		"score2": [6, 6, [7, 7]],
+		"winner": "team2",
+		"round": 1
+	},
+	{
+		"id": 320231201,
+		"team1": "C. Alcaraz",
+		"team2": "A. Muller",
+		"score1": [6, [7, 7], 6],
+		"score2": [4, [6, 2], 3],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231202,
+		"team1": "J. Kubler",
+		"team2": "N. Jarry",
+		"score1": [5, 7, 3, 4],
+		"score2": [7, 5, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231203,
+		"team1": "A. Zverev",
+		"team2": "Y. Watanuki",
+		"score1": [6, 5, 6, 6],
+		"score2": [4, 7, 2, 2],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231204,
+		"team1": "M. Berrettini",
+		"team2": "A. De Minaur",
+		"score1": [6, 6, 6],
+		"score2": [3, 4, 4],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231205,
+		"team1": "F. Tiafoe",
+		"team2": "D. Stricker",
+		"score1": [[7, 13], 6, 6],
+		"score2": [[6, 11], 4, 2],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231206,
+		"team1": "I. Ivashka",
+		"team2": "G. Dimitrov",
+		"score1": [3, 4, 4],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231207,
+		"team1": "A. Davidovich Fokina",
+		"team2": "B. Van De Zandschulp",
+		"score1": [6, 2, 6, 6],
+		"score2": [1, 6, 4, 3],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231208,
+		"team1": "R. Carballes Baena",
+		"team2": "H. Rune",
+		"score1": [3, [6, 3], 4],
+		"score2": [6, [7, 7], 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231209,
+		"team1": "D. Medvedev",
+		"team2": "A. Mannarino",
+		"score1": [6, 6, [7, 7]],
+		"score2": [3, 3, [6, 5]],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231210,
+		"team1": "M. Giron",
+		"team2": "M. Fucsovics",
+		"score1": [[6, 2], 3, 6, 4],
+		"score2": [[7, 7], 6, 4, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231211,
+		"team1": "F. Cerundolo",
+		"team2": "J. Lehecka",
+		"score1": [2, 2, 2],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231212,
+		"team1": "M. Raonic",
+		"team2": "T. Paul",
+		"score1": [4, [6, 4], [7, 7], 4],
+		"score2": [6, [7, 7], [6, 4], 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231213,
+		"team1": "C. Norrie",
+		"team2": "C. Eubanks",
+		"score1": [3, 6, 2, [6, 3]],
+		"score2": [6, 3, 6, [7, 7]],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231214,
+		"team1": "C. O'Connell",
+		"team2": "J. Vesely",
+		"score1": [6, 7, 6],
+		"score2": [3, 5, 4],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231215,
+		"team1": "B. Shelton",
+		"team2": "L. Djere",
+		"score1": [6, 3, [6, 5], 3],
+		"score2": [3, 6, [7, 7], 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231216,
+		"team1": "A. Murray",
+		"team2": "S. Tsitsipas",
+		"score1": [[6, 3], [7, 7], 6, [6, 3], 4],
+		"score2": [[7, 7], [6, 2], 4, [7, 7], 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231217,
+		"team1": "J. Sinner",
+		"team2": "D. Schwartzman",
+		"score1": [7, 6, 6],
+		"score2": [5, 1, 2],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231218,
+		"team1": "A. Vukic",
+		"team2": "Q. Halys",
+		"score1": [3, 1, 4],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231219,
+		"team1": "D.E. Galan",
+		"team2": "O. Otte",
+		"score1": [6, 3, 6, [7, 7]],
+		"score2": [3, 6, 3, [6, 3]],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231220,
+		"team1": "M. Ymer",
+		"team2": "T. Fritz",
+		"score1": [3, 2, 6, 6, 6],
+		"score2": [6, 6, 3, 4, 2],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231221,
+		"team1": "G. Pella",
+		"team2": "H. Mayot",
+		"score1": [2, 6, [7, 7], 7],
+		"score2": [6, 3, [6, 3], 5],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231222,
+		"team1": "C. Moutet",
+		"team2": "R. Safiullin",
+		"score1": [5, 3, [6, 4]],
+		"score2": [7, 6, [7, 7]],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231223,
+		"team1": "D. Shapovalov",
+		"team2": "G. Barrere",
+		"score1": [6, 6, [7, 9]],
+		"score2": [3, 4, [6, 7]],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231224,
+		"team1": "L. Broady",
+		"team2": "C. Ruud",
+		"score1": [6, 3, 4, 6, 6],
+		"score2": [4, 6, 6, 3, 0],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231225,
+		"team1": "A. Rublev",
+		"team2": "A. Karatsev",
+		"score1": [[6, 4], 6, 6, 7],
+		"score2": [[7, 7], 3, 4, 5],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231226,
+		"team1": "T. Barrios Vera",
+		"team2": "D. Goffin",
+		"score1": [[6, 3], 7, 2, 0],
+		"score2": [[7, 7], 5, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231227,
+		"team1": "A. Bublik",
+		"team2": "J.J. Wolf",
+		"score1": [6, [7, 7], 6],
+		"score2": [3, [6, 5], 0],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231228,
+		"team1": "M. Marterer",
+		"team2": "M. Mmoh",
+		"score1": [7, [7, 7], 6],
+		"score2": [5, [6, 5], 4],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231229,
+		"team1": "L. Musetti",
+		"team2": "J. Munar",
+		"score1": [6, 6, 6],
+		"score2": [4, 3, 1],
+		"winner": "team1",
+		"round": 2
+	},
+	{
+		"id": 320231230,
+		"team1": "J. Choinski",
+		"team2": "H. Hurkacz",
+		"score1": [4, 4, [6, 3]],
+		"score2": [6, 6, [7, 7]],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231231,
+		"team1": "T. Etcheverry",
+		"team2": "S. Wawrinka",
+		"score1": [3, 6, 4, 2],
+		"score2": [6, 4, 6, 6],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231232,
+		"team1": "J. Thompson",
+		"team2": "N. Djokovic",
+		"score1": [3, [6, 4], 5],
+		"score2": [6, [7, 7], 7],
+		"winner": "team2",
+		"round": 2
+	},
+	{
+		"id": 320231301,
+		"team1": "C. Alcaraz",
+		"team2": "N. Jarry",
+		"score1": [6, [6, 6], 6, 7],
+		"score2": [3, [7, 8], 3, 5],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231302,
+		"team1": "A. Zverev",
+		"team2": "M. Berrettini",
+		"score1": [3, [6, 4], [6, 5]],
+		"score2": [6, [7, 7], [7, 7]],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231303,
+		"team1": "F. Tiafoe",
+		"team2": "G. Dimitrov",
+		"score1": [2, 3, 2],
+		"score2": [6, 6, 6],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231304,
+		"team1": "A. Davidovich Fokina",
+		"team2": "H. Rune",
+		"score1": [3, 6, 6, 4, 6],
+		"score2": [6, 4, 3, 6, 7],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231305,
+		"team1": "D. Medvedev",
+		"team2": "M. Fucsovics",
+		"score1": [4, 6, 6, 6],
+		"score2": [6, 3, 4, 4],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231306,
+		"team1": "J. Lehecka",
+		"team2": "T. Paul",
+		"score1": [6, [7, 7], [6, 5], [6, 9], 6],
+		"score2": [2, [6, 2], [7, 7], [7, 11], 2],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231307,
+		"team1": "C. Eubanks",
+		"team2": "C. O'Connell",
+		"score1": [
+			[7, 7],
+			[7, 7],
+			[7, 7]
+		],
+		"score2": [
+			[6, 5],
+			[6, 3],
+			[6, 2]
+		],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231308,
+		"team1": "L. Djere",
+		"team2": "S. Tsitsipas",
+		"score1": [4, [6, 5], 4],
+		"score2": [6, [7, 7], 6],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231309,
+		"team1": "J. Sinner",
+		"team2": "Q. Halys",
+		"score1": [3, 6, 6, 6],
+		"score2": [6, 2, 3, 4],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231310,
+		"team1": "D.E. Galan",
+		"team2": "M. Ymer",
+		"score1": [6, [6, 2], [7, 7], 3, 6],
+		"score2": [2, [7, 7], [6, 5], 6, 1],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231311,
+		"team1": "G. Pella",
+		"team2": "R. Safiullin",
+		"score1": [[6, 1], 4, 0],
+		"score2": [[7, 7], 6, 6],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231312,
+		"team1": "D. Shapovalov",
+		"team2": "L. Broady",
+		"score1": [4, 6, 7, 7],
+		"score2": [6, 2, 5, 5],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231313,
+		"team1": "A. Rublev",
+		"team2": "D. Goffin",
+		"score1": [6, [6, 6], [7, 7], 6],
+		"score2": [3, [7, 8], [6, 5], 2],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231314,
+		"team1": "A. Bublik",
+		"team2": "M. Marterer",
+		"score1": [6, 6, [7, 7]],
+		"score2": [4, 1, [6, 4]],
+		"winner": "team1",
+		"round": 3
+	},
+	{
+		"id": 320231315,
+		"team1": "L. Musetti",
+		"team2": "H. Hurkacz",
+		"score1": [[6, 4], 4, 4],
+		"score2": [[7, 7], 6, 6],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231316,
+		"team1": "S. Wawrinka",
+		"team2": "N. Djokovic",
+		"score1": [3, 1, [6, 5]],
+		"score2": [6, 6, [7, 7]],
+		"winner": "team2",
+		"round": 3
+	},
+	{
+		"id": 320231401,
+		"team1": "C. Alcaraz",
+		"team2": "M. Berrettini",
+		"score1": [3, 6, 6, 6],
+		"score2": [6, 3, 3, 3],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231402,
+		"team1": "G. Dimitrov",
+		"team2": "H. Rune",
+		"score1": [6, [6, 6], [6, 4], 3],
+		"score2": [3, [7, 8], [7, 7], 6],
+		"winner": "team2",
+		"round": 4
+	},
+	{
+		"id": 320231403,
+		"team1": "D. Medvedev",
+		"team2": "J. Lehecka",
+		"score1": [6, 6],
+		"score2": [4, 2],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231404,
+		"team1": "C. Eubanks",
+		"team2": "S. Tsitsipas",
+		"score1": [3, [7, 7], 3, 6, 6],
+		"score2": [6, [6, 4], 6, 4, 4],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231405,
+		"team1": "J. Sinner",
+		"team2": "D.E. Galan",
+		"score1": [[7, 7], 6, 6],
+		"score2": [[6, 4], 4, 3],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231406,
+		"team1": "R. Safiullin",
+		"team2": "D. Shapovalov",
+		"score1": [3, 6, 6, 6],
+		"score2": [6, 3, 1, 3],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231407,
+		"team1": "A. Rublev",
+		"team2": "A. Bublik",
+		"score1": [7, 6, [6, 6], [6, 5], 6],
+		"score2": [5, 3, [7, 8], [7, 7], 4],
+		"winner": "team1",
+		"round": 4
+	},
+	{
+		"id": 320231408,
+		"team1": "H. Hurkacz",
+		"team2": "N. Djokovic",
+		"score1": [[6, 6], [6, 6], 7, 4],
+		"score2": [[7, 8], [7, 8], 5, 6],
+		"winner": "team2",
+		"round": 4
+	},
+	{
+		"id": 320231501,
+		"team1": "C. Alcaraz",
+		"team2": "H. Rune",
+		"score1": [[7, 7], 6, 6],
+		"score2": [[6, 3], 4, 4],
+		"winner": "team1",
+		"round": 5
+	},
+	{
+		"id": 320231502,
+		"team1": "D. Medvedev",
+		"team2": "C. Eubanks",
+		"score1": [6, 1, 4, [7, 7], 6],
+		"score2": [4, 6, 6, [6, 4], 1],
+		"winner": "team1",
+		"round": 5
+	},
+	{
+		"id": 320231503,
+		"team1": "J. Sinner",
+		"team2": "R. Safiullin",
+		"score1": [6, 3, 6, 6],
+		"score2": [4, 6, 2, 2],
+		"winner": "team1",
+		"round": 5
+	},
+	{
+		"id": 320231504,
+		"team1": "A. Rublev",
+		"team2": "N. Djokovic",
+		"score1": [6, 1, 4, 3],
+		"score2": [4, 6, 6, 6],
+		"winner": "team2",
+		"round": 5
+	},
+	{
+		"id": 320231601,
+		"team1": "C. Alcaraz",
+		"team2": "D. Medvedev",
+		"score1": [6, 6, 6],
+		"score2": [3, 3, 3],
+		"winner": "team1",
+		"round": 6
+	},
+	{
+		"id": 320231602,
+		"team1": "J. Sinner",
+		"team2": "N. Djokovic",
+		"score1": [3, 4, [6, 4]],
+		"score2": [6, 6, [7, 7]],
+		"winner": "team2",
+		"round": 6
+	},
+	{
+		"id": 320231701,
+		"team1": "C. Alcaraz",
+		"team2": "N. Djokovic",
+		"score1": [1, [7, 8], 6, 3, 6],
+		"score2": [6, [6, 6], 1, 6, 4],
+		"winner": "team1",
+		"round": 7
+	}
+]

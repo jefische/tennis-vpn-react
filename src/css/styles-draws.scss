@@ -8,7 +8,7 @@ body {
 .roundGroup {
 	margin-right: 25px;
 	max-width: 400px;
-	width: calc(33.3333%);
+	width: calc(100%);
 
 	.drawGroup {
 		position: relative;
@@ -73,13 +73,13 @@ body {
 }
 
 .columnA {
-	// margin-left: 50px;
 	.drawGroup {
 		margin-bottom: 50px;
 	}
 }
 
 .columnB {
+	display: none;
 	.drawGroup:first-of-type {
 		margin-top: 72px;
 	}
@@ -97,6 +97,7 @@ body {
 }
 
 .columnC {
+	display: none;
 	.drawGroup:first-of-type {
 		margin-top: 215px;
 	}
@@ -113,43 +114,104 @@ body {
 	}
 }
 
+.columnE {
+	visibility: hidden;
+}
+
 .buttonGroup {
+	display: none;
 	margin-top: 2rem;
 }
 
-.carousel {
-	// height: 100%;
-	margin: auto;
-	max-width: calc(95%);
-}
-
-.flickity-viewport {
-	// height: 100%;
-	margin: auto;
-	max-width: calc(90%);
-	// overflow-y: visible;
-}
-
-.flickity-viewport .is-selected {
-	// overflow-y: visible;
-}
-
-.flickity-viewport::-webkit-scrollbar {
-	display: none;
+.carousel-container {
+	padding-left: 100px;
 }
 
 /* position outside */
-.flickity-prev-next-button.previous {
+.prev-next-button.previous {
+	height: 44px;
+	width: 44px;
 	position: fixed;
-	left: 5px;
-	top: 280px;
+	left: 10px;
+	top: 220px;
+	z-index: 10;
+	border-radius: 50px;
+	cursor: pointer;
 }
-.flickity-prev-next-button.next {
+.prev-next-button.next {
+	height: 44px;
+	width: 44px;
 	position: fixed;
-	right: 5px;
-	top: 280px;
+	right: 10px;
+	top: 220px;
+	z-index: 10;
+	border-radius: 50px;
+	cursor: pointer;
 }
 
-.whitespace {
-	height: 100px;
+.round-headers {
+	margin: auto;
+	max-width: calc(85.5%);
+	h3 {
+		max-width: 400px;
+		width: calc(100%);
+	}
+	.pad-1 {
+		padding-left: 30px;
+	}
+	.pad-2 {
+		padding-left: 90px;
+		display: none;
+	}
+	.pad-3 {
+		padding-left: 140px;
+		display: none;
+	}
+}
+
+@media (min-width: 900px) {
+	.buttonGroup {
+		display: flex;
+	}
+	.roundGroup {
+		margin-right: 25px;
+		max-width: 400px;
+		width: calc(50%);
+	}
+	.round-headers {
+		margin: auto;
+		max-width: calc(85.5%);
+		h3 {
+			max-width: 400px;
+			width: calc(50%);
+		}
+		.pad-2 {
+			display: block;
+		}
+	}
+	.columnB {
+		display: block;
+	}
+}
+
+@media (min-width: 1150px) {
+	.roundGroup {
+		margin-right: 25px;
+		max-width: 400px;
+		width: calc(33.3333%);
+	}
+	.round-headers {
+		margin: auto;
+		max-width: calc(85.5%);
+		h3 {
+			max-width: 400px;
+			width: calc(33.3333%);
+		}
+		.pad-3 {
+			display: block;
+		}
+	}
+	.columnC {
+		display: block;
+	}
 }

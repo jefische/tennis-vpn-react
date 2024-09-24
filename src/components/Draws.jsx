@@ -3,94 +3,144 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import DrawGroup from "./DrawGroup";
 import { atpWimbledonScores, atpWimbledonScores2023 } from "../../data/scoresData";
-import "flickity/dist/flickity.min.css";
-import Flickity from "react-flickity-component";
-
-const flickityOptions = {
-	pageDots: false,
-	cellAlign: "left",
-	groupCells: 1,
-	adaptiveHeight: true,
-	// reloadOnUpdate: true,
-	draggable: true,
-	freeScroll: true,
-};
 
 export default function Draws({ title, updated, children }) {
-	const [selection, setSelection] = useState({});
+	const [roundCounter, setCounter] = useState(0);
+	const [columnARound, setRoundA] = useState(1);
+	const [columnBRound, setRoundB] = useState(2);
+	const [columnCRound, setRoundC] = useState(3);
 	const [displayRoundButtons, setRoundButtons] = useState(false);
 	const [displayDraw, setDisplay] = useState("invisible");
 	const ref = useRef(null);
 
+	const titleA = document.querySelector("h3.pad-1");
+	const titleB = document.querySelector("h3.pad-2");
+	const titleC = document.querySelector("h3.pad-3");
+
 	function handleRoundClick(e) {
-		ref.current.select(e.target.name);
 		window.scrollTo({ top: 0, behavior: "smooth" });
+		setCounter(Number(e.currentTarget.name));
 
-		ref.current.selectedElement.classList.remove("columnA");
-		ref.current.selectedElement.classList.remove("columnB");
-		ref.current.selectedElement.classList.remove("columnC");
-		ref.current.selectedElement.classList.add("columnA");
+		setRoundA(Number(e.currentTarget.name) + 1);
+		setRoundB(Number(e.currentTarget.name) + 2);
+		setRoundC(Number(e.currentTarget.name) + 3);
 
-		if (ref.current.getCellElements()[Number(e.target.name) + 1]) {
-			ref.current.getCellElements()[Number(e.target.name) + 1].classList.remove("columnA");
-			ref.current.getCellElements()[Number(e.target.name) + 1].classList.remove("columnB");
-			ref.current.getCellElements()[Number(e.target.name) + 1].classList.remove("columnC");
-			ref.current.getCellElements()[Number(e.target.name) + 1].classList.add("columnB");
-		}
-
-		if (ref.current.getCellElements()[Number(e.target.name) + 2]) {
-			ref.current.getCellElements()[Number(e.target.name) + 2].classList.remove("columnA");
-			ref.current.getCellElements()[Number(e.target.name) + 2].classList.remove("columnB");
-			ref.current.getCellElements()[Number(e.target.name) + 2].classList.remove("columnC");
-			ref.current.getCellElements()[Number(e.target.name) + 2].classList.add("columnC");
-		}
-
-		if (ref.current.getCellElements()[Number(e.target.name) - 1]) {
-			ref.current.getCellElements()[Number(e.target.name) - 1].classList.remove("columnA");
-			ref.current.getCellElements()[Number(e.target.name) - 1].classList.remove("columnB");
-			ref.current.getCellElements()[Number(e.target.name) - 1].classList.remove("columnC");
+		switch (roundCounter) {
+			case 0:
+				titleA.innerHTML = "1st Round";
+				titleB.innerHTML = "2nd Round";
+				titleC.innerHTML = "3rd Round";
+				break;
+			case 1:
+				titleA.innerHTML = "2nd Round";
+				titleB.innerHTML = "3rd Round";
+				titleC.innerHTML = "4th Round";
+				break;
+			case 2:
+				titleA.innerHTML = "3rd Round";
+				titleB.innerHTML = "4th Round";
+				titleC.innerHTML = "Quarterfinals";
+				break;
+			case 3:
+				titleA.innerHTML = "4th Round";
+				titleB.innerHTML = "Quarterfinals";
+				titleC.innerHTML = "Semifinals";
+				break;
+			case 4:
+				titleA.innerHTML = "Quarterfinals";
+				titleB.innerHTML = "Semifinals";
+				titleC.innerHTML = "Finals";
+				break;
+			case 5:
+				titleA.innerHTML = "Semifinals";
+				titleB.innerHTML = "Finals";
+				titleC.innerHTML = "";
+				break;
+			case 6:
+				titleA.innerHTML = "Finals";
+				titleB.innerHTML = "";
+				titleC.innerHTML = "";
+				break;
 		}
 	}
 
 	useEffect(() => {
-		const nextBtns = document.querySelector(".flickity-prev-next-button.next");
-		const prevBtns = document.querySelector(".flickity-prev-next-button.previous");
+		const nextBtns = document.querySelector(".prev-next-button.next");
+		const prevBtns = document.querySelector(".prev-next-button.previous");
+		const titleA = document.querySelector("h3.pad-1");
+		const titleB = document.querySelector("h3.pad-2");
+		const titleC = document.querySelector("h3.pad-3");
+		const colA = document.querySelector(".columnA");
+		const colB = document.querySelector(".columnB");
+		const colC = document.querySelector(".columnC");
 
-		function handleHorizontalScroll(e) {
-			ref.current.selectedElement.classList.remove("columnA");
-			ref.current.selectedElement.classList.remove("columnB");
-			ref.current.selectedElement.classList.remove("columnC");
-			ref.current.selectedElement.classList.add("columnA");
+		switch (roundCounter) {
+			case 0:
+				titleA.innerHTML = "1st Round";
+				titleB.innerHTML = "2nd Round";
+				titleC.innerHTML = "3rd Round";
+				break;
+			case 1:
+				titleA.innerHTML = "2nd Round";
+				titleB.innerHTML = "3rd Round";
+				titleC.innerHTML = "4th Round";
+				break;
+			case 2:
+				titleA.innerHTML = "3rd Round";
+				titleB.innerHTML = "4th Round";
+				titleC.innerHTML = "Quarterfinals";
+				break;
+			case 3:
+				titleA.innerHTML = "4th Round";
+				titleB.innerHTML = "Quarterfinals";
+				titleC.innerHTML = "Semifinals";
+				break;
+			case 4:
+				titleA.innerHTML = "Quarterfinals";
+				titleB.innerHTML = "Semifinals";
+				titleC.innerHTML = "Finals";
+				break;
+			case 5:
+				titleA.innerHTML = "Semifinals";
+				titleB.innerHTML = "Finals";
+				titleC.innerHTML = "";
+				break;
+			case 6:
+				titleA.innerHTML = "Finals";
+				titleB.innerHTML = "";
+				titleC.innerHTML = "";
+				break;
+		}
 
-			let index = ref.current.selectedIndex;
-
-			if (ref.current.getCellElements()[index + 1]) {
-				ref.current.getCellElements()[index + 1].classList.remove("columnA");
-				ref.current.getCellElements()[index + 1].classList.remove("columnB");
-				ref.current.getCellElements()[index + 1].classList.remove("columnC");
-				ref.current.getCellElements()[index + 1].classList.add("columnB");
-			}
-
-			if (ref.current.getCellElements()[index + 2]) {
-				ref.current.getCellElements()[index + 2].classList.remove("columnA");
-				ref.current.getCellElements()[index + 2].classList.remove("columnB");
-				ref.current.getCellElements()[index + 2].classList.remove("columnC");
-				ref.current.getCellElements()[index + 2].classList.add("columnC");
-			}
-
-			if (ref.current.getCellElements()[index - 1]) {
-				ref.current.getCellElements()[index - 1].classList.remove("columnA");
-				ref.current.getCellElements()[index - 1].classList.remove("columnB");
-				ref.current.getCellElements()[index - 1].classList.remove("columnC");
-			}
+		if (columnARound == 7) {
+			colB.classList.add("invisible");
+			colC.classList.add("invisible");
+		} else if (columnBRound == 7) {
+			colB.classList.remove("invisible");
+			colC.classList.add("invisible");
+		} else {
+			colB.classList.remove("invisible");
+			colC.classList.remove("invisible");
+		}
+		function handleNextScroll(e) {
+			setCounter(Math.min(roundCounter + 1, 6));
+			setRoundA(Math.min(columnARound + 1, 7));
+			setRoundB(Math.min(columnBRound + 1, 8));
+			setRoundC(Math.min(columnCRound + 1, 9));
+		}
+		function handlePrevScroll(e) {
+			setCounter(Math.max(roundCounter - 1, 0));
+			setRoundA(Math.max(columnARound - 1, 1));
+			setRoundB(Math.max(columnBRound - 1, 2));
+			setRoundC(Math.max(columnCRound - 1, 3));
 		}
 
 		if (ref.current) {
-			nextBtns.addEventListener("click", handleHorizontalScroll);
-			prevBtns.addEventListener("click", handleHorizontalScroll);
+			nextBtns.addEventListener("click", handleNextScroll);
+			prevBtns.addEventListener("click", handlePrevScroll);
 			return () => {
-				nextBtns.removeEventListener("click", handleHorizontalScroll);
-				prevBtns.removeEventListener("click", handlePhandleHorizontalScrollrevScroll);
+				nextBtns.removeEventListener("click", handleNextScroll);
+				prevBtns.removeEventListener("click", handlePrevScroll);
 			};
 		}
 	});
@@ -117,15 +167,14 @@ export default function Draws({ title, updated, children }) {
 				>
 					<label htmlFor="slams">Tournament</label>
 					<select id="slams" name="slams" className="mx-2">
-						<option value="AO">Australian Open</option>
-						<option value="FO">French Open</option>
-						<option value="W">Wimbledon</option>
-						<option value="USO">US Open</option>
-					</select>
-					<label htmlFor="gender">Men/Women</label>
-					<select id="gender" name="gender" className="mx-2">
-						<option value="men">Men</option>
-						<option value="women">Women</option>
+						<option value="AOM">Australian Open (M)</option>
+						<option value="AOW">Australian Open (W)</option>
+						<option value="FOM">French Open (M)</option>
+						<option value="FOW">French Open (W)</option>
+						<option value="WM">Wimbledon (M)</option>
+						<option value="WW">Wimbledon (W)</option>
+						<option value="USOM">US Open (M)</option>
+						<option value="USOW">US Open (W)</option>
 					</select>
 					<label htmlFor="year">Year</label>
 					<select name="year" className="mx-2">
@@ -137,7 +186,7 @@ export default function Draws({ title, updated, children }) {
 					</button>
 				</form>
 				{displayRoundButtons ? (
-					<div className="buttonGroup d-flex justify-content-center px-4">
+					<div className="buttonGroup justify-content-center px-4">
 						<button className="btn btn-success mx-3 text-center btn-round" onClick={handleRoundClick} name="0">
 							1st Round
 						</button>
@@ -164,45 +213,28 @@ export default function Draws({ title, updated, children }) {
 					<div></div>
 				)}
 			</div>
-
-			<div className="d-flex pt-5 border border-black sticky-top" style={{ top: "30%" }}>
-				<h3 className="text-center ps-3" style={{ flexBasis: "100%" }}>
-					headers
-				</h3>
+			<div className="mt-2 sticky-top bg-body w-100" style={{ top: "33%" }}>
+				<div className={`d-flex border-bottom round-headers ${displayDraw}`}>
+					<h3 className="text-center pad-1">1st Round</h3>
+					<h3 className="text-center pad-2">2nd Round</h3>
+					<h3 className="text-center pad-3">3rd Round</h3>
+				</div>
 			</div>
-
-			<Flickity className={`carousel px-4 pt-5 ${displayDraw}`} options={flickityOptions} flickityRef={(c) => (ref.current = c)}>
-				<div className="columnA roundGroup">
-					<h3 className="text-center">1st Round</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={1} connector={false} />
+			<div className="carousel-container">
+				<div className={`d-flex px-4 pt-5 ${displayDraw}`} ref={ref}>
+					<div className="columnA roundGroup">
+						<DrawGroup scores={atpWimbledonScores2023} round={columnARound} connector={false} />
+					</div>
+					<div className="columnB roundGroup">
+						<DrawGroup scores={atpWimbledonScores2023} round={columnBRound} connector={true} />
+					</div>
+					<div className="columnC roundGroup">
+						<DrawGroup scores={atpWimbledonScores2023} round={columnCRound} connector={true} />
+					</div>
 				</div>
-				<div className="columnB roundGroup">
-					<h3 className="text-center">2nd Round</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={2} connector={true} />
-				</div>
-				<div className="columnC roundGroup">
-					<h3 className="text-center">3rd Round</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={3} connector={true} />
-				</div>
-				<div className="roundGroup">
-					<h3 className="text-center">4th Round</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={4} connector={true} />
-				</div>
-				<div className="roundGroup">
-					<h3 className="text-center">Quarterfinals</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={5} connector={true} />
-				</div>
-				<div className="roundGroup">
-					<h3 className="text-center">Semifinals</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={6} connector={true} />
-				</div>
-				<div className="roundGroup">
-					<h3 className="text-center">Finals</h3>
-					<DrawGroup scores={atpWimbledonScores2023} round={7} connector={true} />
-				</div>
-			</Flickity>
-
-			{/* <div className="whitespace"></div> */}
+				<button className="prev-next-button next"></button>
+				<button className="prev-next-button previous"></button>
+			</div>
 		</>
 	);
 }
