@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
 // import { faForward as farFaForward } from "@fortawesome/free-regular-svg-icons";
 import DrawGroup from "./DrawGroup";
-import { atpWimbledonScores, atpWimbledonScores2023 } from "../../data/scoresData";
+import { atpWimbledonScores2023, wtaWimbledonScores2023 } from "../../data/scoresData";
 
 export default function Draws({ title, updated, children }) {
 	const [roundCounter, setCounter] = useState(0);
@@ -162,9 +162,11 @@ export default function Draws({ title, updated, children }) {
 						const slam = formData.get("slams");
 						const year = formData.get("year");
 						{
-							formData.get("slams") == "WM"
+							slam == "WM"
 								? setSlamData(atpWimbledonScores2023) & console.log("setting slam data...") & setDisplay("visible")
-								: console.log("no slam data...");
+								: slam == "WW"
+									? setSlamData(wtaWimbledonScores2023) & setDisplay("visible")
+									: console.log("no slam data...");
 						}
 					}}
 				>
