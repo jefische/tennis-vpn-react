@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
 // import { faForward as farFaForward } from "@fortawesome/free-regular-svg-icons";
 import DrawGroup from "./DrawGroup";
-import { atpWimbledonScores2023, wtaWimbledonScores2023 } from "../../data/scoresData";
+import { slamScoresArray } from "../../data/scoresData";
 
 export default function Draws({ title, updated, children }) {
 	const [roundCounter, setCounter] = useState(0);
@@ -11,6 +11,7 @@ export default function Draws({ title, updated, children }) {
 	const [columnBRound, setRoundB] = useState(2);
 	const [columnCRound, setRoundC] = useState(3);
 	const [displayDraw, setDisplay] = useState("invisible");
+	const [displayH3, setH3] = useState(false);
 	const [slamData, setSlamData] = useState([]);
 	const ref = useRef(null);
 
@@ -157,17 +158,20 @@ export default function Draws({ title, updated, children }) {
 					method="get"
 					onSubmit={(e) => {
 						e.preventDefault();
-
 						const formData = new FormData(e.target);
 						const slam = formData.get("slams");
 						const year = formData.get("year");
-						{
-							slam == "WM"
-								? setSlamData(atpWimbledonScores2023) & console.log("setting slam data...") & setDisplay("visible")
-								: slam == "WW"
-									? setSlamData(wtaWimbledonScores2023) & setDisplay("visible")
-									: console.log("no slam data...");
+						const result = slamScoresArray.filter((x) => {
+							return x.id == slam + year;
+						});
+						if (result.length > 0) {
+							setSlamData(result[0].scores);
+							setDisplay("visible");
+						} else {
+							console.log("No slam data...");
+							setDisplay("invisible");
 						}
+						setH3(true);
 					}}
 				>
 					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="slams">
@@ -189,6 +193,14 @@ export default function Draws({ title, updated, children }) {
 					<select className="form-select mx-2 w-auto" name="year">
 						<option value="2024">2024</option>
 						<option value="2023">2023</option>
+						<option value="2022">2022</option>
+						<option value="2021">2021</option>
+						<option value="2020">2020</option>
+						<option value="2019">2019</option>
+						<option value="2018">2018</option>
+						<option value="2017">2017</option>
+						<option value="2016">2016</option>
+						<option value="2015">2015</option>
 					</select>
 					<button className="btn btn-success mx-3" type="submit">
 						Submit
@@ -219,6 +231,8 @@ export default function Draws({ title, updated, children }) {
 					</button>
 				</div>
 			</div>
+			{/* container-draw */}
+
 			<div className="round-headers-container sticky-top bg-body w-100" style={{ top: "33%" }}>
 				<div className={`d-flex border-bottom round-headers ${displayDraw}`}>
 					<h3 className="text-center pad-1">1st Round</h3>
@@ -226,6 +240,12 @@ export default function Draws({ title, updated, children }) {
 					<h3 className="text-center pad-3">3rd Round</h3>
 				</div>
 			</div>
+			{/* round-headers */}
+
+			<h3 className={`text-center ${displayDraw == "visible" ? "invisible" : "visible"} ${displayH3 ? "d-block" : "d-none"}`}>
+				Data not yet available
+			</h3>
+
 			<div className="carousel-container">
 				<div className={`d-flex px-4 pt-5 ${displayDraw}`} ref={ref}>
 					<div className="columnA roundGroup">
@@ -245,6 +265,7 @@ export default function Draws({ title, updated, children }) {
 					<FontAwesomeIcon icon={faBackward} size="xl" style={{ color: "#1e860a" }} />
 				</button>
 			</div>
+			{/* carousel-container */}
 		</>
 	);
 }
