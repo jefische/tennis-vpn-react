@@ -74,6 +74,7 @@ export default function Draws({ title, updated, children }) {
 		const titleC = document.querySelector("h3.pad-3");
 		const colB = document.querySelector(".columnB");
 		const colC = document.querySelector(".columnC");
+		const bodyTag = document.querySelector("body");
 
 		switch (roundCounter) {
 			case 0:
@@ -148,7 +149,7 @@ export default function Draws({ title, updated, children }) {
 
 	return (
 		<>
-			<div className="container-draw d-flex flex-column pt-4 pb-4 sticky-top z-1 bg-body" style={{ top: "6%" }}>
+			<div className="container-draw d-flex flex-column pt-4 sticky-top z-1 bg-body" style={{ top: "56px" }}>
 				<h1 className="ps-3 text-center" style={{ flexBasis: "100%" }}>
 					{title}
 				</h1>
@@ -167,11 +168,15 @@ export default function Draws({ title, updated, children }) {
 						if (result.length > 0) {
 							setSlamData(result[0].scores);
 							setDisplay("visible");
+							setH3(false);
+							document.body.style.overflow = "auto";
 						} else {
 							console.log("No slam data...");
 							setDisplay("invisible");
+							setH3(true);
+							document.body.style.overflow = "hidden";
 						}
-						setH3(true);
+						window.scrollTo({ top: 0, behavior: "instant" });
 					}}
 				>
 					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="slams">
@@ -233,7 +238,7 @@ export default function Draws({ title, updated, children }) {
 			</div>
 			{/* container-draw */}
 
-			<div className="round-headers-container sticky-top bg-body w-100" style={{ top: "33%" }}>
+			<div className="round-headers-container sticky-top bg-body w-100" style={{ top: "314px" }}>
 				<div className={`d-flex border-bottom round-headers ${displayDraw}`}>
 					<h3 className="text-center pad-1">1st Round</h3>
 					<h3 className="text-center pad-2">2nd Round</h3>
