@@ -5,6 +5,7 @@ import { Fragment } from "react";
 export default function DrawGroup({ scores, round, connector }) {
 	let roundScores;
 	{
+		// If no scores are available for a particular tournament year, return an empty array
 		scores == null ? (roundScores = [{}]) : (roundScores = scores.filter((x) => x.round == round));
 	}
 	return (
@@ -29,16 +30,22 @@ export default function DrawGroup({ scores, round, connector }) {
 										<div className="d-flex match-score">
 											{x.score1.map((y, index) => {
 												return (
-													<div className="set" key={index}>
-														{y.length ? (
-															<>
-																<span className="score">{y[0]}</span>
-																<span className="tiebreak">{y[1]}</span>
-															</>
+													<>
+														{y == "Walkover" ? (
+															<div className="set-walkover">{y}</div>
 														) : (
-															<span className="score">{y}</span>
+															<div className="set" key={index}>
+																{y.length ? (
+																	<>
+																		<span className="score">{y[0]}</span>
+																		<span className="tiebreak">{y[1]}</span>
+																	</>
+																) : (
+																	<span className="score">{y}</span>
+																)}
+															</div>
 														)}
-													</div>
+													</>
 												);
 											})}
 										</div>
@@ -58,16 +65,22 @@ export default function DrawGroup({ scores, round, connector }) {
 										<div className="d-flex match-score">
 											{x.score2.map((y, index) => {
 												return (
-													<div className="set" key={index}>
-														{y.length ? (
-															<>
-																<span className="score">{y[0]}</span>
-																<span className="tiebreak">{y[1]}</span>
-															</>
+													<>
+														{y == "Walkover" ? (
+															<div className="set-walkover">{y}</div>
 														) : (
-															<span className="score">{y}</span>
+															<div className="set" key={index}>
+																{y.length ? (
+																	<>
+																		<span className="score">{y[0]}</span>
+																		<span className="tiebreak">{y[1]}</span>
+																	</>
+																) : (
+																	<span className="score">{y}</span>
+																)}
+															</div>
 														)}
-													</div>
+													</>
 												);
 											})}
 										</div>
