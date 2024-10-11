@@ -110,7 +110,7 @@ export function SlamResults() {
 	}, []);
 	return (
 		<>
-			<Draws title="Select a tournament draw"></Draws>
+			<Draws title="Select a Tournament Draw"></Draws>
 		</>
 	);
 }

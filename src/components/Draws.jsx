@@ -15,9 +15,9 @@ export default function Draws({ title, updated, children }) {
 	const [slamData, setSlamData] = useState([]);
 	const ref = useRef(null);
 
-	const titleA = document.querySelector("h3.pad-1");
-	const titleB = document.querySelector("h3.pad-2");
-	const titleC = document.querySelector("h3.pad-3");
+	const titleA = document.querySelector(".pad-1");
+	const titleB = document.querySelector(".pad-2");
+	const titleC = document.querySelector(".pad-3");
 
 	function handleRoundClick(e) {
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -69,9 +69,9 @@ export default function Draws({ title, updated, children }) {
 	useEffect(() => {
 		const nextBtns = document.querySelector(".prev-next-button.next");
 		const prevBtns = document.querySelector(".prev-next-button.previous");
-		const titleA = document.querySelector("h3.pad-1");
-		const titleB = document.querySelector("h3.pad-2");
-		const titleC = document.querySelector("h3.pad-3");
+		const titleA = document.querySelector(".pad-1");
+		const titleB = document.querySelector(".pad-2");
+		const titleC = document.querySelector(".pad-3");
 		const colB = document.querySelector(".columnB");
 		const colC = document.querySelector(".columnC");
 		const bodyTag = document.querySelector("body");
@@ -149,13 +149,10 @@ export default function Draws({ title, updated, children }) {
 
 	return (
 		<>
-			<div className="container-draw d-flex flex-column pt-4 sticky-top z-1 bg-body" style={{ top: "56px" }}>
-				<h1 className="ps-3 text-center" style={{ flexBasis: "100%" }}>
-					{title}
-				</h1>
+			<div className="draw-selection-container">
+				<h3 className="text-center">{title}</h3>
 
 				<form
-					className="d-flex mt-3 justify-content-center"
 					method="get"
 					onSubmit={(e) => {
 						e.preventDefault();
@@ -179,10 +176,8 @@ export default function Draws({ title, updated, children }) {
 						window.scrollTo({ top: 0, behavior: "instant" });
 					}}
 				>
-					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="slams">
-						Tournament
-					</label>
-					<select className="form-select mx-2 w-auto" id="slams" name="slams">
+					<label htmlFor="slams">Tournament</label>
+					<select className="form-select" id="slams" name="slams">
 						<option value="AOM">Australian Open (M)</option>
 						<option value="AOW">Australian Open (W)</option>
 						<option value="FOM">French Open (M)</option>
@@ -192,10 +187,8 @@ export default function Draws({ title, updated, children }) {
 						<option value="USOM">US Open (M)</option>
 						<option value="USOW">US Open (W)</option>
 					</select>
-					<label className="d-flex align-items-center mx-3 fw-bold" htmlFor="year">
-						Year
-					</label>
-					<select className="form-select mx-2 w-auto" name="year">
+					<label htmlFor="year">Year</label>
+					<select className="form-select" name="year">
 						<option value="2024">2024</option>
 						<option value="2023">2023</option>
 						<option value="2022">2022</option>
@@ -207,49 +200,48 @@ export default function Draws({ title, updated, children }) {
 						<option value="2016">2016</option>
 						<option value="2015">2015</option>
 					</select>
-					<button className="btn btn-success mx-3" type="submit">
+					<button className="btn btn-success" type="submit">
 						Submit
 					</button>
 				</form>
+			</div>
+			{/* draw-selection-container */}
 
-				<div className={`buttonGroup d-flex justify-content-center px-4 mt-4 ${displayDraw}`}>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="0">
+			<div className={`round-headers-container ${displayDraw}`}>
+				<div className="buttonGroup">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="0">
 						1st Round
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="1">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="1">
 						2nd Round
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="2">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="2">
 						3rd Round
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="3">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="3">
 						4th Round
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="4">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="4">
 						Quarterfinals
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="5">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="5">
 						Semifinals
 					</button>
-					<button className="btn btn-outline-success mx-3 text-center btn-round" onClick={handleRoundClick} name="6">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="6">
 						Finals
 					</button>
 				</div>
-			</div>
-			{/* container-draw */}
-
-			<div className="round-headers-container sticky-top bg-body w-100" style={{ top: "314px" }}>
-				<div className={`d-flex border-bottom round-headers ${displayDraw}`}>
-					<h3 className="text-center pad-1">1st Round</h3>
-					<h3 className="text-center pad-2">2nd Round</h3>
-					<h3 className="text-center pad-3">3rd Round</h3>
+				<div className={`d-flex border-bottom round-headers`}>
+					<h4 className="text-center pad-1">1st Round</h4>
+					<h4 className="text-center pad-2">2nd Round</h4>
+					<h4 className="text-center pad-3">3rd Round</h4>
 				</div>
 			</div>
 			{/* round-headers */}
 
-			<h3 className={`text-center ${displayDraw == "visible" ? "invisible" : "visible"} ${displayH3 ? "d-block" : "d-none"}`}>
+			<h4 className={`text-center ${displayDraw == "visible" ? "invisible" : "visible"} ${displayH3 ? "d-block" : "d-none"}`}>
 				Data not yet available
-			</h3>
+			</h4>
 
 			<div className="carousel-container">
 				<div className={`d-flex px-4 pt-5 ${displayDraw}`} ref={ref}>

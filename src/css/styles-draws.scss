@@ -1,4 +1,4 @@
-/* Draws */
+/****************** Draws ******************* */
 
 html,
 body {
@@ -6,68 +6,143 @@ body {
 	width: 100%;
 }
 
-.roundGroup {
-	margin-right: 25px;
-	max-width: 400px;
-	width: calc(100%);
+.draw-selection-container {
+	background-color: rgba(255, 255, 255, 1);
+	margin: auto;
+	max-width: 95%;
+	padding-top: 24px;
+	form {
+		display: flex;
+		font-size: 0.875rem;
+		justify-content: center;
+		margin-top: 16px;
+		label {
+			font-weight: 600;
+			margin: auto 16px;
+		}
+		select {
+			font-size: 0.875rem;
+			margin: 0 8px;
+			width: auto;
+		}
+		button {
+			font-size: 0.875rem;
+			height: 30px;
+			line-height: 0px;
+			margin: 0 16px;
+		}
+	}
+}
 
-	.drawGroup {
-		position: relative;
-		.matchbox {
-			border-left: 5px solid green;
-			height: 94px;
+.round-headers-container {
+	background-color: rgba(255, 255, 255, 1);
+	position: sticky;
+	top: 56px;
+	z-index: 1;
 
-			.team-info {
-				padding: 10px;
+	.buttonGroup {
+		display: flex;
+		height: 100px;
+		justify-content: center;
+		padding: 24px;
+		// visibility: hidden;
+		button {
+			font-size: 0.875rem;
+			height: 30px;
+			line-height: 0px;
+			margin: 0 16px;
+			width: auto;
+		}
+	}
 
-				.name {
-					font-weight: 500;
-				}
+	.round-headers {
+		margin: auto;
+		max-width: calc(85.5%);
+		h4 {
+			max-width: 400px;
+			width: calc(100%);
+		}
+		.pad-1 {
+			padding-left: 30px;
+		}
+		.pad-2 {
+			padding-left: 90px;
+			display: none;
+		}
+		.pad-3 {
+			padding-left: 140px;
+			display: none;
+		}
+	}
+}
 
-				.check-icon {
-					margin-right: 25px;
-					width: 20px;
-				}
-				.match-score {
-					width: 100px;
+.carousel-container {
+	font-size: 0.875rem;
+	padding-left: 100px;
 
-					.set {
+	.roundGroup {
+		margin-right: 25px;
+		max-width: 400px;
+		width: calc(100%);
+
+		.drawGroup {
+			position: relative;
+			.matchbox {
+				border-left: 5px solid green;
+				height: 94px;
+
+				.team-info {
+					padding: 10px;
+
+					.name {
+						font-weight: 500;
+					}
+
+					.check-icon {
+						margin-right: 25px;
 						width: 20px;
-						.score {
-							font-size: 17px;
-							color: navy;
-							font-weight: 600;
-						}
-						.tiebreak {
-							color: navy;
-							font-weight: 600;
-							position: relative;
-							top: -9px;
-							font-size: 10px;
+					}
+					.match-score {
+						width: 100px;
+
+						.set {
+							width: 20px;
+							.score {
+								font-size: 1rem;
+								color: navy;
+								font-weight: 600;
+							}
+							.tiebreak {
+								color: navy;
+								font-weight: 600;
+								position: relative;
+								top: -9px;
+								font-size: 10px;
+							}
 						}
 					}
 				}
-			}
 
-			.team-one {
-				border-bottom: 1px solid;
-				border-bottom-color: rgba(0, 0, 0, 0.176);
+				.team-one {
+					border-bottom: 1px solid;
+					border-bottom-color: rgba(0, 0, 0, 0.176);
+				}
 			}
-		}
-		.connector-round {
-			display: flex;
-			position: absolute;
+			.connector-round {
+				display: flex;
+				position: absolute;
 
-			.left-side {
-				border-top: 1px solid green;
-				border-bottom: 1px solid green;
-				border-right: 1px solid green;
-				width: 50%;
-			}
-			.right-side {
-				border-bottom: 1px solid green;
-				height: 50%;
-				width: 50%;
+				.left-side {
+					border-top: 1px solid green;
+					border-bottom: 1px solid green;
+					border-right: 1px solid green;
+					width: 50%;
+				}
+				.right-side {
+					border-bottom: 1px solid green;
+					height: 50%;
+					width: 50%;
+				}
 			}
 		}
 	}
@@ -119,24 +194,7 @@ body {
 	visibility: hidden;
 }
 
-.buttonGroup {
-	height: 100px;
-	margin-top: 2rem;
-	visibility: hidden;
-	button {
-		align-items: center;
-		display: flex;
-		font-size: 12px;
-		height: 30px;
-		width: auto;
-	}
-}
-
-.carousel-container {
-	padding-left: 100px;
-}
-
-/* position outside */
+/*********** position outside *****************/
 .prev-next-button.previous {
 	border: none;
 	border-radius: 50px;
@@ -160,32 +218,10 @@ body {
 	z-index: 10;
 }
 
-.round-headers-container {
-	.round-headers {
-		margin: auto;
-		max-width: calc(85.5%);
-		h3 {
-			max-width: 400px;
-			width: calc(100%);
-		}
-		.pad-1 {
-			padding-left: 30px;
-		}
-		.pad-2 {
-			padding-left: 90px;
-			display: none;
-		}
-		.pad-3 {
-			padding-left: 140px;
-			display: none;
-		}
-	}
-}
-
 @media (min-width: 900px) {
 	.buttonGroup {
 		padding-bottom: 50px;
-		visibility: visible;
+		// visibility: visible;
 	}
 	.roundGroup {
 		margin-right: 25px;
@@ -196,7 +232,7 @@ body {
 		.round-headers {
 			margin: auto;
 			max-width: calc(85.5%);
-			h3 {
+			h4 {
 				max-width: 400px;
 				width: calc(50%);
 			}
@@ -229,7 +265,7 @@ body {
 		.round-headers {
 			margin: auto;
 			max-width: calc(85.5%);
-			h3 {
+			h4 {
 				max-width: 400px;
 				width: calc(33.3333%);
 			}
