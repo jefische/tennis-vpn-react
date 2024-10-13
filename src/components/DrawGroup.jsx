@@ -5,7 +5,7 @@ import { Fragment } from "react";
 export default function DrawGroup({ scores, round, connector }) {
 	let roundScores;
 	{
-		// If no scores are available for a particular tournament year, return an empty array
+		// If no scores are available for a particular tournament and year, return an empty array
 		scores == null ? (roundScores = [{}]) : (roundScores = scores.filter((x) => x.round == round));
 	}
 	return (
@@ -32,7 +32,7 @@ export default function DrawGroup({ scores, round, connector }) {
 												return (
 													<>
 														{y == "Walkover" ? (
-															<div className="set-walkover">{y}</div>
+															<div className="walkover">{y}</div>
 														) : (
 															<div className="set" key={index}>
 																{y.length ? (
@@ -67,7 +67,7 @@ export default function DrawGroup({ scores, round, connector }) {
 												return (
 													<>
 														{y == "Walkover" ? (
-															<div className="set-walkover">{y}</div>
+															<div className="walkover">{y}</div>
 														) : (
 															<div className="set" key={index}>
 																{y.length ? (
