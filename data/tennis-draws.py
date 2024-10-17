@@ -10,7 +10,7 @@ import json
 ############################
 # set working directory
 ############################
-os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data\wimbledon")
+os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data\us-open")
 os.getcwd()
 
 ######################
@@ -25,9 +25,12 @@ pd.set_option('display.max_colwidth', None)
 #Load data
 ##########################
 #df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_mens_2024.csv")
-df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_womens_2024.csv")
-df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-matches.csv")
-df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-points.csv")
+#df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_womens_2024.csv")
+#df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-matches.csv")
+#df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-points.csv")
+df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/usopen_mens_2024.csv")
+df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/2024-usopen-matches.csv")
+df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/2024-usopen-points.csv")
 #df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_mens_2023.csv")
 #df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_womens_2023.csv")
 #df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2023-wimbledon-matches.csv")
@@ -156,8 +159,8 @@ df_order = df_order.reset_index(drop=True)
 
 ################################################################
 # Step 7 (a):
-# If necessary add walkovers into the df_order draw
-# between() is inclusive of the boundaries
+# If necessary add walkovers into the df_order draw.
+# between() is inclusive of the boundaries.
 ################################################################
 # ATP
 df_order[df_order['match_num'].between(1000, 1200)].shape # 64 matches
@@ -168,6 +171,7 @@ df_order[df_order['match_num'].between(1500, 1600)].shape # 3 matches
 df_order[df_order['match_num'].between(1600, 1700)].shape # 2 matches
 df_order[df_order['match_num'].between(1700, 1800)].shape # 1 matches
 
+#WTA
 df_order[df_order['match_num'].between(2000, 2200)].shape # 64 matches
 df_order[df_order['match_num'].between(2200, 2300)].shape # 32 matches
 df_order[df_order['match_num'].between(2300, 2400)].shape # 16 matches
@@ -476,16 +480,16 @@ for i in TB_list:
 
 # left_merged_2.head(12)
 
-#####################################################################################################################################
-# Rename all of the match id values to format tournament id, tournament year, match id (e.g. 2023-wimbledon-1101 would be 0320231101)
+#########################################################################################################################################
+# Rename all of the match id values to format: tournament id | tournament year | match id (e.g. 2023-wimbledon-1101 would be 0320231101)
 # 01 = Austrlian Open
 # 02 = French Open
 # 03 = Wimbledon
 # 04 = US Open
-#####################################################################################################################################
+#########################################################################################################################################
 
 for i in range(0,len(left_merged_2)):
-    left_merged_2.loc[i, 'match_num'] = int(str('032024')+str(left_merged_2.loc[i, 'match_num']))
+    left_merged_2.loc[i, 'match_num'] = int(str('042024')+str(left_merged_2.loc[i, 'match_num']))
 
 
 ######################################################
@@ -494,7 +498,7 @@ for i in range(0,len(left_merged_2)):
 # Update the range in j for loop (ATP Mens vs WTA Womens)
 ######################################################
 for i in range(0, len(left_merged_2)):
-    for j in range(1,4): #Mens to 6 and Womens to 4
+    for j in range(1,6): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
@@ -510,7 +514,7 @@ for i in range(0, len(left_merged_2)):
 
 ###################################################
 # Step 17:
-# Conver strings to integers
+# Convert strings to integers
 ###################################################
 left_merged_2['P1_1'] = left_merged_2['P1_1'].astype(int) # convert P1_1 score from float to integer
 left_merged_2['P1_1T'] = left_merged_2['P1_1T'].astype(int) # convert P1_1T score from float to integer
@@ -559,7 +563,7 @@ for i in range(0, len(left_merged_2)):
     elif left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player2']:
         left_merged_2.loc[i, 'WinnerTeam'] = 'team2'
 
-    for j in range(1,4): #Mens to 6 and Womens to 4
+    for j in range(1,6): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
@@ -584,12 +588,13 @@ for i in range(0, len(left_merged_2)):
 # left_merged_2.to_json('temp.json', orient='records', lines=True)
 #left_merged_2
 
-###############################################################
+##############################################################################
 # Step 20:
 # Grab necessary columns for ATP or WTA records
-###############################################################
-df_final=left_merged_2.loc[left_merged_2['match_num'] < 320242000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Round']] # ATP mens
-df_final=left_merged_2.loc[left_merged_2['match_num'] >= 320242000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Round']] # WTA womens
+# Update match_num to reflect tournament id (1, 2, 3, 4) and tournament year
+##############################################################################
+df_final=left_merged_2.loc[left_merged_2['match_num'] < 420242000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Round']] # ATP mens
+df_final=left_merged_2.loc[left_merged_2['match_num'] >= 420242000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Round']] # WTA womens
 df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Round' : 'round'}, inplace=True)
 #df_final.sort_values(by=['id'])
 #df_final
