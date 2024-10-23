@@ -20,13 +20,17 @@ export default function DrawGroup({ scores, round, connector }) {
 								<div className="card matchbox">
 									<div className="d-flex team-info team-one">
 										<div className="flex-fill name">{x.team1}</div>
-										<div className="check-icon">
-											{x.winner == "team1" ? (
+										{x.winner == "team1" ? (
+											<div className="check-icon">
 												<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
-											) : (
-												""
-											)}
-										</div>
+											</div>
+										) : x.status == "retired" ? (
+											<div className="not-completed">Retired</div>
+										) : x.status == "walkover" ? (
+											<div className="not-completed">Walkover</div>
+										) : (
+											""
+										)}
 										<div className="d-flex match-score">
 											{x.score1.map((y, index) => {
 												return (
@@ -55,13 +59,17 @@ export default function DrawGroup({ scores, round, connector }) {
 
 									<div className="d-flex team-info team-two">
 										<div className="flex-fill name">{x.team2}</div>
-										<div className="check-icon">
-											{x.winner == "team2" ? (
+										{x.winner == "team2" ? (
+											<div className="check-icon">
 												<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
-											) : (
-												""
-											)}
-										</div>
+											</div>
+										) : x.status == "retired" ? (
+											<div className="not-completed">Retired</div>
+										) : x.status == "walkover" ? (
+											<div className="not-completed">Walkover</div>
+										) : (
+											""
+										)}
 										<div className="d-flex match-score">
 											{x.score2.map((y, index) => {
 												return (
