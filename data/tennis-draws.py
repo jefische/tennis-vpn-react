@@ -28,7 +28,8 @@ pd.set_option('display.max_colwidth', None)
 #df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_womens_2024.csv")
 #df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-matches.csv")
 #df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-points.csv")
-df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/usopen_mens_2024.csv")
+# df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/usopen_mens_2024.csv")
+df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/usopen_womens_2024.csv")
 df_order=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/2024-usopen-matches.csv")
 df_Tiebreak=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/2024-usopen-points.csv")
 #df1=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/wimbledon_mens_2023.csv")
@@ -78,7 +79,7 @@ player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connel
 #WTA
 player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang', 'Wang Xiy.', 'Xiyu Wang', 'Osorio M.', 'C. Osorio', 'Friedsam A.L.', 'A. Lena Friedsam', 
                            'Fernandez L.A.', 'L. Fernandez', 'Pliskova Ka.', 'K. Pliskova', 'Riske-Amritraj A.', 'A. Riske Amritraj', 'Carle M.', 'M.L. Carle',
-                           'Ruse E.G.', 'E. Ruse']
+                           'Ruse E.G.', 'E. Ruse', 'Rodionova Ar.', 'A. Rodionova', 'Bassols M.', 'M. Bassols Ribera']
 
 hardcoded_names1 = np.array(player_hardcoded_names1)
 #####################################################################################
@@ -180,15 +181,16 @@ df_order[df_order['match_num'].between(2500, 2600)].shape # 4 matches
 df_order[df_order['match_num'].between(2600, 2700)].shape # 2 matches
 df_order[df_order['match_num'].between(2700, 2800)].shape # 1 matches
 
-df_order[df_order['match_num'].between(1300, 1400)]
+df_order[df_order['match_num'].between(2200, 2300)]
 
 # Create a dictionary with the data for the new row
 new_row = {'match_num': 1314, 'player1': 'Lucas Pouille', 'player2': 'Alex de Minaur'}
 new_row = {'match_num': 1504, 'player1': 'Alex de Minaur', 'player2': 'Novak Djokovic'}
+new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Jessika Ponchet'} #2209 added to USO Womens 2024
 
 # Append the dictionary to the DataFrame and sort
 df_order.loc[len(df_order)] = new_row
-df_order.sort_values(by=['match_num'])
+df_order = df_order.sort_values(by=['match_num'])
 
 # Reset the index
 df_order = df_order.reset_index(drop=True)
@@ -280,7 +282,7 @@ def isNaN(num):
 
 left_merged_2.loc[isNaN(left_merged_2["Round"]),:] # Filter for names that are NA for the Round variable, thus not pulling data
 
-TEXTNAME = 'Miyazaki'
+TEXTNAME = 'Krejcikova'
 
 df2[df2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player1
 df2[df2['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player2
@@ -289,10 +291,13 @@ df1[df1['Winner'].str.contains(rf'{TEXTNAME}')] # Individually check original df
 df1[df1['Loser'].str.contains(rf'{TEXTNAME}')] # Individually check original df2 dataframe, df1
 
 # Reload df_order to get the original naming string
-df_order_r=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/wimbledon/2024-wimbledon-matches.csv")
+df_order_r=pd.read_csv("C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/us-open/2024-usopen-matches.csv")
 
 df_order_r[df_order_r['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df_order names as needed for player1
+df_order[df_order['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df_order names as needed for player1
+
 df_order_r[df_order_r['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df_order names as needed for player2
+df_order[df_order['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df_order names as needed for player2
 
 left_merged_2[left_merged_2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the left_merged_2 names as needed
 
@@ -309,7 +314,7 @@ player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connel
 #WTA
 player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang', 'Wang Xiy.', 'Xiyu Wang', 'Osorio M.', 'C. Osorio', 'Friedsam A.L.', 'A. Lena Friedsam', 
                            'Fernandez L.A.', 'L. Fernandez', 'Pliskova Ka.', 'K. Pliskova', 'Riske-Amritraj A.', 'A. Riske Amritraj', 'Carle M.', 'M.L. Carle',
-                           'Ruse E.G.', 'E. Ruse']
+                           'Ruse E.G.', 'E. Ruse', 'Rodionova Ar.', 'A. Rodionova', 'Bassols M.', 'M. Bassols Ribera']
 
 ## df_order ##
 #ATP
@@ -498,7 +503,7 @@ for i in range(0,len(left_merged_2)):
 # Update the range in j for loop (ATP Mens vs WTA Womens)
 ######################################################
 for i in range(0, len(left_merged_2)):
-    for j in range(1,6): #Mens to 6 and Womens to 4
+    for j in range(1,4): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
@@ -519,24 +524,24 @@ for i in range(0, len(left_merged_2)):
 left_merged_2['P1_1'] = left_merged_2['P1_1'].astype(int) # convert P1_1 score from float to integer
 left_merged_2['P1_1T'] = left_merged_2['P1_1T'].astype(int) # convert P1_1T score from float to integer
 left_merged_2['P1_2'] = left_merged_2['P1_2'].astype(int) # convert P1_2 score from float to integer
-left_merged_2['P1_2T'] = left_merged_2['P1_2T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_2T'] = left_merged_2['P1_2T'].astype(int) # convert P1_2T score from float to integer
 left_merged_2['P1_3'] = left_merged_2['P1_3'].astype(int) # convert P1_3 score from float to integer
-left_merged_2['P1_3T'] = left_merged_2['P1_3T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_3T'] = left_merged_2['P1_3T'].astype(int) # convert P1_3T score from float to integer
 
 left_merged_2['P1_4'] = left_merged_2['P1_4'].astype(int) # convert P1_4 score from float to integer
-left_merged_2['P1_4T'] = left_merged_2['P1_4T'].astype(int) # convert P1_1T score from float to integer
+left_merged_2['P1_4T'] = left_merged_2['P1_4T'].astype(int) # convert P1_4T score from float to integer
 left_merged_2['P1_5'] = left_merged_2['P1_5'].astype(int) # convert P1_5 score from float to integer
 left_merged_2['P1_5T'] = left_merged_2['P1_5T'].astype(int) # convert P1_5T score from float to integer
 
 left_merged_2['P2_1'] = left_merged_2['P2_1'].astype(int) # convert P2_1 score from float to integer
 left_merged_2['P2_1T'] = left_merged_2['P2_1T'].astype(int) # convert P2_1T score from float to integer
 left_merged_2['P2_2'] = left_merged_2['P2_2'].astype(int) # convert P2_2 score from float to integer
-left_merged_2['P2_2T'] = left_merged_2['P2_2T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_2T'] = left_merged_2['P2_2T'].astype(int) # convert P2_2T score from float to integer
 left_merged_2['P2_3'] = left_merged_2['P2_3'].astype(int) # convert P2_3 score from float to integer
-left_merged_2['P2_3T'] = left_merged_2['P2_3T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_3T'] = left_merged_2['P2_3T'].astype(int) # convert P2_3T score from float to integer
 
 left_merged_2['P2_4'] = left_merged_2['P2_4'].astype(int) # convert P2_4 score from float to integer
-left_merged_2['P2_4T'] = left_merged_2['P2_4T'].astype(int) # convert P2_1T score from float to integer
+left_merged_2['P2_4T'] = left_merged_2['P2_4T'].astype(int) # convert P2_4T score from float to integer
 left_merged_2['P2_5'] = left_merged_2['P2_5'].astype(int) # convert P2_5 score from float to integer
 left_merged_2['P2_5T'] = left_merged_2['P2_5T'].astype(int) # convert P2_5T score from float to integer
 
@@ -563,7 +568,7 @@ for i in range(0, len(left_merged_2)):
     elif left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player2']:
         left_merged_2.loc[i, 'WinnerTeam'] = 'team2'
 
-    for j in range(1,6): #Mens to 6 and Womens to 4
+    for j in range(1,4): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
