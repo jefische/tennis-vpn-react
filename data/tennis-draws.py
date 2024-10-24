@@ -6,13 +6,6 @@ import numpy as np
 from json import loads, dumps
 import json
 
-
-############################
-# set working directory
-############################
-os.chdir(r"C:\Users\blue_\Documents\Kaggle\Web Development\Tennis-VPN-React\data\us-open")
-os.getcwd()
-
 ######################
 # display options
 ######################
@@ -28,19 +21,25 @@ pd.set_option('display.max_colwidth', None)
 # Australian Open (W)
 # French Open (M)
 # French Open (W)
-# Wimbledon (M) 2024, 2023
+# Wimbledon (M) 2024, 2023, 2022
 # Wimbledon (W) 2024, 2023
 # US Open (M) 2024, 2023
 # US Open (W) 2024, 2023
 ##########################
-tournament_folder = "us-open"
+tournament_folder = "wimbledon"
 tournament_file = re.sub(r'-', '', tournament_folder)
-year = "2023"
+year = "2022"
+gender = "mens" # mens or womens
 
-df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_mens.csv")
-df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_womens.csv")
+df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
 df_Tiebreak=pd.read_csv(f'C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-points.csv')
+
+############################
+# set working directory
+############################
+os.chdir(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}")
+os.getcwd()
 
 #######################################
 # Step 1:
@@ -93,7 +92,7 @@ hardcoded_names1 = np.array(player_hardcoded_names1)
 #ATP
 player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
                            'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu']
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng']
 #WTA
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig']
@@ -186,13 +185,15 @@ df_order[df_order['match_num'].between(2500, 2600)].shape # 4 matches
 df_order[df_order['match_num'].between(2600, 2700)].shape # 2 matches
 df_order[df_order['match_num'].between(2700, 2800)].shape # 1 matches
 
-df_order[df_order['match_num'].between(2200, 2300)]
+df_order[df_order['match_num'].between(1000, 1200)]
 
 # Create a dictionary with the data for the new row
 new_row = {'match_num': 1314, 'player1': 'Lucas Pouille', 'player2': 'Alex de Minaur'}
 new_row = {'match_num': 1504, 'player1': 'Alex de Minaur', 'player2': 'Novak Djokovic'}
 new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Jessika Ponchet'} #2209 added to USO Womens 2024
 new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Ajla Tomljanovic'} #2209 added to USO Womens 2023
+new_row = {'match_num': 1222, 'player1': 'Daniel Elahi Galan', 'player2': 'Roberto Bautista Agut'} #1222 added to Wimbledon Mens 2022
+new_row = {'match_num': 1602, 'player1': 'Nick Kyrgios', 'player2': 'Rafael Nadal'} #1602 added to Wimbledon Mens 2022
 
 # Append the dictionary to the DataFrame and sort
 df_order.loc[len(df_order)] = new_row
@@ -288,7 +289,7 @@ def isNaN(num):
 
 left_merged_2.loc[isNaN(left_merged_2["Round"]),:] # Filter for names that are NA for the Round variable, thus not pulling data
 
-TEXTNAME = 'Tig'
+TEXTNAME = 'Agut'
 
 df2[df2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player1
 df2[df2['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player2
@@ -326,7 +327,7 @@ player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang'
 #ATP
 player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
                            'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu']
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng']
 #WTA
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig']
@@ -502,7 +503,7 @@ for i in TB_list:
 #########################################################################################################################################
 
 for i in range(0,len(left_merged_2)):
-    left_merged_2.loc[i, 'match_num'] = int(str('042023')+str(left_merged_2.loc[i, 'match_num']))
+    left_merged_2.loc[i, 'match_num'] = int(str('032022')+str(left_merged_2.loc[i, 'match_num']))
 
 
 ######################################################
@@ -511,7 +512,7 @@ for i in range(0,len(left_merged_2)):
 # Update the range in j for loop (ATP Mens vs WTA Womens)
 ######################################################
 for i in range(0, len(left_merged_2)):
-    for j in range(1,4): #Mens to 6 and Womens to 4
+    for j in range(1,6): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
@@ -553,15 +554,23 @@ left_merged_2['P2_4T'] = left_merged_2['P2_4T'].astype(int) # convert P2_4T scor
 left_merged_2['P2_5'] = left_merged_2['P2_5'].astype(int) # convert P2_5 score from float to integer
 left_merged_2['P2_5T'] = left_merged_2['P2_5T'].astype(int) # convert P2_5T score from float to integer
 
-###########################################################
+###################################################################################
 # Step 18:
-# Add score1 and score 2 columns, and WinnerTeam column
-###########################################################
-left_merged_2['score1'] = np.empty((len(left_merged_2), 0)).tolist() # create new empty array column for Player 1 scores
-left_merged_2['score2'] = np.empty((len(left_merged_2), 0)).tolist() # create new empty array column for Player 2 scores
-left_merged_2['WinnerTeam'] = left_merged_2['Winner']
+# Create new dataframe and add score1 and score 2 columns, and WinnerTeam column
+##################################################################################
+merge_to_final = left_merged_2
+merge_to_final['score1'] = np.empty((len(merge_to_final), 0)).tolist() # create new empty array column for Player 1 scores
+merge_to_final['score2'] = np.empty((len(merge_to_final), 0)).tolist() # create new empty array column for Player 2 scores
+merge_to_final['WinnerTeam'] = merge_to_final['Winner']
 #left_merged_2 = left_merged_2.drop('score1', axis=1) # drop a column
 #left_merged_2 = left_merged_2.drop('score2', axis=1) # drop a column
+
+
+###################################################################################
+# Step 18 (b) testing:
+# Data checks for any specific matches
+##################################################################################
+left_merged_2[left_merged_2['match_num'].between(320221220, 320221230)]
 
 
 ##############################################################################
@@ -569,45 +578,45 @@ left_merged_2['WinnerTeam'] = left_merged_2['Winner']
 # Iterate through each record to add player1 and player2 scores to an array
 # Update the range in j for loop (ATP Mens vs WTA Womens)
 ##############################################################################
-for i in range(0, len(left_merged_2)):
+for i in range(0, len(merge_to_final)):
 
-    if left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player1']:
-        left_merged_2.loc[i, 'WinnerTeam'] = 'team1'
-    elif left_merged_2.loc[i, 'Winner'] == left_merged_2.loc[i, 'player2']:
-        left_merged_2.loc[i, 'WinnerTeam'] = 'team2'
+    if merge_to_final.loc[i, 'Winner'] == merge_to_final.loc[i, 'player1']:
+        merge_to_final.loc[i, 'WinnerTeam'] = 'team1'
+    elif merge_to_final.loc[i, 'Winner'] == merge_to_final.loc[i, 'player2']:
+        merge_to_final.loc[i, 'WinnerTeam'] = 'team2'
 
-    for j in range(1,4): #Mens to 6 and Womens to 4
+    for j in range(1,6): #Mens to 6 and Womens to 4
         P1_colName =('P1_'+ str(j))
         P1T_colName =('P1_'+ str(j) + 'T')
         P2_colName =('P2_'+ str(j))
         P2T_colName =('P2_'+ str(j) + 'T')
-        if left_merged_2.loc[i,P1_colName] < 0:
+        if merge_to_final.loc[i,P1_colName] < 0:
             break
-        elif left_merged_2.loc[i,P1T_colName] < 0:
-            left_merged_2.loc[i,'score1'].append(left_merged_2.loc[i,P1_colName])
+        elif merge_to_final.loc[i,P1T_colName] < 0:
+            merge_to_final.loc[i,'score1'].append(merge_to_final.loc[i,P1_colName])
         else:
-            left_merged_2.loc[i,'score1'].append([left_merged_2.loc[i,P1_colName], left_merged_2.loc[i,P1T_colName]])
+            merge_to_final.loc[i,'score1'].append([merge_to_final.loc[i,P1_colName], merge_to_final.loc[i,P1T_colName]])
         
-        if left_merged_2.loc[i,P2_colName] < 0:
+        if merge_to_final.loc[i,P2_colName] < 0:
             break
-        elif left_merged_2.loc[i,P2T_colName] < 0:
-            left_merged_2.loc[i,'score2'].append(left_merged_2.loc[i,P2_colName])
+        elif merge_to_final.loc[i,P2T_colName] < 0:
+            merge_to_final.loc[i,'score2'].append(merge_to_final.loc[i,P2_colName])
         else:
-            left_merged_2.loc[i,'score2'].append([left_merged_2.loc[i,P2_colName], left_merged_2.loc[i,P2T_colName]])
+            merge_to_final.loc[i,'score2'].append([merge_to_final.loc[i,P2_colName], merge_to_final.loc[i,P2T_colName]])
 
 
 
-# left_merged_2.to_csv('sample_data_2.csv', index=True)
-# left_merged_2.to_json('temp.json', orient='records', lines=True)
-#left_merged_2
+# merge_to_final.to_csv('sample_data_2.csv', index=True)
+# merge_to_final.to_json('temp.json', orient='records', lines=True)
+#merge_to_final
 
 ##############################################################################
 # Step 20:
 # Grab necessary columns for ATP or WTA records
 # Update match_num to reflect tournament id (1, 2, 3, 4) and tournament year
 ##############################################################################
-df_final=left_merged_2.loc[left_merged_2['match_num'] < 420232000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
-df_final=left_merged_2.loc[left_merged_2['match_num'] >= 420232000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
+df_final=merge_to_final.loc[merge_to_final['match_num'] < 320222000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
+df_final=merge_to_final.loc[merge_to_final['match_num'] >= 420232000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
 df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Comment' : 'status', 'Round' : 'round'}, inplace=True)
 #df_final.sort_values(by=['id'])
 #df_final
