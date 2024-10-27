@@ -133,13 +133,13 @@ a {
 	transform: scale(1.05);
 }
 
-@media (min-width: 819px) {
+@media (min-width: 836px) {
 	ul li.nav-item {
 		margin-left: 1rem;
 	}
 }
 
-@media (min-width: 915px) {
+@media (min-width: 932px) {
 	ul li.nav-item {
 		margin-left: 2rem;
 	}

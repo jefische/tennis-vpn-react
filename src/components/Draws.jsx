@@ -10,8 +10,8 @@ export default function Draws({ title, updated, children }) {
 	const [columnARound, setRoundA] = useState(1);
 	const [columnBRound, setRoundB] = useState(2);
 	const [columnCRound, setRoundC] = useState(3);
-	const [displayDraw, setDisplay] = useState("invisible");
-	const [displayH3, setH3] = useState(false);
+	const [showHidden, setVisibility] = useState("invisible");
+	const [displayDataMsg, setDataMsg] = useState(false);
 	const [slamData, setSlamData] = useState([]);
 	const ref = useRef(null);
 
@@ -164,42 +164,46 @@ export default function Draws({ title, updated, children }) {
 						});
 						if (result.length > 0) {
 							setSlamData(result[0].scores);
-							setDisplay("visible");
-							setH3(false);
+							setVisibility("visible");
+							setDataMsg(false);
 							document.body.style.overflow = "auto";
 						} else {
 							console.log("No slam data...");
-							setDisplay("invisible");
-							setH3(true);
+							setVisibility("invisible");
+							setDataMsg(true);
 							document.body.style.overflow = "hidden";
 						}
 						window.scrollTo({ top: 0, behavior: "instant" });
 					}}
 				>
-					<label htmlFor="slams">Tournament</label>
-					<select className="form-select" id="slams" name="slams">
-						<option value="AOM">Australian Open (M)</option>
-						<option value="AOW">Australian Open (W)</option>
-						<option value="FOM">French Open (M)</option>
-						<option value="FOW">French Open (W)</option>
-						<option value="WM">Wimbledon (M)</option>
-						<option value="WW">Wimbledon (W)</option>
-						<option value="USOM">US Open (M)</option>
-						<option value="USOW">US Open (W)</option>
-					</select>
-					<label htmlFor="year">Year</label>
-					<select className="form-select" name="year">
-						<option value="2024">2024</option>
-						<option value="2023">2023</option>
-						<option value="2022">2022</option>
-						<option value="2021">2021</option>
-						<option value="2020">2020</option>
-						<option value="2019">2019</option>
-						<option value="2018">2018</option>
-						<option value="2017">2017</option>
-						<option value="2016">2016</option>
-						<option value="2015">2015</option>
-					</select>
+					<div>
+						<label htmlFor="slams">Tournament</label>
+						<select className="form-select" id="slams" name="slams">
+							<option value="AOM">Australian Open (M)</option>
+							<option value="AOW">Australian Open (W)</option>
+							<option value="FOM">French Open (M)</option>
+							<option value="FOW">French Open (W)</option>
+							<option value="WM">Wimbledon (M)</option>
+							<option value="WW">Wimbledon (W)</option>
+							<option value="USOM">US Open (M)</option>
+							<option value="USOW">US Open (W)</option>
+						</select>
+					</div>
+					<div>
+						<label htmlFor="year">Year</label>
+						<select className="form-select" name="year">
+							<option value="2024">2024</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2020">2020</option>
+							<option value="2019">2019</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+						</select>
+					</div>
 					<button className="btn btn-success" type="submit">
 						Submit
 					</button>
@@ -207,7 +211,7 @@ export default function Draws({ title, updated, children }) {
 			</div>
 			{/* draw-selection-container */}
 
-			<div className={`round-headers-container ${displayDraw}`}>
+			<div className={`round-headers-container ${showHidden}`}>
 				<div className="buttonGroup">
 					<button className="btn btn-outline-success" onClick={handleRoundClick} name="0">
 						1st Round
@@ -231,7 +235,7 @@ export default function Draws({ title, updated, children }) {
 						Finals
 					</button>
 				</div>
-				<div className={`d-flex border-bottom round-headers`}>
+				<div className={`round-headers`}>
 					<h4 className="text-center pad-1">1st Round</h4>
 					<h4 className="text-center pad-2">2nd Round</h4>
 					<h4 className="text-center pad-3">3rd Round</h4>
@@ -239,12 +243,12 @@ export default function Draws({ title, updated, children }) {
 			</div>
 			{/* round-headers */}
 
-			<h4 className={`text-center ${displayDraw == "visible" ? "invisible" : "visible"} ${displayH3 ? "d-block" : "d-none"}`}>
+			<h4 className={`text-center ${showHidden == "visible" ? "invisible" : "visible"} ${displayDataMsg ? "d-block" : "d-none"}`}>
 				Data not yet available
 			</h4>
 
 			<div className="carousel-container">
-				<div className={`d-flex px-4 pt-5 ${displayDraw}`} ref={ref}>
+				<div className={`px-4 pt-5 ${showHidden}`} ref={ref}>
 					<div className="columnA roundGroup">
 						<DrawGroup scores={slamData} round={columnARound} connector={false} />
 					</div>
