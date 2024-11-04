@@ -13,11 +13,29 @@ export default function Draws({ title, updated, children }) {
 	const [showHidden, setVisibility] = useState("invisible");
 	const [displayDataMsg, setDataMsg] = useState(false);
 	const [slamData, setSlamData] = useState([]);
+	const [slamYears, setSlamYears] = useState(["Choose..."]);
 	const ref = useRef(null);
 
 	const titleA = document.querySelector(".pad-1");
 	const titleB = document.querySelector(".pad-2");
 	const titleC = document.querySelector(".pad-3");
+
+	function handleTournamentChange(e) {
+		const years = slamScoresArray.filter((x) => {
+			if (x.id.match(e.target.value)) {
+				return x;
+			}
+		});
+		if (years.length > 0) {
+			setSlamYears(
+				years.map((x) => {
+					return x.id.match(/\d+/);
+				}),
+			);
+		} else {
+			setSlamYears(["No Data"]);
+		}
+	}
 
 	function handleRoundClick(e) {
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -178,7 +196,8 @@ export default function Draws({ title, updated, children }) {
 				>
 					<div>
 						<label htmlFor="slams">Tournament</label>
-						<select className="form-select" id="slams" name="slams">
+						<select className="form-select" id="slams" name="slams" onChange={handleTournamentChange}>
+							<option value="empty">Choose...</option>
 							<option value="AOM">Australian Open (M)</option>
 							<option value="AOW">Australian Open (W)</option>
 							<option value="FOM">French Open (M)</option>
@@ -191,17 +210,14 @@ export default function Draws({ title, updated, children }) {
 					</div>
 					<div>
 						<label htmlFor="year">Year</label>
-						<select className="form-select" name="year">
-							<option value="2024">2024</option>
-							<option value="2023">2023</option>
-							<option value="2022">2022</option>
-							<option value="2021">2021</option>
-							<option value="2020">2020</option>
-							<option value="2019">2019</option>
-							<option value="2018">2018</option>
-							<option value="2017">2017</option>
-							<option value="2016">2016</option>
-							<option value="2015">2015</option>
+						<select className="form-select" name="year" id="tournament_year">
+							{slamYears.map((x) => {
+								return (
+									<option key={x} value={x}>
+										{x}
+									</option>
+								);
+							})}
 						</select>
 					</div>
 					<button className="btn btn-success" type="submit">
@@ -244,7 +260,7 @@ export default function Draws({ title, updated, children }) {
 			{/* round-headers */}
 
 			<h4 className={`text-center ${showHidden == "visible" ? "invisible" : "visible"} ${displayDataMsg ? "d-block" : "d-none"}`}>
-				Data not yet available
+				Data not available
 			</h4>
 
 			<div className="carousel-container">

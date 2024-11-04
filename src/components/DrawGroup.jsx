@@ -34,11 +34,11 @@ export default function DrawGroup({ scores, round, connector }) {
 										<div className="d-flex match-score">
 											{x.score1.map((y, index) => {
 												return (
-													<>
+													<Fragment key={index}>
 														{y == "Walkover" ? (
 															<div className="walkover">{y}</div>
 														) : (
-															<div className="set" key={index}>
+															<div className="set">
 																{y.length ? (
 																	<>
 																		<span className="score">{y[0]}</span>
@@ -49,7 +49,7 @@ export default function DrawGroup({ scores, round, connector }) {
 																)}
 															</div>
 														)}
-													</>
+													</Fragment>
 												);
 											})}
 										</div>
@@ -73,11 +73,11 @@ export default function DrawGroup({ scores, round, connector }) {
 										<div className="d-flex match-score">
 											{x.score2.map((y, index) => {
 												return (
-													<>
+													<Fragment key={index}>
 														{y == "Walkover" ? (
 															<div className="walkover">{y}</div>
 														) : (
-															<div className="set" key={index}>
+															<div className="set">
 																{y.length ? (
 																	<>
 																		<span className="score">{y[0]}</span>
@@ -88,7 +88,7 @@ export default function DrawGroup({ scores, round, connector }) {
 																)}
 															</div>
 														)}
-													</>
+													</Fragment>
 												);
 											})}
 										</div>
