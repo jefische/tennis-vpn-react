@@ -26,6 +26,7 @@ export default function Draws({ title, updated, children }) {
 				return x;
 			}
 		});
+		console.log(years);
 		if (years.length > 0) {
 			setSlamYears(
 				years.map((x) => {
