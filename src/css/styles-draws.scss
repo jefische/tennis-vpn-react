@@ -51,17 +51,16 @@ body {
 	}
 
 	.round-headers {
-		border-bottom: 1px solid #dee2e6;
 		display: flex;
-		justify-content: center;
 		margin: 20px auto 0;
-		max-width: calc(85.5%);
 		h4 {
+			border-bottom: 1px solid #dee2e6;
 			max-width: 400px;
 			width: calc(100%);
 		}
 		.pad-1 {
-			// padding-left: 30px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.pad-2 {
 			display: none;
@@ -74,10 +73,8 @@ body {
 
 .carousel-container {
 	font-size: 0.875rem;
-	// padding-left: 100px;
 	> div {
 		display: flex;
-		// justify-content: center;
 	}
 
 	.roundGroup {
@@ -240,12 +237,6 @@ body {
 	.buttonGroup {
 		padding-bottom: 50px;
 	}
-
-	.carousel-container .roundGroup {
-		margin-right: 25px;
-		max-width: 400px;
-		width: calc(50%);
-	}
 	.round-headers-container {
 		.buttonGroup {
 			display: flex;
@@ -262,24 +253,38 @@ body {
 			}
 		}
 		.round-headers {
-			margin: auto;
-			max-width: calc(85.5%);
-			h4 {
-				width: calc(50%);
+			margin: auto 0;
+			.pad-1 {
+				margin-left: 100px;
+				margin-right: 25px;
 			}
 			.pad-2 {
+				margin-right: 25px;
 				display: block;
 			}
 		}
 	}
-	.carousel-container > div {
-		justify-content: left;
+	.carousel-container {
+		.roundGroup {
+			margin-right: 25px;
+			width: calc(50%);
+		}
+		.columnA {
+			margin-left: 100px;
+		}
+		.columnB {
+			display: block;
+		}
 	}
-	.columnA {
-		margin-left: 100px;
+}
+
+@media (min-width: 1000px) {
+	.roundGroup {
+		// max-width: 400px;
 	}
-	.columnB {
-		display: block;
+	.round-headers-container {
+		.round-headers {
+		}
 	}
 }
 
@@ -293,40 +298,54 @@ body {
 }
 
 @media (min-width: 1150px) {
-	.roundGroup {
-		margin-right: 25px;
-		max-width: 400px;
-		width: calc(33.3333%);
-	}
 	.round-headers-container {
 		.round-headers {
-			margin: auto;
-			max-width: calc(85.5%);
 			h4 {
-				max-width: 400px;
 				width: calc(33.3333%);
 			}
 			.pad-3 {
-				padding-left: 140px;
+				margin-right: 25px;
 				display: block;
 			}
 		}
 	}
-	.columnC {
-		display: block;
+	.carousel-container {
+		.roundGroup {
+			width: calc(33.3333%);
+		}
+		.columnC {
+			display: block;
+		}
 	}
 }
 
 @media (min-width: 1500px) {
 	.round-headers-container {
 		.round-headers {
-			padding-left: 125px;
+			justify-content: center;
+			h4 {
+				max-width: 350px;
+			}
+			.pad-1 {
+				margin-left: 0;
+			}
+			.pad-3 {
+				margin-right: 0;
+			}
 		}
 	}
 	.carousel-container {
-		// padding-left: 250px;
+		> div {
+			justify-content: center;
+		}
+		.roundGroup {
+			max-width: 350px;
+		}
 		.columnA {
-			margin-left: 250px;
+			margin-left: 0;
+		}
+		.columnC {
+			margin-right: 0;
 		}
 	}
 }

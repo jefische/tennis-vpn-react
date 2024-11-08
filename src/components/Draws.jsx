@@ -185,12 +185,10 @@ export default function Draws({ title, updated, children }) {
 							setSlamData(result[0].scores);
 							setVisibility("visible");
 							setDataMsg(false);
-							document.body.style.overflow = "auto";
 						} else {
-							console.log("No slam data...");
+							setSlamData(slamScoresArray[0].scores);
 							setVisibility("invisible");
 							setDataMsg(true);
-							document.body.style.overflow = "hidden";
 						}
 						window.scrollTo({ top: 0, behavior: "instant" });
 					}}
@@ -252,7 +250,7 @@ export default function Draws({ title, updated, children }) {
 						Finals
 					</button>
 				</div>
-				<div className={`round-headers`}>
+				<div className={`round-headers px-4 ${showHidden}`}>
 					<h4 className="text-center pad-1">1st Round</h4>
 					<h4 className="text-center pad-2">2nd Round</h4>
 					<h4 className="text-center pad-3">3rd Round</h4>
@@ -260,12 +258,10 @@ export default function Draws({ title, updated, children }) {
 			</div>
 			{/* round-headers */}
 
-			<h4 className={`text-center ${showHidden == "visible" ? "invisible" : "visible"} ${displayDataMsg ? "d-block" : "d-none"}`}>
-				Data not available
-			</h4>
+			<h4 className={`text-center ${!showHidden} ${displayDataMsg ? "d-block" : "d-none"}`}>Data not available</h4>
 
 			<div className="carousel-container">
-				<div className={`px-4 pt-5 ${showHidden}`} ref={ref}>
+				<div className={`px-4 pt-5`} ref={ref}>
 					<div className="columnA roundGroup">
 						<DrawGroup scores={slamData} round={columnARound} connector={false} />
 					</div>
