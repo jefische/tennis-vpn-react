@@ -17,20 +17,21 @@ pd.set_option('display.max_colwidth', None)
 ##########################
 # Load data
 # Data completed:
-# Australian Open (M)
+# Australian Open (M) 2021
 # Australian Open (W)
 # French Open (M) 2021
-# French Open (W) 2021 working
+# French Open (W) 2021
 # Wimbledon (M) 2024, 2023, 2022
 # Wimbledon (W) 2024, 2023, 2022
 # US Open (M) 2024, 2023, 2022
 # US Open (W) 2024, 2023, 2022
 ##########################
-tournament_folder = "french-open"
+tournament_folder = "australian-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
+tournament_file = "ausopen"
 year = "2021"
-gender = "womens" # mens or womens
-gender_loop_range = 4 # 4 for women, 6 for me
+gender = "mens" # mens or womens
+gender_loop_range = 6 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
@@ -72,38 +73,42 @@ for i in range(0, len(df2)):
         df2.loc[i, 'Round'] = 7
         
 
-##################################################################################
-# Step 3a:
-# Reformat player names to first initial. last name of the match results csv (df2)
-##################################################################################
-#ATP
+##################################################################################################################
+# Step 3a (ATP):
+# Reformat player names to first initial. last name of the match results csv (df2) and draw order csv (df_order)
+##################################################################################################################
+#df2
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 
                            'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas', 'Struff J.L.', 'J. Lennard Struff', 
-                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu']
-#WTA
+                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
+
+#df_order
+player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
+                           'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
+                           'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
+                           'Ph Herbert', 'P.H. Herbert', 'P Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff',
+                           'J Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan', 'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero', 'C Stebe', 'C.M. Stebe']
+
+hardcoded_names1 = np.array(player_hardcoded_names1)
+hardcoded_names2 = np.array(player_hardcoded_names2)
+##################################################################################################################
+# Step 3b (WTA):
+# Reformat player names to first initial. last name of the match results csv (df2) and draw order csv (df_order)
+##################################################################################################################
+#df2
 player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang', 'Wang Xiy.', 'Xiyu Wang', 'Osorio M.', 'C. Osorio', 'Friedsam A.L.', 'A. Lena Friedsam', 
                            'Fernandez L.A.', 'L. Fernandez', 'Riske-Amritraj A.', 'A. Riske Amritraj', 'Riske A.', 'A. Riske Amritraj', 'Carle M.', 'M.L. Carle',
                            'Ruse E.G.', 'E. Ruse', 'Rodionova Ar.', 'A. Rodionova', 'Bassols M.', 'M. Bassols Ribera', 'Han N.L.', 'N. Lae Han', 'Harrison Ca.', 'C. Harrison',
                            'Mchale C.', 'C. McHale', 'In-Albon Y.', 'Y. In Albon', 'Pliskova Kr.', 'Kr. Pliskova', 'Pliskova Ka.', 'Ka. Pliskova']
 
-hardcoded_names1 = np.array(player_hardcoded_names1)
-#####################################################################################
-# Step 3b:
-# Reformat player names to first initial. last name of the draw order csv (df_order)
-#####################################################################################
-#ATP
-player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
-                           'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
-                           'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
-                           'Ph Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan',
-                           'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero']
-#WTA
+#df_order
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'X Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig',
                            'Pm Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova',
                            'Ka Pliskova', 'Ka. Pliskova',  'C Mchale', 'C. McHale', 'Mc Osorio Serrano', 'C. Osorio']
 
+hardcoded_names1 = np.array(player_hardcoded_names1)
 hardcoded_names2 = np.array(player_hardcoded_names2)
 
 ##############################################################################################
@@ -298,7 +303,7 @@ def isNaN(num):
 
 left_merged_2.loc[isNaN(left_merged_2["Round"]),:] # Filter for names that are NA for the Round variable, thus not pulling data
 
-TEXTNAME = 'Pliskova'
+TEXTNAME = 'Herbert'
 
 df2[df2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player1
 df2[df2['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player2
@@ -322,26 +327,29 @@ left_merged_2[left_merged_2['player1'].str.contains(rf'{TEXTNAME}')] # Individua
 # For easier editing and less scrolling, copy and paste hardcoded arrays to step 3 when finished
 #################################################################################################
 
-## df2 ##
+
 #ATP
+## df2 ##
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 
                            'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas', 'Struff J.L.', 'J. Lennard Struff', 
-                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu']
+                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
+
+## df_order ##
+player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
+                           'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
+                           'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
+                           'Ph Herbert', 'P.H. Herbert', 'P Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff',
+                           'J Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan', 'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero', 'C Stebe', 'C.M. Stebe']
+
 #WTA
+## df2 ##
 player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang', 'Wang Xiy.', 'Xiyu Wang', 'Osorio M.', 'C. Osorio', 'Friedsam A.L.', 'A. Lena Friedsam', 
                            'Fernandez L.A.', 'L. Fernandez', 'Riske-Amritraj A.', 'A. Riske Amritraj', 'Riske A.', 'A. Riske Amritraj', 'Carle M.', 'M.L. Carle',
                            'Ruse E.G.', 'E. Ruse', 'Rodionova Ar.', 'A. Rodionova', 'Bassols M.', 'M. Bassols Ribera', 'Han N.L.', 'N. Lae Han', 'Harrison Ca.', 'C. Harrison',
                            'Mchale C.', 'C. McHale', 'In-Albon Y.', 'Y. In Albon', 'Pliskova Kr.', 'Kr. Pliskova', 'Pliskova Ka.', 'Ka. Pliskova']
 
 ## df_order ##
-#ATP
-player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
-                           'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
-                           'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
-                           'Ph Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan',
-                           'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero']
-#WTA
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'X Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig',
                            'Pm Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova',
@@ -518,7 +526,7 @@ for i in TB_list:
 #########################################################################################################################################
 
 for i in range(0,len(left_merged_2)):
-    left_merged_2.loc[i, 'match_num'] = int(str('022021')+str(left_merged_2.loc[i, 'match_num']))
+    left_merged_2.loc[i, 'match_num'] = int(str('012021')+str(left_merged_2.loc[i, 'match_num']))
 
 
 ######################################################
@@ -630,8 +638,8 @@ for i in range(0, len(merge_to_final)):
 # Grab necessary columns for ATP or WTA records
 # Update match_num to reflect tournament id (1, 2, 3, 4) and tournament year
 ##############################################################################
-df_final=merge_to_final.loc[merge_to_final['match_num'] < 220212000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
-df_final=merge_to_final.loc[merge_to_final['match_num'] >= 220212000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
+df_final=merge_to_final.loc[merge_to_final['match_num'] < 120212000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
+df_final=merge_to_final.loc[merge_to_final['match_num'] >= 120212000, ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
 df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Comment' : 'status', 'Round' : 'round'}, inplace=True)
 #df_final.sort_values(by=['id'])
 #df_final

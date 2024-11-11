@@ -133,6 +133,8 @@ a {
 	transform: scale(1.05);
 }
 
+/* navbar media queries */
+
 @media (min-width: 836px) {
 	ul li.nav-item {
 		margin-left: 1rem;
