@@ -19,7 +19,14 @@ export default function DrawGroup({ scores, round, connector }) {
 							<div className="drawGroup">
 								<div className="card matchbox">
 									<div className="d-flex team-info team-one">
-										<div className="flex-fill name">{x.team1}</div>
+										<div className="d-flex flex-fill name align-items-center">
+											{x.team1}
+											<img
+												className="ms-3"
+												src={`src/assets/flags/${x.team1_country}_sm.gif`}
+												alt={`${x.team1_country} flag`}
+											/>
+										</div>
 										{x.winner == "team1" ? (
 											<div className="check-icon">
 												<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
@@ -58,7 +65,14 @@ export default function DrawGroup({ scores, round, connector }) {
 									{/* team-one */}
 
 									<div className="d-flex team-info team-two">
-										<div className="flex-fill name">{x.team2}</div>
+										<div className="d-flex flex-fill name align-items-center">
+											{x.team2}
+											<img
+												className="ms-3"
+												src={`src/assets/flags/${x.team2_country}_sm.gif`}
+												alt={`${x.team2_country} flag`}
+											/>
+										</div>
 										{x.winner == "team2" ? (
 											<div className="check-icon">
 												<FontAwesomeIcon icon={faCheck} size="xl" style={{ color: "#1e860a" }} />
