@@ -20,12 +20,12 @@ export default function DrawGroup({ scores, round, connector }) {
 								<div className="card matchbox">
 									<div className="d-flex team-info team-one">
 										<div className="d-flex flex-fill name align-items-center">
-											{x.team1}
 											<img
-												className="ms-3"
+												className="me-3"
 												src={`src/assets/flags/${x.team1_country}_sm.gif`}
 												alt={`${x.team1_country} flag`}
 											/>
+											{x.team1}
 										</div>
 										{x.winner == "team1" ? (
 											<div className="check-icon">
@@ -66,12 +66,12 @@ export default function DrawGroup({ scores, round, connector }) {
 
 									<div className="d-flex team-info team-two">
 										<div className="d-flex flex-fill name align-items-center">
-											{x.team2}
 											<img
-												className="ms-3"
+												className="me-3"
 												src={`src/assets/flags/${x.team2_country}_sm.gif`}
 												alt={`${x.team2_country} flag`}
 											/>
+											{x.team2}
 										</div>
 										{x.winner == "team2" ? (
 											<div className="check-icon">
