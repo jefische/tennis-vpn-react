@@ -18,7 +18,7 @@ pd.set_option('display.max_colwidth', None)
 # Load data
 # Data completed:
 # Australian Open (M) 2021
-# Australian Open (W)
+# Australian Open (W) 2021
 # French Open (M) 2021
 # French Open (W) 2021
 # Wimbledon (M) 2024, 2023, 2022
@@ -30,8 +30,8 @@ tournament_folder = "australian-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
 tournament_file = "ausopen"
 year = "2021"
-gender = "mens" # mens or womens
-gender_loop_range = 6 # 4 for women, 6 for men
+gender = "womens" # mens or womens
+gender_loop_range = 4 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
@@ -105,8 +105,9 @@ player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang'
 #df_order
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'X Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig',
-                           'Pm Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova',
-                           'Ka Pliskova', 'Ka. Pliskova',  'C Mchale', 'C. McHale', 'Mc Osorio Serrano', 'C. Osorio']
+                           'Pm Tig', 'P.M. Tig', 'P Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'S Hsieh', 'S.W. Hsieh', 
+                           'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova', 'Ka Pliskova', 'Ka. Pliskova',  'C Mchale', 'C. McHale', 'Mc Osorio Serrano', 'C. Osorio',
+                           'A Riske', 'A. Riske Amritraj']
 
 hardcoded_names1 = np.array(player_hardcoded_names1)
 hardcoded_names2 = np.array(player_hardcoded_names2)
@@ -303,7 +304,7 @@ def isNaN(num):
 
 left_merged_2.loc[isNaN(left_merged_2["Round"]),:] # Filter for names that are NA for the Round variable, thus not pulling data
 
-TEXTNAME = 'Herbert'
+TEXTNAME = 'Riske'
 
 df2[df2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player1
 df2[df2['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player2
@@ -352,8 +353,9 @@ player_hardcoded_names1 = ['Mcnally C.', 'C. McNally', 'Wang Xin.', 'Xinyu Wang'
 ## df_order ##
 player_hardcoded_names2 = ['Anna Karolina Schmiedlova', 'A. Schmiedlova', 'Xinyu Wang', 'Xinyu Wang', 'Xiyu Wang', 'Xiyu Wang', 'X Wang', 'Xiyu Wang', 'Irina Camelia Begu', 'I. Begu',
                            'Maria Lourdes Carle', 'M.L. Carle', 'Elena Gabriela Ruse', 'E. Ruse', 'Yuriko Lily Miyazaki', 'Y. Miyazaki', 'Patricia Maria Tig', 'P.M. Tig',
-                           'Pm Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova',
-                           'Ka Pliskova', 'Ka. Pliskova',  'C Mchale', 'C. McHale', 'Mc Osorio Serrano', 'C. Osorio']
+                           'Pm Tig', 'P.M. Tig', 'P Tig', 'P.M. Tig', 'Jaqueline Adina Cristian', 'J. Cristian', 'Sw Hsieh', 'S.W. Hsieh', 'S Hsieh', 'S.W. Hsieh', 
+                           'Es Liang', 'E.S. Liang', 'Kr Pliskova', 'Kr. Pliskova', 'Ka Pliskova', 'Ka. Pliskova',  'C Mchale', 'C. McHale', 'Mc Osorio Serrano', 'C. Osorio',
+                           'A Riske', 'A. Riske Amritraj']
 
 
 #concatenated.to_csv('sample_data_c.csv', index=True)
@@ -420,6 +422,8 @@ for i in range(0,len(df_TB)):
     matchid = re.search(r'-\d\d\d\d', df_TB.loc[i,'match_id'])
     if matchid is not None:
         df_TB.loc[i,'match_id'] = matchid.group()[1:]
+
+
 
 df_TB['match_id'] = df_TB['match_id'].astype(int) # convert match_id from string to integer
 df_TB = df_TB.loc[df_TB['match_id'] < 2000, :] # ATP mens
@@ -593,7 +597,7 @@ merge_to_final['WinnerTeam'] = merge_to_final['Winner']
 # Step 18 (b) testing:
 # Data checks for any specific matches
 ##################################################################################
-left_merged_2[left_merged_2['match_num'].between(320221220, 320221230)]
+left_merged_2[left_merged_2['match_num'].between(120212300, 120212400)]
 
 
 ##############################################################################
@@ -645,13 +649,59 @@ df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 't
 #df_final
 #df_final.to_csv('sample_data.csv', index=True)
 
+
 ##################################################################################################
 # Step 21:
+# Attach player countries to each entry
+##################################################################################################
+os.chdir(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data")
+os.getcwd()
+
+# Open WTA players json file
+f = open("WTA_players.json")
+WTA_players = json.load(f)
+print(json.dumps(WTA_players, indent=4)) # View the URLs
+
+
+
+# Add country columns for both players/teams
+df_final = df_final.reindex(['id', 'team1', 'team1_country', 'team2', 'team2_country', 'score1', 'score2', 'winner', 'status', 'round'], axis=1)
+
+
+for i in range(0, len(df_final)):
+	if df_final.loc[i, 'team1'] in WTA_players:
+		# print(test.loc[i, 'team1'] + " is from: " + players[test.loc[i, 'team1']])
+		df_final.loc[i, 'team1_country'] = WTA_players[df_final.loc[i, 'team1']]
+
+	if df_final.loc[i, 'team2'] in WTA_players:
+		df_final.loc[i, 'team2_country'] = WTA_players[df_final.loc[i, 'team2']]
+
+
+# Sort the WTA_players json file by last name
+def last_name_sort(name):
+    return re.search(r'\s.*', name[0]).group().strip()
+
+WTA_players = dict(sorted(WTA_players.items(), key=last_name_sort))
+print(json.dumps(WTA_players, indent=4))
+
+# Save WTA players to json file
+with open("WTA_players.json", "w") as outfile:
+	json.dump(WTA_players, outfile, indent=4)
+
+
+##################################################################################################
+# Step 22:
 # Output the results into a sample.json file which we can copy and paste into scoresData.js
 ##################################################################################################
+
+os.chdir(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}")
+os.getcwd()
+
 result = df_final.to_json(orient='records')
 parsed = loads(result)
 json_object = json.dumps(parsed, indent=4)
 with open('sample.json', 'w') as outfile:
     outfile.write(json_object)
-    
+
+
+
