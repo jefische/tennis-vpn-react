@@ -30,8 +30,8 @@ tournament_folder = "wimbledon"
 tournament_file = re.sub(r'-', '', tournament_folder)
 #tournament_file = "ausopen"
 year = "2023"
-gender = "womens" # mens or womens
-gender_loop_range = 4 # 4 for women, 6 for men
+gender = "mens" # mens or womens
+gender_loop_range = 6 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
@@ -202,14 +202,14 @@ df_order[df_order['match_num'].between(2700, 2800)].shape # 1 matches
 df_order[df_order['match_num'].between(2200, 2300)]
 
 # Create a dictionary with the data for the new row
-new_row = {'match_num': 1314, 'player1': 'Lucas Pouille', 'player2': 'Alex de Minaur'}
-new_row = {'match_num': 1504, 'player1': 'Alex de Minaur', 'player2': 'Novak Djokovic'}
-new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Jessika Ponchet'} #2209 added to USO Womens 2024
-new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Ajla Tomljanovic'} #2209 added to USO Womens 2023
+new_row = {'match_num': 1314, 'player1': 'Lucas Pouille', 'player2': 'Alex de Minaur'} # added to Wimbledon Mens 2024
+new_row = {'match_num': 1504, 'player1': 'Alex de Minaur', 'player2': 'Novak Djokovic'} # added to Wimbledon Mens 2024
 new_row = {'match_num': 1222, 'player1': 'Daniel Elahi Galan', 'player2': 'Roberto Bautista Agut'} #1222 added to Wimbledon Mens 2022
 new_row = {'match_num': 1602, 'player1': 'Nick Kyrgios', 'player2': 'Rafael Nadal'} #1602 added to Wimbledon Mens 2022
-new_row = {'match_num': 1226, 'player1': 'John Isner', 'player2': 'Holger Rune'} #1226 added to US Open Mens 2022
-new_row = {'match_num': 2206, 'player1': 'Anhelina Kalinina', 'player2': 'Petra Kvitova'} #2206 added to US Open Womens 2022
+new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Jessika Ponchet'} #2209 added to USO Womens 2024
+new_row = {'match_num': 2209, 'player1': 'Elena Rybakina', 'player2': 'Ajla Tomljanovic'} #2209 added to USO Womens 2023
+new_row = {'match_num': 1226, 'player1': 'John Isner', 'player2': 'Holger Rune'} #1226 added to USO Mens 2022
+new_row = {'match_num': 2206, 'player1': 'Anhelina Kalinina', 'player2': 'Petra Kvitova'} #2206 added to USO Womens 2022
 
 # Append the dictionary to the DataFrame and sort
 df_order.loc[len(df_order)] = new_row
@@ -625,6 +625,12 @@ df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 't
 # Step 21:
 # Attach player countries to each entry
 ##################################################################################################
+
+# Add country columns for both players/teams
+df_final = df_final.reindex(['id', 'team1', 'team1_country', 'team2', 'team2_country', 'score1', 'score2', 'winner', 'status', 'round'], axis=1)
+df_final
+
+
 os.chdir(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data")
 os.getcwd()
 
@@ -633,19 +639,23 @@ f = open("WTA_players.json")
 WTA_players = json.load(f)
 print(json.dumps(WTA_players, indent=4)) # View player countries
 
+# Open ATP players json file
+f = open("ATP_players.json")
+ATP_players = json.load(f)
+print(json.dumps(ATP_players, indent=4)) # View player countries
 
 
-# Add country columns for both players/teams
-df_final = df_final.reindex(['id', 'team1', 'team1_country', 'team2', 'team2_country', 'score1', 'score2', 'winner', 'status', 'round'], axis=1)
-df_final
+if gender == 'mens':
+     player_check = ATP_players
+elif gender == 'womens':
+     player_check = WTA_players
 
 for i in range(0, len(df_final)):
-	if df_final.loc[i, 'team1'] in WTA_players:
-		# print(test.loc[i, 'team1'] + " is from: " + players[test.loc[i, 'team1']])
-		df_final.loc[i, 'team1_country'] = WTA_players[df_final.loc[i, 'team1']]
+	if df_final.loc[i, 'team1'] in player_check:
+		df_final.loc[i, 'team1_country'] = player_check[df_final.loc[i, 'team1']]
 
-	if df_final.loc[i, 'team2'] in WTA_players:
-		df_final.loc[i, 'team2_country'] = WTA_players[df_final.loc[i, 'team2']]
+	if df_final.loc[i, 'team2'] in player_check:
+		df_final.loc[i, 'team2_country'] = player_check[df_final.loc[i, 'team2']]
 
 
 
@@ -653,16 +663,22 @@ df_final.loc[isNaN(df_final['team1_country'])] # filter to view all NaN values f
 df_final.loc[isNaN(df_final['team2_country'])] # filter to view all NaN values for team2
 
 
-# Sort the WTA_players json file by last name
+# Sort the WTA_players or ATP_players json file by last name
 def last_name_sort(name):
     return re.search(r'\s.*', name[0]).group().strip()
 
 WTA_players = dict(sorted(WTA_players.items(), key=last_name_sort))
+ATP_players = dict(sorted(ATP_players.items(), key=last_name_sort))
 print(json.dumps(WTA_players, indent=4))
+print(json.dumps(ATP_players, indent=4))
 
 # Save WTA players to json file
 with open("WTA_players.json", "w") as outfile:
 	json.dump(WTA_players, outfile, indent=4)
+     
+# Save ATP players to json file
+with open("ATP_players.json", "w") as outfile:
+	json.dump(ATP_players, outfile, indent=4)
 
 
 ##################################################################################################
