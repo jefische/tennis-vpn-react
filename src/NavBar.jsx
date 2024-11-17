@@ -1,10 +1,40 @@
 import { Link, NavLink } from "react-router-dom";
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function NavBar() {
+	const navContainerRef = useRef(null);
+	const menuDivRef = useRef(null);
+
+	function toggleNav() {
+		// Toggle the dropdown to close when an option is selected
+		const menuToggle = document.getElementById("navbarSupportedContent");
+		const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, { toggle: false });
+
+		bsCollapse.toggle();
+	}
+
+	function handleDropdownToggle(e) {
+		// Toggle the dropdown to close when clicking outside the menu area.
+		const menuToggle = document.getElementById("navbarSupportedContent");
+		const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, { toggle: false });
+
+		let div_container = menuDivRef.current.className;
+		let reg = new RegExp("show");
+
+		if (!e.target.closest(`.${navContainerRef.current.className}`) & reg.test(div_container)) {
+			bsCollapse.toggle();
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener("click", handleDropdownToggle);
+		return () => {
+			document.removeEventListener("click", handleDropdownToggle);
+		};
+	});
 	return (
 		<nav className="navbar sticky-top navbar-expand-md bg-dark" data-bs-theme="dark">
-			<div className="container-lg">
+			<div className="container-lg" ref={navContainerRef}>
 				<Link className="navbar-brand text-white" to="/">
 					<img
 						src={"tennisball-bg-dark.png"}
@@ -30,39 +60,51 @@ export default function NavBar() {
 				</button>
 
 				{/* Menu of Tournmanets */}
-				<div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ justifyContent: "space-around" }}>
+				<div
+					className="collapse navbar-collapse"
+					id="navbarSupportedContent"
+					ref={menuDivRef}
+					style={{ justifyContent: "space-around" }}
+				>
 					<ul className="navbar-nav mb-lg-0">
 						<li className="nav-item">
-							<NavLink className="nav-link" to="/australian-open">
+							<NavLink className="nav-link" to="/australian-open" onClick={toggleNav}>
 								Australian Open
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="/french-open">
+							<NavLink className="nav-link" to="/french-open" onClick={toggleNav}>
 								French Open
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="/wimbledon">
+							<NavLink className="nav-link" to="/wimbledon" onClick={toggleNav}>
 								Wimbledon
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="/us-open">
+							<NavLink className="nav-link" to="/us-open" onClick={toggleNav}>
 								US Open
 							</NavLink>
 						</li>
 						<li className="nav-item dropdown">
-							<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								News
+							<a
+								className="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								data-bs-auto-close="true"
+								aria-expanded="false"
+							>
+								More
 							</a>
-							<ul className="dropdown-menu">
+							<ul className="dropdown-menu" style={{ width: "fit-content" }}>
 								<li>
 									{/* <Link className="dropdown-item" to="/national-bank-open">
 										National Bank Open
 									</Link> */}
-									<Link className="dropdown-item" to="/grand-slam-results">
-										Grand Slam Results
+									<Link className="dropdown-item" to="/grand-slam-results" onClick={toggleNav}>
+										Tournament Results
 									</Link>
 									{/* <a className="dropdown-item" href="javascript:void(0)"> */}
 									{/* Coming Soon */}
@@ -125,13 +167,16 @@ export default function NavBar() {
 							</ul>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="/contact">
+							<NavLink className="nav-link" to="/contact" onClick={toggleNav}>
 								Contact
 							</NavLink>
 						</li>
 					</ul>
+					{/* navbar-nav */}
 				</div>
+				{/* collapse navbar-collapse */}
 			</div>
+			{/* container-lg */}
 		</nav>
 	);
 }

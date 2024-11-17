@@ -4,6 +4,7 @@ import { faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
 // import { faForward as farFaForward } from "@fortawesome/free-regular-svg-icons";
 import DrawGroup from "./DrawGroup";
 import { slamScoresArray } from "../../data/scoresData";
+import Footer from "./Footer";
 
 export default function Draws({ title, updated, children }) {
 	const [roundCounter, setCounter] = useState(0);
@@ -15,6 +16,7 @@ export default function Draws({ title, updated, children }) {
 	const [slamData, setSlamData] = useState([]);
 	const [slamYears, setSlamYears] = useState(["Choose..."]);
 	const ref = useRef(null);
+	const [footer, setFooter] = useState(true);
 
 	const titleA = document.querySelector(".pad-1");
 	const titleB = document.querySelector(".pad-2");
@@ -190,6 +192,7 @@ export default function Draws({ title, updated, children }) {
 							setVisibility("invisible");
 							setDataMsg(true);
 						}
+						setFooter(false);
 						window.scrollTo({ top: 0, behavior: "instant" });
 					}}
 				>
@@ -280,6 +283,7 @@ export default function Draws({ title, updated, children }) {
 				</button>
 			</div>
 			{/* carousel-container */}
+			<Footer fixedBottom={footer} />
 		</>
 	);
 }

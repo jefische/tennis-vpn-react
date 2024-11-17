@@ -2,7 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import Footer from "./Footer";
 import { Home, Australian, French, Wimbledon, USO, Contact, NationalBank, SlamResults } from "./Pages";
 import ScrollToTop from "./components/ScrollToTop";
 import "./css/styles-draws.scss";
@@ -24,7 +23,6 @@ const App = () => {
 			</Routes>
 
 			<ScrollToTop />
-			<Footer />
 		</BrowserRouter>
 	);
 };

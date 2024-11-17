@@ -9,6 +9,7 @@ import { WimbledonPost } from "./content/WimbledonPost";
 import { USOpenPost } from "./content/USOpenPost";
 import { NationalBankOpenPost } from "./content/NationalBankOpenPost";
 import { SlamResultsPost } from "./content/SlamResultsPost";
+import Footer from "./components/Footer";
 
 export function Home() {
 	useEffect(() => {
@@ -20,6 +21,7 @@ export function Home() {
 				<Hero img="main-image" />
 				<HomepagePost />
 			</Posts>
+			<Footer />
 		</>
 	);
 }
@@ -34,6 +36,7 @@ export function Australian() {
 				<Hero img="ao-main-image" />
 				<AustralianPost />
 			</Posts>
+			<Footer />
 		</>
 	);
 }
@@ -48,6 +51,7 @@ export function French() {
 				<Hero img="french-main-image" />
 				<FrenchPost />
 			</Posts>
+			<Footer />
 		</>
 	);
 }
@@ -62,6 +66,7 @@ export function Wimbledon() {
 				<Hero img="wimbledon-main-image" />
 				<WimbledonPost />
 			</Posts>
+			<Footer />
 		</>
 	);
 }
@@ -76,6 +81,7 @@ export function USO() {
 				<Hero img="uso-main-image" />
 				<USOpenPost />
 			</Posts>
+			<Footer />
 		</>
 	);
 }
@@ -87,6 +93,7 @@ export function Contact() {
 	return (
 		<>
 			<h4 className="ps-3 mt-5 text-center">Please email us for any questions at support@totaltennis.tv</h4>
+			<Footer fixedBottom={true} />
 		</>
 	);
 }
