@@ -12,10 +12,10 @@ export function USOpenPost() {
 		<>
 			<br />
 			<p>
-				The final grand slam of the year, the <span>US Open</span>, will take place in electric New York City.
-				Coco Gauff will look to defend her grand slam title after what's been another consistent year so far
-				posting a 35-11 win-loss record through Wimbledon. On the men's side, Novak Djokovic will aim to defend
-				his title and try to add to his record breaking 24 grand slam titles.
+				The final grand slam of the year, the <span>US Open</span>, will take place in electric New York City. Coco Gauff will look
+				to defend her grand slam title after what's been another consistent year so far posting a 35-11 win-loss record through
+				Wimbledon. On the men's side, Novak Djokovic will aim to defend his title and try to add to his record breaking 24 grand
+				slam titles.
 			</p>
 
 			<p>
@@ -23,16 +23,15 @@ export function USOpenPost() {
 			</p>
 
 			<p>
-				<span>ESPN owns the broadcasting rights for the 2024 US Open,</span> meaning the it will be difficult to
-				watch matches anywhere outside of the US. This is due to <span>geo-restrictions</span> and{" "}
-				<span>blackout policies</span> which prevent certain locations from streaming the tournament.
-				Fortunately, users can bypass these restrictions by <span>masking your ip address with a VPN.</span>
+				<span>ESPN owns the broadcasting rights for the 2024 US Open,</span> meaning the it will be difficult to watch matches
+				anywhere outside of the US. This is due to <span>geo-restrictions</span> and <span>blackout policies</span> which prevent
+				certain locations from streaming the tournament. Fortunately, users can bypass these restrictions by{" "}
+				<span>masking your ip address with a VPN.</span>
 			</p>
 
 			<p>
-				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its
-				reliability, speed, and service with more than <span>3,000 servers</span> located in{" "}
-				<span>94 countries</span>.
+				A high quality VPN recommended by many users around the world is <span>ExpressVPN</span> due to its reliability, speed, and
+				service with more than <span>3,000 servers</span> located in <span>94 countries</span>.
 			</p>
 
 			<QuickGuide
@@ -48,9 +47,8 @@ export function USOpenPost() {
 			</h2>
 			<br />
 			<p>
-				There are a few services you can use to watch the US Open depending on your location. A great option is{" "}
-				<span>9Now</span> as it's <span>complete free</span>. For users with a different preference here are
-				other great options:
+				There are a few services you can use to watch the US Open depending on your location. A great option is <span>9Now</span> as
+				it's <span>complete free</span>. For users with a different preference here are other great options:
 			</p>
 			<ActionTable tableData={streamingDataUSO} />
 			<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
@@ -90,9 +88,9 @@ export function USOpenPost() {
 			<ActionButton vpnLink={vpn.USOLink} text="Stream US Open on your device" />
 
 			<p className="pt-5">
-				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
-				your VPN straight to your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin
-				dashboard and connect to your <span>VPN network</span>.
+				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting your VPN straight to
+				your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin dashboard and connect to your{" "}
+				<span>VPN network</span>.
 			</p>
 
 			<h2 className="mt-5">2024 US Open Schedule of Play (Singles)</h2>
@@ -107,17 +105,17 @@ export function USOpenPost() {
 				<div className="accordion-item">
 					<h2 className="accordion-header">
 						<button
-							className="accordion-button"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#panelsStayOpen-collapseOne"
-							aria-expanded="true"
+							aria-expanded="false"
 							aria-controls="panelsStayOpen-collapseOne"
 						>
 							View Past Champions - ATP
 						</button>
 					</h2>
-					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse">
 						<div className="accordion-body">
 							<ActionTable tableData={USOChampionsATP} />
 						</div>

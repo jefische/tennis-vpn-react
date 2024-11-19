@@ -9,7 +9,8 @@ import json
 ######################
 # display options
 ######################
-pd.set_option('display.max_rows', 20)
+pd.set_option('display.max_rows', 200)
+pd.set_option('display.min_rows', 20)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_colwidth', None)
 
@@ -26,10 +27,10 @@ pd.set_option('display.max_colwidth', None)
 # US Open (M) 2024, 2023, 2022
 # US Open (W) 2024, 2023, 2022
 ##########################
-tournament_folder = "wimbledon"
+tournament_folder = "australian-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
-#tournament_file = "ausopen"
-year = "2023"
+tournament_file = "ausopen"
+year = "2021"
 gender = "mens" # mens or womens
 gender_loop_range = 6 # 4 for women, 6 for men
 
@@ -80,12 +81,12 @@ for i in range(0, len(df2)):
 #df2
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 
                            'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas', 'Struff J.L.', 'J. Lennard Struff', 
-                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
+                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. De Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
 
 #df_order
 player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
                            'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. De Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
                            'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
                            'Ph Herbert', 'P.H. Herbert', 'P Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff',
                            'J Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan', 'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero', 'C Stebe', 'C.M. Stebe']
@@ -402,7 +403,7 @@ print(f'{firstname2.group()}.{lastname2.group()}')
 # Step 10:
 # Grab necessary columns for tiebreak data (df_Tiebreak)
 #############################################################
-df_TB=df_Tiebreak.loc[:,['match_id', 'ElapsedTime', 'SetNo', 'P1GamesWon', 'P2GamesWon', 'SetWinner', 'GameNo', 'GameWinner', 'P1Score', 'P2Score']]
+df_TB=df_Tiebreak.loc[:,['match_id', 'ElapsedTime', 'SetNo', 'P1GamesWon', 'P2GamesWon', 'SetWinner', 'GameNo', 'GameWinner', 'PointNumber', 'PointWinner', 'P1Score', 'P2Score']]
 
 ##################################################################################################################
 # Step 11:
@@ -426,8 +427,9 @@ elif gender == 'womens':
     
 
 ##########################################################################################################################
-# Step 12:
+# Step 12 (a):
 # Pull all of the tiebreak final points (requires 2 rows for each final score b/c how the data is captured in the file)
+# # This is for Wimbledon and US Open data only
 ##########################################################################################################################
 TB_list = df_TB.loc[(df_TB['GameNo'] == 13) & (df_TB['SetWinner'] != 0) & (df_TB['P1GamesWon'] > 0) & (df_TB['P2GamesWon'] > 0)].index.tolist()
 TB_list_extended = TB_list.copy()
@@ -441,8 +443,42 @@ df_TB = df_TB.loc[TB_list_extended] # filter df_TB to only the required tiebreak
 df_TB['P1Score'] = df_TB['P1Score'].astype(int) # convert P1Score from string to integer
 df_TB['P2Score'] = df_TB['P2Score'].astype(int) # convert P2Score from string to integer
 
+
+##########################################################################################################################
+# Step 12 (b):
+# Pull all of the tiebreak final points (requires 2 rows for each final score b/c how the data is captured in the file)
+# This is for Australian Open and French Open data only
+##########################################################################################################################
+for i in range(0, len(df_TB)):
+     if df_TB.loc[i,'P1Score'] == 'GAME':
+          df_TB.loc[i,'P1Score'] = -1
+     if df_TB.loc[i,'P2Score'] == 'GAME':
+          df_TB.loc[i,'P2Score'] = -1
+     if df_TB.loc[i,'P1Score'] == 'AD':
+          df_TB.loc[i,'P1Score'] = -2
+     if df_TB.loc[i,'P2Score'] == 'AD':
+          df_TB.loc[i,'P2Score'] = -2
+          
+df_TB['P1Score'] = df_TB['P1Score'].astype(int) # convert P1Score from string to integer
+df_TB['P2Score'] = df_TB['P2Score'].astype(int) # convert P2Score from string to integer
+
+
+
+df_TB.loc[(df_TB['P1Score'] > 12) & (df_TB['P1Score'] < 15)] # Check for any 15 - 13 tiebreak scores
+df_TB.loc[(df_TB['P1Score'] > 15) & (df_TB['P1Score'] < 30)] # Check for any 17 - 15 tiebreak scores
+
+TB_list = df_TB.loc[(df_TB['P1Score'] > 0) & (df_TB['P1Score'] < 15)] # Grab all the tiebreak points
+
+TB_index = TB_list.loc[(np.abs(TB_list['P1Score'] - TB_list['P2Score']) > 1) & ((TB_list['P1Score'] > 6) | (TB_list['P2Score'] > 6))].index.tolist() # Filter for the final tiebreak scores (indexes)
+df_TB = df_TB.loc[TB_index] # filter df_TB to only the required tiebreak scores 
+
+#df_TB.loc[: , ['match_id', 'SetNo', 'P1GamesWon', 'P2GamesWon', 'PointNumber', 'PointWinner', 'P1Score', 'P2Score']]
+#df_TB['P1GamesWon']
+#table = pd.pivot_table(df_TB, values=['P1Score', 'P2Score'], index=['match_id', 'SetNo', 'GameNo'], aggfunc="sum")
+#pd.pivot_table(df_TB, values=['P1Score', 'P2Score'], index=['match_id', 'SetNo'], aggfunc="sum")
+
 #####################################################################
-# Step 13a:
+# Step 13:
 # Add additional columns for set tiebreak scores (ATP Mens 5 sets)
 # Add additional columns for set tiebreak scores (WTA Womens 3 sets)
 #####################################################################
@@ -456,9 +492,11 @@ elif gender == 'womens':
 
 #left_merged_2.loc[left_merged_2['match_num'] == 1102]
 
+
 ##########################################################################################################################
-# Step 14:
+# Step 14 (a):
 # Iterate through the tiebreak final point list and pull scores from the previous record (i-1) to capture the final score
+# This is for Wimbledon and US Open data only
 ##########################################################################################################################
 for i in TB_list:
     if (df_TB.loc[i-1, 'P1Score'] != 0) | (df_TB.loc[i-1, 'P2Score'] != 0):
@@ -476,6 +514,22 @@ for i in TB_list:
         left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName1] = p1
         left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName2] = p2
 
+##########################################################################################################################
+# Step 14 (b):
+# Iterate through the tiebreak final point list and pull scores from the previous record (i-1) to capture the final score
+# This is for Australian Open and French Open data only
+##########################################################################################################################
+for i in TB_index:
+	matchid = df_TB.loc[i, 'match_id']
+	set = df_TB.loc[i, 'SetNo']
+	p1 = df_TB.loc[i, 'P1Score']
+	p2 = df_TB.loc[i, 'P2Score']
+	# construct column name to enter tiebreak data
+	TBcolName1 = ('P1_'+ str(set) + 'T')
+	TBcolName2 = ('P2_'+ str(set) + 'T')
+	left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName1] = p1
+	left_merged_2.loc[left_merged_2['match_num'] == matchid, TBcolName2] = p2
+        
 
 ######################################################
 # Step 15:

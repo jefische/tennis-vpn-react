@@ -7,6 +7,7 @@ export default function NavBar() {
 
 	function toggleNav() {
 		// Toggle the dropdown to close when an option is selected
+		// Found working solution: https://stackoverflow.com/questions/42401606/how-to-hide-collapsible-bootstrap-navbar-on-click
 		const menuToggle = document.getElementById("navbarSupportedContent");
 		const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, { toggle: false });
 
@@ -15,6 +16,7 @@ export default function NavBar() {
 
 	function handleDropdownToggle(e) {
 		// Toggle the dropdown to close when clicking outside the menu area.
+		// Found working solution: https://medium.com/@alexandprivate/a-button-dropdown-in-react-and-not-3fc16525da62
 		const menuToggle = document.getElementById("navbarSupportedContent");
 		const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, { toggle: false });
 

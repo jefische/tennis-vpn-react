@@ -5,7 +5,7 @@ export const australianChampionsATP = {
 			id: 1,
 			year: "2024",
 			champion: "Jannik Sinner (ITA)",
-			runnerup: "Daniil Medvedev",
+			runnerup: "Daniil Medvedev (RUS)",
 			score: "3-6, 3-6, 6-4, 6-4, 6-3",
 		},
 		{
@@ -19,14 +19,14 @@ export const australianChampionsATP = {
 			id: 3,
 			year: "2022",
 			champion: "Rafael Nadal (ESP)",
-			runnerup: "Daniil Medvedev",
+			runnerup: "Daniil Medvedev (RUS)",
 			score: "2-6, 6-7(5), 6-4, 6-4, 7-5",
 		},
 		{
 			id: 4,
 			year: "2021",
 			champion: "Novak Djokovic (SRB)",
-			runnerup: "Daniil Medvedev",
+			runnerup: "Daniil Medvedev (RUS)",
 			score: "7-5, 6-2, 6-2",
 		},
 		{
@@ -80,14 +80,14 @@ export const australianChampionsWTA = {
 		{
 			id: 1,
 			year: "2024",
-			champion: "Aryna Sabalenka",
+			champion: "Aryna Sabalenka (BLR)",
 			runnerup: "Zheng Qinwen (CHN)",
 			score: "6-3, 6-2",
 		},
 		{
 			id: 2,
 			year: "2023",
-			champion: "Aryna Sabalenka",
+			champion: "Aryna Sabalenka (BLR)",
 			runnerup: "Elena Rybakina (KAZ)",
 			score: "4-6, 6-3, 6-4",
 		},
@@ -144,7 +144,7 @@ export const australianChampionsWTA = {
 			id: 10,
 			year: "2015",
 			champion: "Serena Williams (USA)",
-			runnerup: "Maria Sharapova",
+			runnerup: "Maria Sharapova (RUS)",
 			score: "6-3, 7-6(5)",
 		},
 	],
@@ -460,9 +460,9 @@ export const USOChampionsATP = {
 		{
 			id: 1,
 			year: "2024",
-			champion: "---",
-			runnerup: "---",
-			score: "---",
+			champion: "Jannik Sinner (ITA)",
+			runnerup: "Taylor Fritz (USA)",
+			score: "6-3, 6-4, 7-5",
 		},
 		{
 			id: 2,
@@ -536,9 +536,9 @@ export const USOChampionsWTA = {
 		{
 			id: 1,
 			year: "2024",
-			champion: "---",
-			runnerup: "---",
-			score: "---",
+			champion: "Aryna Sabalenka (BLR)",
+			runnerup: "Jessica Pegula (USA)",
+			score: "7-5, 7-5",
 		},
 		{
 			id: 2,

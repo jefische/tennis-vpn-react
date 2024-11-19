@@ -103,10 +103,10 @@ body {
 						margin-right: 25px;
 					}
 					.match-score {
-						width: 100px;
+						width: auto;
 
 						.set {
-							width: 20px;
+							width: 24px;
 							.score {
 								font-size: 1rem;
 								color: navy;
@@ -268,6 +268,18 @@ body {
 		.roundGroup {
 			margin-right: 25px;
 			width: calc(50%);
+			.drawGroup {
+				.matchbox {
+					.team-info {
+						.match-score {
+							width: 110px;
+							.set {
+								width: 22px;
+							}
+						}
+					}
+				}
+			}
 		}
 		.columnA {
 			margin-left: 100px;

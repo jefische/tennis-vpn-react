@@ -13,27 +13,24 @@ export function FrenchPost() {
 			<br />
 			<p>
 				The second gram slam of the season and one of the most anticipated tournaments of the year is upon us,{" "}
-				<span>Roland Garros!</span> Much of the anticipation this year is centered around{" "}
-				<span>Rafael Nadal's</span> return to competitive match play and what many have speculated as likely his
-				last French Open as a player.
+				<span>Roland Garros!</span> Much of the anticipation this year is centered around <span>Rafael Nadal's</span> return to
+				competitive match play and what many have speculated as likely his last French Open as a player.
 			</p>
 			<p>
 				The tournament will <span>start on Sunday, May 26th</span> and run until Sunday June 9th.
 			</p>
 
 			<p>
-				If you are located in Australia, then you can watch the tournament for{" "}
-				<span>free on Channel 9 or 9Now</span>. If you <span>live outside Australia</span> then unfortunately
-				you may not have access to a live broadcast of the tournaments due to <span>geo-restrictions</span> or{" "}
-				<span>blackout policies</span> which prevent certain locations from streaming events because of TV
-				broadcasting rights.
+				If you are located in Australia, then you can watch the tournament for <span>free on Channel 9 or 9Now</span>. If you{" "}
+				<span>live outside Australia</span> then unfortunately you may not have access to a live broadcast of the tournaments due to{" "}
+				<span>geo-restrictions</span> or <span>blackout policies</span> which prevent certain locations from streaming events
+				because of TV broadcasting rights.
 			</p>
 
 			<p>
-				Fortunately, you can bypass these restrictions using a VPN and{" "}
-				<span>masking your actual IP address</span>. A VPN will change your IP address to a different location
-				of your choosing and encrypt your data for safety. A high quality VPN recommended by many experts is{" "}
-				<span>ExpressVPN</span> due to its reliability, speed, and service with more than{" "}
+				Fortunately, you can bypass these restrictions using a VPN and <span>masking your actual IP address</span>. A VPN will
+				change your IP address to a different location of your choosing and encrypt your data for safety. A high quality VPN
+				recommended by many experts is <span>ExpressVPN</span> due to its reliability, speed, and service with more than{" "}
 				<span>3,000 servers</span> located in <span>94 countries</span>.
 			</p>
 
@@ -50,9 +47,9 @@ export function FrenchPost() {
 			</h2>
 			<br />
 			<p>
-				There are a few services you can use to watch the French Open depending on your location. The best
-				option is <span>9Now</span> as it is a <span>completely free streaming service</span>. However, for
-				users with a different preference here are other great options:
+				There are a few services you can use to watch the French Open depending on your location. The best option is{" "}
+				<span>9Now</span> as it is a <span>completely free streaming service</span>. However, for users with a different preference
+				here are other great options:
 			</p>
 			<ActionTable tableData={streamingDataFO} />
 			<ActionButton vpnLink={vpn.streamingServicesLink} text="Unblock streaming with ExpressVPN" />
@@ -92,9 +89,9 @@ export function FrenchPost() {
 			<ActionButton vpnLink={vpn.FOLink} text="Stream French Open on your device" />
 
 			<p className="pt-5">
-				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting
-				your VPN straight to your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin
-				dashboard and connect to your <span>VPN network</span>.
+				Note if your Smart TV doesn’t directly support the ExpressVPN app you can get around this by connecting your VPN straight to
+				your <a href={vpn.routerLink}>Wi-Fi router</a>. Simply access your router’s admin dashboard and connect to your{" "}
+				<span>VPN network</span>.
 			</p>
 
 			<h2 className="mt-5">2024 French Open Broadcast Schedule (USA)</h2>
@@ -107,17 +104,17 @@ export function FrenchPost() {
 				<div className="accordion-item">
 					<h2 className="accordion-header">
 						<button
-							className="accordion-button"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#panelsStayOpen-collapseOne"
-							aria-expanded="true"
+							aria-expanded="false"
 							aria-controls="panelsStayOpen-collapseOne"
 						>
 							View Past Champions - ATP
 						</button>
 					</h2>
-					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+					<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse">
 						<div className="accordion-body">
 							<ActionTable tableData={frenchChampionsATP} />
 						</div>
