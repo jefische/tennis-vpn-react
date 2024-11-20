@@ -11,7 +11,12 @@ export default function NavBar() {
 		const menuToggle = document.getElementById("navbarSupportedContent");
 		const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle, { toggle: false });
 
-		bsCollapse.toggle();
+		const buttonToggle = document.querySelector("button.navbar-toggler");
+
+		// Check for opened menu on mobile and then call toggle.
+		if (buttonToggle.getAttribute("aria-expanded") == "true") {
+			bsCollapse.toggle();
+		}
 	}
 
 	function handleDropdownToggle(e) {
