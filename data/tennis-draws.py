@@ -31,8 +31,8 @@ tournament_folder = "australian-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
 tournament_file = "ausopen"
 year = "2021"
-gender = "mens" # mens or womens
-gender_loop_range = 6 # 4 for women, 6 for men
+gender = "womens" # mens or womens
+gender_loop_range = 4 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
@@ -665,9 +665,9 @@ left_merged_2[left_merged_2['match_num'].between(120212300, 120212400)]
 # 04 = US Open
 ##############################################################################
 if gender == 'mens':
-	df_final=merge_to_final.loc[merge_to_final['match_num'] < int('3' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
+	df_final=merge_to_final.loc[merge_to_final['match_num'] < int('1' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
 elif gender == 'womens':
-	df_final=merge_to_final.loc[merge_to_final['match_num'] >= int('3' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
+	df_final=merge_to_final.loc[merge_to_final['match_num'] >= int('1' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
 
 df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Comment' : 'status', 'Round' : 'round'}, inplace=True)
 #df_final.sort_values(by=['id'])
@@ -739,9 +739,6 @@ with open("ATP_players.json", "w") as outfile:
 # Step 22:
 # Output the results into a sample.json file which we can copy and paste into scoresData.js
 ##################################################################################################
-
-os.chdir(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}")
-os.getcwd()
 
 result = df_final.to_json(orient='records')
 parsed = loads(result)
