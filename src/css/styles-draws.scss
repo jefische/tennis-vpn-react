@@ -372,3 +372,12 @@ body {
 		}
 	}
 }
+
+@media (min-width: 1750px) {
+	.prev-next-button.previous {
+		left: 300px;
+	}
+	.prev-next-button.next {
+		right: 300px;
+	}
+}

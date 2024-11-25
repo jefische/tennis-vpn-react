@@ -27,12 +27,12 @@ pd.set_option('display.max_colwidth', None)
 # US Open (M) 2024, 2023, 2022
 # US Open (W) 2024, 2023, 2022
 ##########################
-tournament_folder = "australian-open"
+tournament_folder = "french-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
-tournament_file = "ausopen"
+# tournament_file = "ausopen"
 year = "2021"
-gender = "womens" # mens or womens
-gender_loop_range = 4 # 4 for women, 6 for men
+gender = "mens" # mens or womens
+gender_loop_range = 6 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
@@ -81,12 +81,12 @@ for i in range(0, len(df2)):
 #df2
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 
                            'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas', 'Struff J.L.', 'J. Lennard Struff', 
-                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. De Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
+                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. De Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu']
 
 #df_order
 player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
                            'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. De Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. De Minaur', 'A De Minaur', 'A. De Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
                            'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
                            'Ph Herbert', 'P.H. Herbert', 'P Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff',
                            'J Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan', 'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero', 'C Stebe', 'C.M. Stebe']
@@ -297,7 +297,7 @@ def isNaN(num):
 
 left_merged_2.loc[isNaN(left_merged_2["Round"]),:] # Filter for names that are NA for the Round variable, thus not pulling data
 
-TEXTNAME = 'Pliskova'
+TEXTNAME = 'Londero'
 
 df2[df2['player1'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player1
 df2[df2['player2'].str.contains(rf'{TEXTNAME}')] # Individually check the df2 names as needed for player2
@@ -326,12 +326,12 @@ left_merged_2[left_merged_2['player1'].str.contains(rf'{TEXTNAME}')] # Individua
 ## df2 ##
 player_hardcoded_names1 = ['Zhang Zh.', 'Z. Zhang', 'O Connell C.', "C. O'Connell", 'Barrios M.', 'T. Barrios Vera', 'Mcdonald M.', 'M. McDonald', 
                            'Auger-Aliassime F.', 'F. Auger Aliassime', 'Ramos-Vinolas A.', 'A. Ramos Vinolas', 'Struff J.L.', 'J. Lennard Struff', 
-                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu', 'Londero J.I.', 'J. Londero']
+                           'Mpetshi G.', 'G. Mpetshi Perricard', 'De Minaur A.', 'A. de Minaur', 'Kwon S.W.', 'S. Kwon', 'Hsu Y.', 'Y.H. Hsu']
 
 ## df_order ##
 player_hardcoded_names2 = ['Marc Andrea Huesler', 'M.A. Huesler', 'Juan Manuel Cerundolo', 'J.M. Cerundolo', 'Daniel Elahi Galan', 'D.E. Galan', 
                            'Juan Pablo Varillas', 'J.P. Varillas', 'Tomas Martin Etcheverry', 'T. Etcheverry', 'Botic van De Zandschulp', 'B. Van De Zandschulp',
-                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. de Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
+                           'Yu Hsiou Hsu', 'Y.H. Hsu', 'Alex De Minaur', 'A. de Minaur', 'A De Minaur', 'A. De Minaur', 'Chun Hsin Tseng', 'C.H. Tseng', 
                            'Chun hsin Tseng', 'C.H. Tseng', 'Tim van Rijthoven', 'T. Van Rijthoven', 'Jw Tsonga', 'J.W. Tsonga', 'F Auger-Aliassime', 'F. Auger Aliassime',
                            'Ph Herbert', 'P.H. Herbert', 'P Herbert', 'P.H. Herbert', 'A Ramos-Vinolas', 'A. Ramos Vinolas', 'Jl Struff', 'J. Lennard Struff',
                            'J Struff', 'J. Lennard Struff', 'De Galan', 'D.E. Galan', 'M Mcdonald', 'M. McDonald', 'Ji Londero', 'J.I. Londero', 'C Stebe', 'C.M. Stebe']
@@ -665,9 +665,9 @@ left_merged_2[left_merged_2['match_num'].between(120212300, 120212400)]
 # 04 = US Open
 ##############################################################################
 if gender == 'mens':
-	df_final=merge_to_final.loc[merge_to_final['match_num'] < int('1' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
+	df_final=merge_to_final.loc[merge_to_final['match_num'] < int('2' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # ATP mens
 elif gender == 'womens':
-	df_final=merge_to_final.loc[merge_to_final['match_num'] >= int('1' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
+	df_final=merge_to_final.loc[merge_to_final['match_num'] >= int('2' + year + '2000'), ['match_num', 'player1', 'player2', 'score1', 'score2', 'WinnerTeam', 'Comment', 'Round']] # WTA womens
 
 df_final.rename(columns={'match_num' : 'id', 'player1' : 'team1', 'player2' : 'team2', 'WinnerTeam' : 'winner', 'Comment' : 'status', 'Round' : 'round'}, inplace=True)
 #df_final.sort_values(by=['id'])

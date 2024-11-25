@@ -7,7 +7,7 @@ import { slamScoresArray } from "../../data/scoresData";
 import Footer from "./Footer";
 
 export default function Draws({ title, updated, children }) {
-	const [roundCounter, setRound] = useState(null);
+	const [currentRound, setRound] = useState(null);
 	const [showHidden, setVisibility] = useState("invisible");
 	const [displayDataMsg, setDataMsg] = useState(false);
 	const [slamData, setSlamData] = useState([]);
@@ -36,10 +36,10 @@ export default function Draws({ title, updated, children }) {
 		setRound(Number(e.currentTarget.name));
 	}
 	function handleNextScroll(e) {
-		setRound(Math.min(roundCounter + 1, 7));
+		setRound(Math.min(currentRound + 1, 7));
 	}
 	function handlePrevScroll(e) {
-		setRound(Math.max(roundCounter - 1, 1));
+		setRound(Math.max(currentRound - 1, 1));
 	}
 
 	useEffect(() => {
@@ -49,7 +49,7 @@ export default function Draws({ title, updated, children }) {
 		const titleB = document.querySelector(".pad-2");
 		const titleC = document.querySelector(".pad-3");
 
-		switch (roundCounter) {
+		switch (currentRound) {
 			case 1:
 				titleA.innerHTML = "1st Round";
 				titleB.innerHTML = "2nd Round";
@@ -184,9 +184,9 @@ export default function Draws({ title, updated, children }) {
 					</button>
 				</div>
 				<div className={`round-headers px-4 ${showHidden}`}>
-					<h4 className="text-center pad-1">1st Round</h4>
-					<h4 className="text-center pad-2">2nd Round</h4>
-					<h4 className="text-center pad-3">3rd Round</h4>
+					<h4 className="text-center pad-1"></h4>
+					<h4 className="text-center pad-2"></h4>
+					<h4 className="text-center pad-3"></h4>
 				</div>
 			</div>
 			{/* round-headers */}
@@ -196,13 +196,13 @@ export default function Draws({ title, updated, children }) {
 			<div className="carousel-container">
 				<div className={`px-4 pt-5`} ref={ref}>
 					<div className="columnA roundGroup">
-						<DrawGroup scores={slamData} round={roundCounter} connector={false} />
+						<DrawGroup scores={slamData} round={currentRound} connector={false} />
 					</div>
 					<div className="columnB roundGroup">
-						<DrawGroup scores={slamData} round={roundCounter + 1} connector={true} />
+						<DrawGroup scores={slamData} round={currentRound + 1} connector={true} />
 					</div>
 					<div className="columnC roundGroup">
-						<DrawGroup scores={slamData} round={roundCounter + 2} connector={true} />
+						<DrawGroup scores={slamData} round={currentRound + 2} connector={true} />
 					</div>
 				</div>
 				<button className={`prev-next-button next ${showHidden}`} onClick={handleNextScroll}>
