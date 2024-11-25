@@ -7,10 +7,7 @@ import { slamScoresArray } from "../../data/scoresData";
 import Footer from "./Footer";
 
 export default function Draws({ title, updated, children }) {
-	const [roundCounter, setCounter] = useState(null);
-	const [columnARound, setRoundA] = useState(1);
-	const [columnBRound, setRoundB] = useState(2);
-	const [columnCRound, setRoundC] = useState(3);
+	const [roundCounter, setRound] = useState(null);
 	const [showHidden, setVisibility] = useState("invisible");
 	const [displayDataMsg, setDataMsg] = useState(false);
 	const [slamData, setSlamData] = useState([]);
@@ -34,99 +31,67 @@ export default function Draws({ title, updated, children }) {
 			setSlamYears(["No Data"]);
 		}
 	}
-
 	function handleRoundClick(e) {
 		window.scrollTo({ top: 0, behavior: "smooth" });
-		setCounter(Number(e.currentTarget.name));
-		setRoundA(Number(e.currentTarget.name) + 1);
-		setRoundB(Number(e.currentTarget.name) + 2);
-		setRoundC(Number(e.currentTarget.name) + 3);
+		setRound(Number(e.currentTarget.name));
+	}
+	function handleNextScroll(e) {
+		setRound(Math.min(roundCounter + 1, 7));
+	}
+	function handlePrevScroll(e) {
+		setRound(Math.max(roundCounter - 1, 1));
 	}
 
 	useEffect(() => {
-		const nextBtns = document.querySelector(".prev-next-button.next");
-		const prevBtns = document.querySelector(".prev-next-button.previous");
+		// Updating the Round Headers after round state has been updated. Otherwise the headers would need to be updated inside the component/element tags
+		// below using large 7 piece ternary chain operators.
 		const titleA = document.querySelector(".pad-1");
 		const titleB = document.querySelector(".pad-2");
 		const titleC = document.querySelector(".pad-3");
-		const colB = document.querySelector(".columnB");
-		const colC = document.querySelector(".columnC");
 
 		switch (roundCounter) {
-			case 0:
+			case 1:
 				titleA.innerHTML = "1st Round";
 				titleB.innerHTML = "2nd Round";
 				titleC.innerHTML = "3rd Round";
 				setFooter(false);
 				break;
-			case 1:
+			case 2:
 				titleA.innerHTML = "2nd Round";
 				titleB.innerHTML = "3rd Round";
 				titleC.innerHTML = "4th Round";
 				setFooter(false);
 				break;
-			case 2:
+			case 3:
 				titleA.innerHTML = "3rd Round";
 				titleB.innerHTML = "4th Round";
 				titleC.innerHTML = "Quarterfinals";
 				setFooter(false);
 				break;
-			case 3:
+			case 4:
 				titleA.innerHTML = "4th Round";
 				titleB.innerHTML = "Quarterfinals";
 				titleC.innerHTML = "Semifinals";
 				setFooter(false);
 				break;
-			case 4:
+			case 5:
 				titleA.innerHTML = "Quarterfinals";
 				titleB.innerHTML = "Semifinals";
 				titleC.innerHTML = "Finals";
 				setFooter(false);
 				break;
-			case 5:
+			case 6:
 				titleA.innerHTML = "Semifinals";
 				titleB.innerHTML = "Finals";
 				titleC.innerHTML = "";
 				setFooter(true);
 				break;
-			case 6:
+			case 7:
 				titleA.innerHTML = "Finals";
 				titleB.innerHTML = "";
 				titleC.innerHTML = "";
 				setFooter(true);
 				break;
-		}
-
-		if (columnARound == 7) {
-			colB.classList.add("invisible");
-			colC.classList.add("invisible");
-		} else if (columnBRound == 7) {
-			colB.classList.remove("invisible");
-			colC.classList.add("invisible");
-		} else {
-			colB.classList.remove("invisible");
-			colC.classList.remove("invisible");
-		}
-		function handleNextScroll(e) {
-			setCounter(Math.min(roundCounter + 1, 6));
-			setRoundA(Math.min(columnARound + 1, 7));
-			setRoundB(Math.min(columnBRound + 1, 8));
-			setRoundC(Math.min(columnCRound + 1, 9));
-		}
-		function handlePrevScroll(e) {
-			setCounter(Math.max(roundCounter - 1, 0));
-			setRoundA(Math.max(columnARound - 1, 1));
-			setRoundB(Math.max(columnBRound - 1, 2));
-			setRoundC(Math.max(columnCRound - 1, 3));
-		}
-
-		if (ref.current) {
-			nextBtns.addEventListener("click", handleNextScroll);
-			prevBtns.addEventListener("click", handlePrevScroll);
-			return () => {
-				nextBtns.removeEventListener("click", handleNextScroll);
-				prevBtns.removeEventListener("click", handlePrevScroll);
-			};
 		}
 	});
 
@@ -150,12 +115,12 @@ export default function Draws({ title, updated, children }) {
 							setVisibility("visible");
 							setDataMsg(false);
 							setFooter(false);
+							setRound(1);
 						} else {
-							console.log(result.length);
 							setSlamData(slamScoresArray[0].scores);
 							setVisibility("invisible");
 							setDataMsg(true);
-							setCounter(null);
+							setRound(null);
 							setFooter(true);
 						}
 						window.scrollTo({ top: 0, behavior: "instant" });
@@ -196,25 +161,25 @@ export default function Draws({ title, updated, children }) {
 
 			<div className={`round-headers-container ${showHidden}`}>
 				<div className="buttonGroup">
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="0">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="1">
 						1st Round
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="1">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="2">
 						2nd Round
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="2">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="3">
 						3rd Round
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="3">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="4">
 						4th Round
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="4">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="5">
 						Quarterfinals
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="5">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="6">
 						Semifinals
 					</button>
-					<button className="btn btn-outline-success" onClick={handleRoundClick} name="6">
+					<button className="btn btn-outline-success" onClick={handleRoundClick} name="7">
 						Finals
 					</button>
 				</div>
@@ -231,19 +196,19 @@ export default function Draws({ title, updated, children }) {
 			<div className="carousel-container">
 				<div className={`px-4 pt-5`} ref={ref}>
 					<div className="columnA roundGroup">
-						<DrawGroup scores={slamData} round={columnARound} connector={false} />
+						<DrawGroup scores={slamData} round={roundCounter} connector={false} />
 					</div>
 					<div className="columnB roundGroup">
-						<DrawGroup scores={slamData} round={columnBRound} connector={true} />
+						<DrawGroup scores={slamData} round={roundCounter + 1} connector={true} />
 					</div>
 					<div className="columnC roundGroup">
-						<DrawGroup scores={slamData} round={columnCRound} connector={true} />
+						<DrawGroup scores={slamData} round={roundCounter + 2} connector={true} />
 					</div>
 				</div>
-				<button className={`prev-next-button next ${showHidden}`}>
+				<button className={`prev-next-button next ${showHidden}`} onClick={handleNextScroll}>
 					<FontAwesomeIcon icon={faForward} size="xl" style={{ color: "#1e860a" }} />
 				</button>
-				<button className={`prev-next-button previous ${showHidden}`}>
+				<button className={`prev-next-button previous ${showHidden}`} onClick={handlePrevScroll}>
 					<FontAwesomeIcon icon={faBackward} size="xl" style={{ color: "#1e860a" }} />
 				</button>
 			</div>
