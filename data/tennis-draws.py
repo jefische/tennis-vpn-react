@@ -31,8 +31,8 @@ tournament_folder = "french-open"
 tournament_file = re.sub(r'-', '', tournament_folder)
 # tournament_file = "ausopen"
 year = "2021"
-gender = "mens" # mens or womens
-gender_loop_range = 6 # 4 for women, 6 for men
+gender = "womens" # mens or womens
+gender_loop_range = 4 # 4 for women, 6 for men
 
 df1=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}_{gender}.csv")
 df_order=pd.read_csv(f"C:/Users/blue_/Documents/Kaggle/Web Development/Tennis-VPN-React/data/{tournament_folder}/{year}-{tournament_file}-matches.csv")
