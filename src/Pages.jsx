@@ -17,7 +17,7 @@ export function Home() {
 	}, []);
 	return (
 		<>
-			<Posts id="toc1" title="How to Watch Tennis Online in 2024" updated="Last updated July 2024">
+			<Posts id="toc1" title="How to Watch Tennis Online in 2025" updated="Last updated February 2025">
 				<Hero img="main-image" />
 				<HomepagePost />
 			</Posts>
