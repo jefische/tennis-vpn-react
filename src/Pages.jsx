@@ -62,7 +62,7 @@ export function Wimbledon() {
 	}, []);
 	return (
 		<>
-			<Posts title="How to Watch Wimbledon in 2024" updated="Last updated June 2024">
+			<Posts title="How to Watch Wimbledon in 2024" updated="Last updated June 2024" updateSoon={true}>
 				<Hero img="wimbledon-main-image" />
 				<WimbledonPost />
 			</Posts>
@@ -77,7 +77,7 @@ export function USO() {
 	}, []);
 	return (
 		<>
-			<Posts title="How to Watch the US Open in 2024" updated="Last updated July 2024">
+			<Posts title="How to Watch the US Open in 2024" updated="Last updated July 2024" updateSoon={true}>
 				<Hero img="uso-main-image" />
 				<USOpenPost />
 			</Posts>
