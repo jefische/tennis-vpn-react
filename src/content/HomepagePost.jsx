@@ -17,7 +17,7 @@ export function HomepagePost() {
 			</p>
 			<p>
 				With <span>Roland Garros</span> and <span>Wimbledon</span> coming soon, there is plenty of high level tennis to watch.
-				However, depending on which country you live in, you may not have access to a live broadcast of a tournament due to{" "}
+				However, depending on which country you live, you may not have access to a live broadcast of a tournament due to{" "}
 				<span>geo-restrictions.</span> Another roadblock fans run into are <span>blackout policies</span> which prevent certain
 				locations from streaming an event due to TV station broadcasting rights. Fortunately you can bypass these restrictions using
 				a VPN and <span>masking your actual IP address.</span>
@@ -82,10 +82,10 @@ export function HomepagePost() {
 
 			<h2 className="mt-5">Conclusion</h2>
 			<p>
-				The landscape of broadcasting rights and licensing is always changing. Most recently in the UK, Amazon Prime will be
-				dropping international tennis tournament coverage after 2023. Sky Sports may take over some of the coverage as they have
-				covered the ATP tour before. To <span>avoid paying for expensive cable plans</span>, having access to a{" "}
-				<span>quality VPN</span> is a must have to bypass geo-restrictions and help you watch more tennis!
+				The landscape of broadcasting rights and licensing is always changing. Most recently in the UK, Amazon Prime has dropped
+				international tennis tournament coverage. Sky Sports has taken over some of the coverage as they have covered the ATP tour
+				before. To <span>avoid paying for expensive cable plans</span>, having access to a <span>quality VPN</span> is a must have
+				to bypass geo-restrictions and help you watch more tennis!
 			</p>
 		</>
 	);

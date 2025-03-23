@@ -162,17 +162,17 @@ export const streamingDataFO = {
 		},
 		{
 			id: 5,
-			name: "NBC Sports",
+			name: "TNT Sports",
 			location: "USA",
 			cost: "Free",
-			details: "",
+			details: "Download the TNT app",
 		},
 		{
 			id: 6,
-			name: "Peacock",
+			name: "Sling TV",
 			location: "USA",
-			cost: "$5.99",
-			details: "Also available to SKY and NOW subscribers in UK, Germany, Austria, Switzerland, Italy, or Ireland",
+			cost: "$46",
+			details: "Sling Orange is offered at $23 for the first month",
 		},
 		{
 			id: 7,

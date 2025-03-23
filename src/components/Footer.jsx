@@ -5,7 +5,7 @@ export default function Footer({ fixedBottom }) {
 				className={`d-flex justify-content-center align-items-center bg-dark ${fixedBottom ? "fixed-bottom" : ""}`}
 				style={{ height: "40px", color: "white" }}
 			>
-				&#169; 2024 totaltennis.tv
+				&#169; 2025 totaltennis.tv
 			</footer>
 		</>
 	);

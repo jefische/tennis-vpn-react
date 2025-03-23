@@ -47,7 +47,7 @@ export function French() {
 	}, []);
 	return (
 		<>
-			<Posts title="How to Watch the French Open in 2024" updated="Last updated April 2024">
+			<Posts title="How to Watch the French Open in 2025" updated="Last updated March 2025">
 				<Hero img="french-main-image" />
 				<FrenchPost />
 			</Posts>

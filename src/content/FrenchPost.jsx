@@ -13,11 +13,12 @@ export function FrenchPost() {
 			<br />
 			<p>
 				The second gram slam of the season and one of the most anticipated tournaments of the year is upon us,{" "}
-				<span>Roland Garros!</span> Much of the anticipation this year is centered around <span>Rafael Nadal's</span> return to
-				competitive match play and what many have speculated as likely his last French Open as a player.
+				<span>Roland Garros!</span> As <span>Iga Świątek</span> looks to extend her clay-court dominance with a fourth consecutive
+				title on the womens side, <span>Carlos Alcaraz</span> aims to defend his crown in the men's draw, setting the stage for an
+				electrifying showdown in Paris.
 			</p>
 			<p>
-				The tournament will <span>start on Sunday, May 26th</span> and run until Sunday June 9th.
+				The tournament will <span>start on Sunday, May 25th</span> and run until Sunday June 8th.
 			</p>
 
 			<p>
@@ -94,7 +95,8 @@ export function FrenchPost() {
 				<span>VPN network</span>.
 			</p>
 
-			<h2 className="mt-5">2024 French Open Broadcast Schedule (USA)</h2>
+			<h2 className="mt-5">2025 Broadcast Schedule (USA) coming soon</h2>
+			<h6>*Below is the 2024 schedule for reference</h6>
 			<br />
 			<ActionTable tableData={frenchSchedule} />
 

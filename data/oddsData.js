@@ -1,5 +1,5 @@
 export const atpAustralianOdds = {
-	title: "AO Mens 2024 Favorites to Win",
+	title: "AO Mens 2025 Favorites to Win",
 	options: [
 		{
 			id: 1,
@@ -65,7 +65,7 @@ export const atpAustralianOdds = {
 };
 
 export const wtaAustralianOdds = {
-	title: "AO Womens 2024 Favorites to Win",
+	title: "AO Womens 2025 Favorites to Win",
 	options: [
 		{
 			id: 1,
@@ -131,133 +131,133 @@ export const wtaAustralianOdds = {
 };
 
 export const atpFrenchOdds = {
-	title: "RG Mens 2024 Favorites to Win",
+	title: "RG Mens 2025 Favorites to Win (TBD)",
 	options: [
 		{
 			id: 1,
 			player: "C. Alcaraz",
-			american_odds: "+160",
-			euro_odds: "2.6",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 2,
 			player: "N. Djokovic",
-			american_odds: "+250",
-			euro_odds: "3.5",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 3,
 			player: "J.Sinner",
-			american_odds: "+300",
-			euro_odds: "4.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 4,
 			player: "R. Nadal",
-			american_odds: "+900",
-			euro_odds: "10.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 5,
 			player: "C. Ruud",
-			american_odds: "+1000",
-			euro_odds: "11.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 6,
 			player: "S. Tsitsipas",
-			american_odds: "+1200",
-			euro_odds: "13.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 7,
 			player: "D. Medvedev",
-			american_odds: "+1600",
-			euro_odds: "17.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 8,
 			player: "A. Zverev",
-			american_odds: "+1600",
-			euro_odds: "17.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 9,
 			player: "H. Rune",
-			american_odds: "+1800",
-			euro_odds: "19.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 10,
 			player: "A. Rublev",
-			american_odds: "+3500",
-			euro_odds: "36.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 	],
 };
 
 export const wtaFrenchOdds = {
-	title: "RG Womens 2024 Favorites to Win",
+	title: "RG Womens 2025 Favorites to Win (TBD)",
 	options: [
 		{
 			id: 1,
 			player: "I. Swiatek",
-			american_odds: "+100",
-			euro_odds: "2.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 2,
 			player: "A. Sabalenka",
-			american_odds: "+550",
-			euro_odds: "6.5",
+			aamerican_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 3,
 			player: "E. Rybakina",
-			american_odds: "+900",
-			euro_odds: "10.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 4,
 			player: "C. Gauff",
-			american_odds: "+900",
-			euro_odds: "10.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 5,
 			player: "K. Muchova",
-			american_odds: "+1600",
-			euro_odds: "17.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 6,
 			player: "M. Andreeva",
-			american_odds: "+1800",
-			euro_odds: "19.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 7,
 			player: "B. Krejcikova",
-			american_odds: "+2000",
-			euro_odds: "21.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 8,
 			player: "S. Halep",
-			american_odds: "+2000",
-			euro_odds: "21.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 9,
 			player: "O. Jabeur",
-			american_odds: "+2200",
-			euro_odds: "23.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 		{
 			id: 10,
 			player: "N. Osaka",
-			american_odds: "+2500",
-			euro_odds: "26.0",
+			american_odds: "---",
+			euro_odds: "---",
 		},
 	],
 };
