@@ -9,7 +9,7 @@ UK based tennis and betting match results website: http://tennis-data.co.uk/alld
 # How To renew letsencrypt SSL certificate on Namecheap
 
 Run the following terminal command in cPanel:
-.acme.sh/acme.sh --issue -d totaltennis.tv -d totaltennis.tv -w /home/tennitng/public_html/ --server letsencrypt --force
+.acme.sh/acme.sh --issue -d totaltennis.tv -d www.totaltennis.tv -w /home/tennitng/public_html/ --server letsencrypt --force
 
 Check if my SSL certificate is correctly working:
 https://wphowknow.com/ssl-checker/
