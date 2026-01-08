@@ -50,7 +50,10 @@ pnpm preview
 ## How To Renew Let's Encrypt SSL Certificate on Namecheap
 
 Run the following terminal command in cPanel:
-`.acme.sh/acme.sh --issue -d totaltennis.tv -d www.totaltennis.tv -w /home/tennitng/public_html/ --server letsencrypt --force`
+
+```bash
+.acme.sh/acme.sh --issue -d totaltennis.tv -d www.totaltennis.tv -w /home/tennitng/public_html/ --server letsencrypt --force
+```
 
 Then in cPanel go to File Manager -> .acme.sh -> totaltennis.tv_ecc and copy the content from totaltennis.tv.cer and totaltennis.tv.key
 
