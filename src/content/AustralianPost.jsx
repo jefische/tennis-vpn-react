@@ -26,9 +26,9 @@ export function AustralianPost() {
 		<>
 			<br />
 			<p>
-				With the start of the 2025 season just around the corner, the <span>Australian Open</span> will be under way before we know
-				it, kicking off the first of the four grand slam events! The tournament will <span>start on Sunday, January 12th</span> and
-				run until Sunday January 26th.
+				With the start of the 2026 season now underway, the <span>Australian Open</span> will be under way before we know it,
+				kicking off the first of the four grand slam events! The tournament will <span>start on Monday, January 12th</span> and run
+				until Sunday February 1st.
 			</p>
 			<p>
 				If you are located in Australia, then you can watch the tournament for <span>free on Channel 9 or 9Now</span>. If you{" "}

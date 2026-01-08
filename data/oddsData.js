@@ -1,5 +1,5 @@
 export const atpAustralianOdds = {
-	title: "AO Mens 2025 Favorites to Win",
+	title: "AO Mens 2026 Favorites to Win",
 	options: [
 		{
 			id: 1,
@@ -65,7 +65,7 @@ export const atpAustralianOdds = {
 };
 
 export const wtaAustralianOdds = {
-	title: "AO Womens 2025 Favorites to Win",
+	title: "AO Womens 2026 Favorites to Win",
 	options: [
 		{
 			id: 1,

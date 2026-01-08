@@ -32,7 +32,7 @@ export function Australian() {
 	}, []);
 	return (
 		<>
-			<Posts title="How to Watch the Australian Open in 2025" updated="Last updated January 2025">
+			<Posts title="How to Watch the Australian Open in 2026" updated="Last updated January 2026">
 				<Hero img="ao-main-image" />
 				<AustralianPost />
 			</Posts>
